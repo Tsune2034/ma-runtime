@@ -1,6 +1,6 @@
 # MA Runtime — Hardware Safety Topology for AI Agent Execution
 
-**Daisuke Tsunemori** · One Hour Value Inc. · Japan
+**Daisuke Tsunemori** · Independent Researcher · Japan
 
 > *"Safety is not a layer you add on top. It is a topological property of the execution graph."*
 
@@ -20,7 +20,7 @@ The framework also introduces **CIIE (Creative Intelligence Insight Event)** —
 
 ---
 
-## Key Results (N=50)
+## Key Results (N=151)
 
 | Metric | Value |
 |--------|-------|
@@ -40,7 +40,7 @@ ma-runtime/
 ├── paper/
 │   └── ma-runtime-draft-v0.1.md   # Paper draft
 ├── experiments/
-│   └── sessions/          # N=50 Observer audit logs (JSON)
+│   └── sessions/          # N=151 Observer audit logs (JSON)
 └── README.md
 ```
 
