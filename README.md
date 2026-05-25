@@ -84,7 +84,7 @@ Key novelty claims:
 
 ## Background
 
-The author has 25 years of experience as a field/equipment engineer, including 10 years as a semiconductor FSE (ASM Japan · CVD/ALD process equipment), specializing in systems where failure means physical harm. The safety design patterns in this framework — EMO topology, C-contact fail-safe, cascade control — were validated in that context before being applied to AI execution.
+The author has 25 years of experience as a field/equipment engineer, including 10 years as a semiconductor FSE at a global ALD pioneer manufacturer (CVD/ALD process equipment), specializing in systems where failure means physical harm. The safety design patterns in this framework — EMO topology, C-contact fail-safe, cascade control — were validated in that context before being applied to AI execution.
 
 ---
 
