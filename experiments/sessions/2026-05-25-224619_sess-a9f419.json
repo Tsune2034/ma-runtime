@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-a9f419",
+  "goal": "解释量子计算对密码学安全性的长期影响",
+  "started_at": "2026-05-25T22:45:57.134406",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:45:57.134599",
+      "task_id": "task-6d60c022",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:45:57.134869",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:45:57.135095",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:46:01.515365",
+      "shell": "openrouter",
+      "duration_sec": 4.4,
+      "status": "OK",
+      "output_len": 877
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:46:06.534856",
+      "shell": "openrouter",
+      "duration_sec": 5.0,
+      "status": "OK",
+      "output_len": 696
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:46:06.536133",
+      "start": "2026-05-25T22:46:06.536123"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:46:14.650121",
+      "output_len": 765
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:46:19.526779",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:46:19.529924",
+      "score": 0.65,
+      "passed": true,
+      "source_count": 1,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:46:19.530937",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 22.4
+}

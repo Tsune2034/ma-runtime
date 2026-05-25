@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-64f95c",
+  "goal": "タスク管理ツールの設計において認知負荷を最小化する方法を提案してください",
+  "started_at": "2026-05-25T22:38:01.993423",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:38:01.993901",
+      "task_id": "task-0ba53fa3",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:38:01.994391",
+      "memory_confidence": 0.981,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:38:01.994668",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:38:07.226882",
+      "shell": "openrouter",
+      "duration_sec": 5.2,
+      "status": "OK",
+      "output_len": 774
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:38:12.528388",
+      "shell": "openrouter",
+      "duration_sec": 5.3,
+      "status": "OK",
+      "output_len": 783
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:38:12.529329",
+      "start": "2026-05-25T22:38:12.529322"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:38:18.327086",
+      "output_len": 942
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:38:22.192576",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:38:22.195276",
+      "score": 0.75,
+      "passed": true,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:38:22.196187",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 20.2
+}

@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-b85d3f",
+  "goal": "분산 시스템에서 일관성과 가용성의 트레이드오프를 CAP 정리로 설명해주세요",
+  "started_at": "2026-05-25T23:16:46.701290",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T23:16:46.701488",
+      "task_id": "task-cbaf9b66",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T23:16:46.701770",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T23:16:46.701945",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T23:16:52.075562",
+      "shell": "openrouter",
+      "duration_sec": 5.4,
+      "status": "OK",
+      "output_len": 986
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T23:16:59.627087",
+      "shell": "openrouter",
+      "duration_sec": 7.6,
+      "status": "OK",
+      "output_len": 833
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T23:16:59.628063",
+      "start": "2026-05-25T23:16:59.628057"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T23:17:05.724703",
+      "output_len": 851
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T23:17:05.724802",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T23:17:05.726803",
+      "score": 0.7000000000000001,
+      "passed": true,
+      "source_count": 1,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T23:17:05.727838",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 19.0
+}

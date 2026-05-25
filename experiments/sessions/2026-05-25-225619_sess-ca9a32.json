@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-ca9a32",
+  "goal": "欧州AI規制（EU AI Act）が企業のAI開発プロセスに与える具体的な影響を分析してください",
+  "started_at": "2026-05-25T22:55:54.545224",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:55:54.545373",
+      "task_id": "task-de5477f2",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:55:54.545601",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:55:54.545737",
+      "persona": "analyst"
+    },
+    {
+      "step": "think/analyst",
+      "ts": "2026-05-25T22:55:59.838218",
+      "shell": "openrouter",
+      "duration_sec": 5.3,
+      "status": "OK",
+      "output_len": 701
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:56:06.168393",
+      "shell": "openrouter",
+      "duration_sec": 6.3,
+      "status": "OK",
+      "output_len": 725
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:56:06.169524",
+      "start": "2026-05-25T22:56:06.169515"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:56:14.056927",
+      "output_len": 989
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:56:19.850446",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:56:19.853176",
+      "score": 1.0,
+      "passed": true,
+      "source_count": 1,
+      "source_diversity": 0,
+      "has_date": true,
+      "has_numbers": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:56:19.853878",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 25.3
+}

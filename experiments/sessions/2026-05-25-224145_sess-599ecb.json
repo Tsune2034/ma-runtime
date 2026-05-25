@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-599ecb",
+  "goal": "请分析：中国新能源汽车产业在2025年的全球竞争态势",
+  "started_at": "2026-05-25T22:41:25.495889",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:41:25.496186",
+      "task_id": "task-8f7786dd",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:41:25.496462",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:41:25.496647",
+      "persona": "analyst"
+    },
+    {
+      "step": "think/analyst",
+      "ts": "2026-05-25T22:41:31.820719",
+      "shell": "openrouter",
+      "duration_sec": 6.3,
+      "status": "OK",
+      "output_len": 852
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:41:34.899961",
+      "shell": "openrouter",
+      "duration_sec": 3.1,
+      "status": "OK",
+      "output_len": 462
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:41:34.901041",
+      "start": "2026-05-25T22:41:34.901030"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:41:39.968358",
+      "output_len": 768
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:41:45.073274",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:41:45.076277",
+      "score": 0.7000000000000001,
+      "passed": true,
+      "source_count": 2,
+      "source_diversity": 0,
+      "has_date": true,
+      "has_numbers": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:41:45.077231",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 19.6
+}

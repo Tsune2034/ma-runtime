@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-891ee9",
+  "goal": "What experimental methodologies are used in human-AI interaction research to measure cognitive insight events?",
+  "started_at": "2026-05-25T23:01:07.159687",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T23:01:07.159879",
+      "task_id": "task-b979b08d",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T23:01:07.160121",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T23:01:07.160242",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T23:01:14.206862",
+      "shell": "openrouter",
+      "duration_sec": 7.0,
+      "status": "OK",
+      "output_len": 1046
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T23:01:19.321563",
+      "shell": "openrouter",
+      "duration_sec": 5.1,
+      "status": "OK",
+      "output_len": 688
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T23:01:19.322970",
+      "start": "2026-05-25T23:01:19.322957"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T23:01:26.125501",
+      "output_len": 1056
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T23:01:26.125621",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T23:01:26.127731",
+      "score": 0.65,
+      "passed": true,
+      "source_count": 2,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T23:01:26.129043",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 19.0
+}

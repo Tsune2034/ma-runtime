@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-c476a7",
+  "goal": "日本の食料安全保障政策における農業DXの役割を分析してください",
+  "started_at": "2026-05-25T22:44:24.711763",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:44:24.711973",
+      "task_id": "task-85fb015c",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:44:24.712207",
+      "memory_confidence": 1.0,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:44:24.712354",
+      "persona": "analyst"
+    },
+    {
+      "step": "think/analyst",
+      "ts": "2026-05-25T22:44:29.668257",
+      "shell": "openrouter",
+      "duration_sec": 5.0,
+      "status": "OK",
+      "output_len": 705
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:44:35.952853",
+      "shell": "openrouter",
+      "duration_sec": 6.3,
+      "status": "OK",
+      "output_len": 797
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:44:35.954589",
+      "start": "2026-05-25T22:44:35.954572"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:44:52.213114",
+      "output_len": 878
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:44:55.614432",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:44:55.616557",
+      "score": 1.0,
+      "passed": true,
+      "source_count": 1,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:44:55.617212",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 30.9
+}

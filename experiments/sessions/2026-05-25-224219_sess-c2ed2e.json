@@ -1,0 +1,100 @@
+{
+  "session_id": "sess-c2ed2e",
+  "goal": "Analysez les principales tendances de l'IA générative en Europe en 2025",
+  "started_at": "2026-05-25T22:41:45.176318",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:41:45.176505",
+      "task_id": "task-a33444b0",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:41:45.176769",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:41:45.176907",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:41:58.323969",
+      "shell": "openrouter",
+      "duration_sec": 13.1,
+      "status": "OK",
+      "output_len": 2308
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:42:04.424416",
+      "shell": "openrouter",
+      "duration_sec": 6.1,
+      "status": "OK",
+      "output_len": 748
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:42:04.426559",
+      "start": "2026-05-25T22:42:04.426543"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:42:08.776222",
+      "output_len": 758
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:42:12.946444",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:42:12.949771",
+      "score": 0.45,
+      "passed": false,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": true,
+      "has_numbers": false
+    },
+    {
+      "step": "policy-engine",
+      "ts": "2026-05-25T22:42:12.949799",
+      "fail_type": "weak_source",
+      "retry_strategy": {
+        "action": "retry_with_context",
+        "context": "情報ソースをURLまたは論文名で必ず明記してください"
+      }
+    },
+    {
+      "step": "retry",
+      "ts": "2026-05-25T22:42:12.949815",
+      "action": "retry_with_context",
+      "retry_count": 1,
+      "fail_type": "weak_source"
+    },
+    {
+      "step": "judge-retry",
+      "ts": "2026-05-25T22:42:19.212363",
+      "score": 0.65,
+      "passed": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:42:19.212978",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": "weak_source",
+    "retry_count": 1
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 34.0
+}

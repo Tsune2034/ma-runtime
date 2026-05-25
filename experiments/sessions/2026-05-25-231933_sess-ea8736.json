@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-ea8736",
+  "goal": "Analyze how transformer attention mechanisms relate to human cognitive attention models",
+  "started_at": "2026-05-25T23:19:07.264047",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T23:19:07.264228",
+      "task_id": "task-2c4fc82d",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T23:19:07.264528",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T23:19:07.264729",
+      "persona": "analyst"
+    },
+    {
+      "step": "think/analyst",
+      "ts": "2026-05-25T23:19:13.777741",
+      "shell": "openrouter",
+      "duration_sec": 6.5,
+      "status": "OK",
+      "output_len": 765
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T23:19:25.824455",
+      "shell": "openrouter",
+      "duration_sec": 12.0,
+      "status": "OK",
+      "output_len": 835
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T23:19:25.825614",
+      "start": "2026-05-25T23:19:25.825602"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T23:19:33.315745",
+      "output_len": 742
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T23:19:33.315866",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T23:19:33.318357",
+      "score": 0.7000000000000001,
+      "passed": true,
+      "source_count": 2,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T23:19:33.319238",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 26.1
+}

@@ -1,0 +1,100 @@
+{
+  "session_id": "sess-1bc656",
+  "goal": "Erklären Sie die Rolle der Fehlertoleranz in verteilten KI-Agentensystemen",
+  "started_at": "2026-05-25T23:17:54.228547",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T23:17:54.228734",
+      "task_id": "task-06a1ee5f",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T23:17:54.229020",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T23:17:54.229155",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T23:17:58.852432",
+      "shell": "openrouter",
+      "duration_sec": 4.6,
+      "status": "OK",
+      "output_len": 2583
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T23:18:03.390852",
+      "shell": "openrouter",
+      "duration_sec": 4.5,
+      "status": "OK",
+      "output_len": 1501
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T23:18:03.391862",
+      "start": "2026-05-25T23:18:03.391855"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T23:18:12.480008",
+      "output_len": 949
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T23:18:12.480100",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T23:18:12.481686",
+      "score": 0.45,
+      "passed": false,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "policy-engine",
+      "ts": "2026-05-25T23:18:12.481706",
+      "fail_type": "weak_source",
+      "retry_strategy": {
+        "action": "retry_with_context",
+        "context": "情報ソースをURLまたは論文名で必ず明記してください"
+      }
+    },
+    {
+      "step": "retry",
+      "ts": "2026-05-25T23:18:12.481718",
+      "action": "retry_with_context",
+      "retry_count": 1,
+      "fail_type": "weak_source"
+    },
+    {
+      "step": "judge-retry",
+      "ts": "2026-05-25T23:18:18.647017",
+      "score": 0.65,
+      "passed": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T23:18:18.648160",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": "weak_source",
+    "retry_count": 1
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 24.4
+}

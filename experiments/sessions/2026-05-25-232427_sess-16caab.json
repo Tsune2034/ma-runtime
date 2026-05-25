@@ -1,0 +1,100 @@
+{
+  "session_id": "sess-16caab",
+  "goal": "Explain the concept of emergent behavior in complex multi-agent systems",
+  "started_at": "2026-05-25T23:24:01.120565",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T23:24:01.120791",
+      "task_id": "task-fa47cdb6",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T23:24:01.121083",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T23:24:01.121233",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T23:24:08.938356",
+      "shell": "openrouter",
+      "duration_sec": 7.8,
+      "status": "OK",
+      "output_len": 903
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T23:24:15.190535",
+      "shell": "openrouter",
+      "duration_sec": 6.3,
+      "status": "OK",
+      "output_len": 662
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T23:24:15.191732",
+      "start": "2026-05-25T23:24:15.191717"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T23:24:20.358505",
+      "output_len": 595
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T23:24:20.358582",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T23:24:20.360572",
+      "score": 0.45,
+      "passed": false,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "policy-engine",
+      "ts": "2026-05-25T23:24:20.360593",
+      "fail_type": "weak_source",
+      "retry_strategy": {
+        "action": "retry_with_context",
+        "context": "情報ソースをURLまたは論文名で必ず明記してください"
+      }
+    },
+    {
+      "step": "retry",
+      "ts": "2026-05-25T23:24:20.360606",
+      "action": "retry_with_context",
+      "retry_count": 1,
+      "fail_type": "weak_source"
+    },
+    {
+      "step": "judge-retry",
+      "ts": "2026-05-25T23:24:27.000876",
+      "score": 0.65,
+      "passed": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T23:24:27.002017",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": "weak_source",
+    "retry_count": 1
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 25.9
+}

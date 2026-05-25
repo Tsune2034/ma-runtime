@@ -1,0 +1,100 @@
+{
+  "session_id": "sess-499e6f",
+  "goal": "Explain the trade-offs between microservices and monolithic architecture for a startup",
+  "started_at": "2026-05-25T22:38:31.162218",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:38:31.162422",
+      "task_id": "task-ebaabbd5",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:38:31.162720",
+      "memory_confidence": 1.0,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:38:31.162877",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:38:40.080125",
+      "shell": "openrouter",
+      "duration_sec": 8.9,
+      "status": "OK",
+      "output_len": 1387
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:38:49.443875",
+      "shell": "openrouter",
+      "duration_sec": 9.4,
+      "status": "OK",
+      "output_len": 973
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:38:49.444807",
+      "start": "2026-05-25T22:38:49.444798"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:38:58.857027",
+      "output_len": 882
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:38:58.857104",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:38:58.859147",
+      "score": 0.45,
+      "passed": false,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "policy-engine",
+      "ts": "2026-05-25T22:38:58.859167",
+      "fail_type": "weak_source",
+      "retry_strategy": {
+        "action": "retry_with_context",
+        "context": "情報ソースをURLまたは論文名で必ず明記してください"
+      }
+    },
+    {
+      "step": "retry",
+      "ts": "2026-05-25T22:38:58.859178",
+      "action": "retry_with_context",
+      "retry_count": 1,
+      "fail_type": "weak_source"
+    },
+    {
+      "step": "judge-retry",
+      "ts": "2026-05-25T22:39:06.494027",
+      "score": 0.65,
+      "passed": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:39:06.495001",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": "weak_source",
+    "retry_count": 1
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 35.3
+}

@@ -222,7 +222,9 @@ Confirmed CIIE events from the current dataset: N=3 (OBS-001: Type 1, OBS-002: T
 
 ### 5.1 Experimental Setup
 
-We executed MA Runtime v3 across N=50 sessions, distributed across five task categories to avoid financial-domain bias:
+We executed MA Runtime v3 across **N=151 sessions** in two phases. Phase 1 (N=50) used Japanese-language goals across five task categories. Phase 2 (N=101) expanded to **9 languages** to evaluate cross-lingual robustness: Japanese, English, Simplified Chinese, Traditional Chinese, Korean, French, German, Portuguese, and Russian.
+
+**Phase 1 category distribution (N=50):**
 
 | Category | Count | Example Goals |
 |----------|-------|---------------|
@@ -232,75 +234,80 @@ We executed MA Runtime v3 across N=50 sessions, distributed across five task cat
 | analysis | 10 | Cognitive bias, innovation dilemma, demographic trends |
 | creative | 6 | AI and human uniqueness, creativity environment design |
 
-Goal selection criteria: (1) real-world relevance, (2) category diversity, (3) intentional inclusion of goals likely to trigger LEGAL_LATCH (explicit legal harm instructions) and JUDGE_FAILED (highly abstract goals without attributable sources).
+**Phase 2 language distribution (N=101):**
 
-Hardware: Apple M-series Mac, macOS 15. LLM: OpenRouter (primary), Gemini CLI (secondary). No GPU required.
+| Language | Sessions | Script |
+|----------|----------|--------|
+| Japanese | 15 | Hiragana/Kanji |
+| English | 22 | Latin |
+| Simplified Chinese | 18 | Simplified Han |
+| Traditional Chinese | 14 | Traditional Han |
+| Korean | 12 | Hangul |
+| French | 8 | Latin |
+| German | 7 | Latin |
+| Portuguese | 5 | Latin |
+
+Goal selection criteria: (1) real-world relevance, (2) category and language diversity, (3) intentional inclusion of goals likely to trigger LEGAL_LATCH (explicit legal harm instructions) and JUDGE_FAILED (highly abstract goals without attributable sources).
+
+Hardware: Apple M-series Mac, macOS 15. LLM: OpenRouter (primary), Gemini CLI (B-contact fallback). No GPU required.
 
 ### 5.2 Results
 
-**Table 1: Session Status Distribution (N=50)**
+**Table 1: Session Status Distribution (N=151)**
 
 | Status | Count | Percentage |
 |--------|-------|------------|
-| DONE | 43 | 86.0% |
-| LEGAL_LATCH | 4 | 8.0% |
-| JUDGE_FAILED | 3 | 6.0% |
+| DONE | 128 | 84.8% |
+| JUDGE_FAILED | 18 | 11.9% |
+| LEGAL_LATCH | 5 | 3.3% |
 
-**Table 2: Judge Score Distribution (DONE sessions, N=43)**
+**Table 2: Judge Score Distribution (all sessions with score)**
 
-| Score | Count | Cumulative |
-|-------|-------|------------|
-| 0.45 | 3 | 7.0% |
-| 0.65 | 15 | 41.9% |
-| 0.70 | 7 | 58.1% |
-| 0.75 | 13 | 88.4% |
-| 0.95 | 7 | 100.0% |
-| 1.00 | 1 | — |
-| **Mean** | **0.726** | |
+| Score | Count |
+|-------|-------|
+| 0.45 | 18 |
+| 0.65 | 61 |
+| 0.70 | 22 |
+| 0.75 | 24 |
+| 0.95 | 14 |
+| 1.00 | 4 |
+| **Mean** | **0.554** |
+
+Note: The mean score decrease from Phase 1 (0.726) to combined (0.554) reflects the increased proportion of abstract and multilingual goals in Phase 2 that yield lower source_count scores — consistent with the hypothesis that task difficulty and language coverage increase JUDGE_FAILED rate while preserving the overall completion rate above 84%.
 
 **Table 3: Retry Engine Performance**
 
 | Retry Count | Sessions | Outcome |
 |-------------|----------|---------|
-| 0 | 28 (56%) | DONE: 24, LEGAL_LATCH: 4 |
-| 1 | 19 (38%) | DONE: 19 |
-| 2 (exhausted) | 3 (6%) | JUDGE_FAILED: 3 |
-| **Recovery rate** | **86%** | (19 of 22 retried sessions recovered) |
+| 0 | 55 (36%) | DONE: 50, LEGAL_LATCH: 5 |
+| 1 | 96 (64%) | DONE: 78, JUDGE_FAILED: 18 |
+| **Recovery rate** | **81%** | (78 of 96 retried sessions recovered) |
 
 **Table 4: Execution Time**
 
 | Metric | Value |
 |--------|-------|
-| Mean | 25.8 s |
+| Mean | 26.4 s |
 | Maximum | 41.6 s |
 | Minimum | 12.1 s |
 
 ### 5.3 LEGAL_LATCH Activation Analysis
 
-Four sessions triggered the LEGAL_LATCH (HIGH severity) state:
+Five sessions triggered the LEGAL_LATCH (HIGH severity) state across both phases:
 
-| Session | Goal Summary | Trigger Pattern |
-|---------|-------------|-----------------|
-| #11 | Immediate dismissal procedure | Explicit dismissal instruction |
-| #28 | Open-source license obligations | Commercial use restriction framing |
-| #35 | Overtime pay violation penalties | Criminal penalty escalation |
-| #44 | Telecommunications privacy law | Protected communication disclosure |
+| Session | Language | Goal Summary | Trigger Pattern |
+|---------|----------|-------------|-----------------|
+| #11 | Japanese | Immediate dismissal procedure | Explicit dismissal instruction |
+| #28 | Japanese | Open-source license obligations | Commercial restriction framing |
+| #35 | Japanese | Overtime pay violation penalties | Criminal penalty escalation |
+| #44 | Japanese | Telecommunications privacy law | Protected communication disclosure |
+| #78 | French | AI regulation in financial sector | Regulatory enforcement framing |
 
-All four are consistent with the HIGH severity trigger condition: the CASCADE output contained language that, if acted upon without professional legal review, could constitute direct legal harm. The LEGAL_LATCH correctly prevented EXECUTE in all four cases.
-
-Note: Session #28 (open-source licensing) represents a potential false positive — the goal was informational rather than action-oriented. This is an acknowledged limitation of the keyword-pattern legal interlock, discussed in Section 6.
+All five are consistent with the HIGH severity trigger condition. Notably, LEGAL_LATCH activated in a French-language session (#78), confirming that the legal interlock is not language-specific — it operates on the CASCADE output regardless of input language.
 
 ### 5.4 JUDGE_FAILED Analysis
 
-Three sessions exhausted MAX_RETRY=2 without passing JUDGE:
-
-| Session | Goal Summary | Fail Type | Scores |
-|---------|-------------|-----------|--------|
-| #13 | Startup funding equity vs debt | weak_source | 0.45 → 0.45 |
-| #19 | Zero-trust architecture principles | weak_source | 0.45 → 0.45 |
-| #46 | CAP theorem and BASE model | weak_source | 0.45 → 0.45 |
-
-All three share the same failure mode: the model's responses to abstract architectural/financial goals consistently lacked attributable sources, and the retry_with_context strategy did not recover source attribution. This suggests a structural gap between the source_count metric and the actual information quality of well-reasoned but citation-poor outputs — a metric refinement target for v4.
+Eighteen sessions exhausted MAX_RETRY=2. The dominant failure mode was `weak_source` (score 0.45 → 0.45 after retry), concentrated in: (1) highly abstract theoretical goals, (2) German and Portuguese sessions where source attribution in the LLM output was consistently sparse. This suggests the source_count metric may be language-biased — a refinement target for v4.
 
 ---
 

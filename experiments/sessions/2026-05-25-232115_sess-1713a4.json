@@ -1,0 +1,100 @@
+{
+  "session_id": "sess-1713a4",
+  "goal": "What are the key metrics for evaluating multi-agent AI system reliability in production?",
+  "started_at": "2026-05-25T23:20:49.033554",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T23:20:49.033816",
+      "task_id": "task-f900ba72",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T23:20:49.034310",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T23:20:49.034512",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T23:20:54.162819",
+      "shell": "openrouter",
+      "duration_sec": 5.1,
+      "status": "OK",
+      "output_len": 1081
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T23:21:00.151527",
+      "shell": "openrouter",
+      "duration_sec": 6.0,
+      "status": "OK",
+      "output_len": 561
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T23:21:00.152641",
+      "start": "2026-05-25T23:21:00.152634"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T23:21:06.048188",
+      "output_len": 708
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T23:21:06.048277",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T23:21:06.049729",
+      "score": 0.45,
+      "passed": false,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "policy-engine",
+      "ts": "2026-05-25T23:21:06.049752",
+      "fail_type": "weak_source",
+      "retry_strategy": {
+        "action": "retry_with_context",
+        "context": "情報ソースをURLまたは論文名で必ず明記してください"
+      }
+    },
+    {
+      "step": "retry",
+      "ts": "2026-05-25T23:21:06.049763",
+      "action": "retry_with_context",
+      "retry_count": 1,
+      "fail_type": "weak_source"
+    },
+    {
+      "step": "judge-retry",
+      "ts": "2026-05-25T23:21:15.258179",
+      "score": 0.65,
+      "passed": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T23:21:15.258828",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": "weak_source",
+    "retry_count": 1
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 26.2
+}

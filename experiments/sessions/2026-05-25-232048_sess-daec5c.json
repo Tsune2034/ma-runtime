@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-daec5c",
+  "goal": "エッジコンピューティングとクラウドコンピューティングの最適な使い分けを分析してください",
+  "started_at": "2026-05-25T23:20:20.383242",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T23:20:20.383428",
+      "task_id": "task-01982525",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T23:20:20.383741",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T23:20:20.383891",
+      "persona": "analyst"
+    },
+    {
+      "step": "think/analyst",
+      "ts": "2026-05-25T23:20:27.708027",
+      "shell": "openrouter",
+      "duration_sec": 7.3,
+      "status": "OK",
+      "output_len": 976
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T23:20:33.339844",
+      "shell": "openrouter",
+      "duration_sec": 5.6,
+      "status": "OK",
+      "output_len": 749
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T23:20:33.340768",
+      "start": "2026-05-25T23:20:33.340761"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T23:20:41.204356",
+      "output_len": 1011
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T23:20:48.914762",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T23:20:48.918636",
+      "score": 1.0,
+      "passed": true,
+      "source_count": 1,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T23:20:48.919975",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 28.5
+}

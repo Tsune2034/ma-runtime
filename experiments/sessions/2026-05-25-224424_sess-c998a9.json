@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-c998a9",
+  "goal": "Compare the economic impact of AI automation on manufacturing vs service sectors",
+  "started_at": "2026-05-25T22:44:04.770704",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:44:04.770909",
+      "task_id": "task-cb5026e1",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:44:04.771180",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:44:04.771362",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:44:10.574840",
+      "shell": "openrouter",
+      "duration_sec": 5.8,
+      "status": "OK",
+      "output_len": 1120
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:44:15.662061",
+      "shell": "openrouter",
+      "duration_sec": 5.1,
+      "status": "OK",
+      "output_len": 628
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:44:15.663021",
+      "start": "2026-05-25T22:44:15.663013"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:44:20.566428",
+      "output_len": 911
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:44:24.637119",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:44:24.638712",
+      "score": 0.7000000000000001,
+      "passed": true,
+      "source_count": 1,
+      "source_diversity": 0,
+      "has_date": true,
+      "has_numbers": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:44:24.639131",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 19.9
+}

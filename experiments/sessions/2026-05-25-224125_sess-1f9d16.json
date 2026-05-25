@@ -1,0 +1,100 @@
+{
+  "session_id": "sess-1f9d16",
+  "goal": "분석: 한국의 반도체 산업이 AI 시대에 직면한 주요 도전과 기회를 설명해주세요",
+  "started_at": "2026-05-25T22:40:57.494040",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:40:57.494233",
+      "task_id": "task-bf1e66aa",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:40:57.494670",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:40:57.494802",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:41:02.824137",
+      "shell": "openrouter",
+      "duration_sec": 5.3,
+      "status": "OK",
+      "output_len": 1100
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:41:08.346532",
+      "shell": "openrouter",
+      "duration_sec": 5.5,
+      "status": "OK",
+      "output_len": 991
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:41:08.347484",
+      "start": "2026-05-25T22:41:08.347471"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:41:14.144250",
+      "output_len": 892
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:41:19.388623",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:41:19.393839",
+      "score": 0.45,
+      "passed": false,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "policy-engine",
+      "ts": "2026-05-25T22:41:19.393877",
+      "fail_type": "weak_source",
+      "retry_strategy": {
+        "action": "retry_with_context",
+        "context": "情報ソースをURLまたは論文名で必ず明記してください"
+      }
+    },
+    {
+      "step": "retry",
+      "ts": "2026-05-25T22:41:19.393892",
+      "action": "retry_with_context",
+      "retry_count": 1,
+      "fail_type": "weak_source"
+    },
+    {
+      "step": "judge-retry",
+      "ts": "2026-05-25T22:41:25.388927",
+      "score": 0.65,
+      "passed": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:41:25.390297",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": "weak_source",
+    "retry_count": 1
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 27.9
+}

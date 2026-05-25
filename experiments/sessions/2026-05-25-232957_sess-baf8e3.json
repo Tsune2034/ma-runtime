@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-baf8e3",
+  "goal": "半導体製造における歩留まり管理とAI予測保全の統合アーキテクチャを提案してください",
+  "started_at": "2026-05-25T23:29:27.969330",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T23:29:27.969547",
+      "task_id": "task-1f58e554",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T23:29:27.969838",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T23:29:27.970026",
+      "persona": "supervisor"
+    },
+    {
+      "step": "think/supervisor",
+      "ts": "2026-05-25T23:29:40.825696",
+      "shell": "openrouter",
+      "duration_sec": 12.9,
+      "status": "OK",
+      "output_len": 771
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T23:29:45.416068",
+      "shell": "openrouter",
+      "duration_sec": 4.6,
+      "status": "OK",
+      "output_len": 877
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T23:29:45.417733",
+      "start": "2026-05-25T23:29:45.417717"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T23:29:52.979986",
+      "output_len": 930
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T23:29:57.227920",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T23:29:57.229786",
+      "score": 0.75,
+      "passed": true,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T23:29:57.230828",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 29.3
+}

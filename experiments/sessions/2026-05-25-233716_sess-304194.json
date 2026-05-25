@@ -1,0 +1,100 @@
+{
+  "session_id": "sess-304194",
+  "goal": "Wie können neurosymbolische KI-Systeme die Grenzen rein statistischer Modelle überwinden?",
+  "started_at": "2026-05-25T23:36:54.899312",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T23:36:54.899514",
+      "task_id": "task-076d8ad8",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T23:36:54.899783",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T23:36:54.899929",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T23:37:00.288806",
+      "shell": "openrouter",
+      "duration_sec": 5.4,
+      "status": "OK",
+      "output_len": 1972
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T23:37:06.877708",
+      "shell": "openrouter",
+      "duration_sec": 6.6,
+      "status": "OK",
+      "output_len": 699
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T23:37:06.878738",
+      "start": "2026-05-25T23:37:06.878731"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T23:37:11.061901",
+      "output_len": 814
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T23:37:11.062038",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T23:37:11.064762",
+      "score": 0.45,
+      "passed": false,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "policy-engine",
+      "ts": "2026-05-25T23:37:11.064810",
+      "fail_type": "weak_source",
+      "retry_strategy": {
+        "action": "retry_with_context",
+        "context": "情報ソースをURLまたは論文名で必ず明記してください"
+      }
+    },
+    {
+      "step": "retry",
+      "ts": "2026-05-25T23:37:11.064828",
+      "action": "retry_with_context",
+      "retry_count": 1,
+      "fail_type": "weak_source"
+    },
+    {
+      "step": "judge-retry",
+      "ts": "2026-05-25T23:37:16.357547",
+      "score": 0.65,
+      "passed": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T23:37:16.358260",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": "weak_source",
+    "retry_count": 1
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 21.5
+}

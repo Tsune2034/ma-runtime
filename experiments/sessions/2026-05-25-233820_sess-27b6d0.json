@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-27b6d0",
+  "goal": "Como implementar um sistema de monitoramento de saúde de agentes IA em produção?",
+  "started_at": "2026-05-25T23:38:00.701113",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T23:38:00.702344",
+      "task_id": "task-0eec6cf4",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T23:38:00.703033",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T23:38:00.703251",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T23:38:04.629350",
+      "shell": "openrouter",
+      "duration_sec": 3.9,
+      "status": "OK",
+      "output_len": 907
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T23:38:08.891712",
+      "shell": "openrouter",
+      "duration_sec": 4.3,
+      "status": "OK",
+      "output_len": 760
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T23:38:08.892811",
+      "start": "2026-05-25T23:38:08.892799"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T23:38:15.863486",
+      "output_len": 849
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T23:38:20.001485",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T23:38:20.004198",
+      "score": 0.65,
+      "passed": true,
+      "source_count": 1,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T23:38:20.005095",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 19.3
+}

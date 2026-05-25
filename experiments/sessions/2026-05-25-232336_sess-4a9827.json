@@ -1,0 +1,100 @@
+{
+  "session_id": "sess-4a9827",
+  "goal": "Descreva as principais diferenças entre aprendizado supervisionado e não supervisionado",
+  "started_at": "2026-05-25T23:23:13.364407",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T23:23:13.364585",
+      "task_id": "task-3f664b01",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T23:23:13.364905",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T23:23:13.365134",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T23:23:17.192939",
+      "shell": "openrouter",
+      "duration_sec": 3.8,
+      "status": "OK",
+      "output_len": 1892
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T23:23:21.420245",
+      "shell": "openrouter",
+      "duration_sec": 4.2,
+      "status": "OK",
+      "output_len": 612
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T23:23:21.421577",
+      "start": "2026-05-25T23:23:21.421563"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T23:23:28.738548",
+      "output_len": 880
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T23:23:28.738674",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T23:23:28.741019",
+      "score": 0.45,
+      "passed": false,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "policy-engine",
+      "ts": "2026-05-25T23:23:28.741040",
+      "fail_type": "weak_source",
+      "retry_strategy": {
+        "action": "retry_with_context",
+        "context": "情報ソースをURLまたは論文名で必ず明記してください"
+      }
+    },
+    {
+      "step": "retry",
+      "ts": "2026-05-25T23:23:28.741051",
+      "action": "retry_with_context",
+      "retry_count": 1,
+      "fail_type": "weak_source"
+    },
+    {
+      "step": "judge-retry",
+      "ts": "2026-05-25T23:23:36.312838",
+      "score": 0.45,
+      "passed": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T23:23:36.313991",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": "weak_source",
+    "retry_count": 1
+  },
+  "final_status": "JUDGE_FAILED",
+  "total_duration_sec": 22.9
+}

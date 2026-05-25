@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-5d8048",
+  "goal": "請分析台灣半導體產業在AI供應鏈中的戰略地位",
+  "started_at": "2026-05-25T22:42:49.843631",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:42:49.843791",
+      "task_id": "task-8dc1428c",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:42:49.843999",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:42:49.844129",
+      "persona": "analyst"
+    },
+    {
+      "step": "think/analyst",
+      "ts": "2026-05-25T22:42:55.009995",
+      "shell": "openrouter",
+      "duration_sec": 5.2,
+      "status": "OK",
+      "output_len": 656
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:43:00.305284",
+      "shell": "openrouter",
+      "duration_sec": 5.3,
+      "status": "OK",
+      "output_len": 567
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:43:00.306400",
+      "start": "2026-05-25T22:43:00.306385"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:43:04.767243",
+      "output_len": 743
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:43:04.767320",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:43:04.768782",
+      "score": 0.7000000000000001,
+      "passed": true,
+      "source_count": 1,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:43:04.769384",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 14.9
+}

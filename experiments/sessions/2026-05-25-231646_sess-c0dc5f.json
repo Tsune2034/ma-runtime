@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-c0dc5f",
+  "goal": "日本の宇宙開発政策と民間企業参入の現状を分析してください",
+  "started_at": "2026-05-25T23:16:24.683349",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T23:16:24.683573",
+      "task_id": "task-e5bc7696",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T23:16:24.683890",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T23:16:24.684100",
+      "persona": "analyst"
+    },
+    {
+      "step": "think/analyst",
+      "ts": "2026-05-25T23:16:32.793252",
+      "shell": "openrouter",
+      "duration_sec": 8.1,
+      "status": "OK",
+      "output_len": 732
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T23:16:41.759594",
+      "shell": "openrouter",
+      "duration_sec": 9.0,
+      "status": "OK",
+      "output_len": 832
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T23:16:41.760900",
+      "start": "2026-05-25T23:16:41.760849"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T23:16:46.591404",
+      "output_len": 899
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T23:16:46.591502",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T23:16:46.593760",
+      "score": 1.0,
+      "passed": true,
+      "source_count": 2,
+      "source_diversity": 0,
+      "has_date": true,
+      "has_numbers": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T23:16:46.594682",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 21.9
+}

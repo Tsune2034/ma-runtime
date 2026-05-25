@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-d0cbcd",
+  "goal": "인간-AI 협업에서 신뢰 보정(Trust Calibration)의 중요성과 측정 방법을 설명해주세요",
+  "started_at": "2026-05-25T23:33:46.287368",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T23:33:46.287732",
+      "task_id": "task-14036f34",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T23:33:46.288003",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T23:33:46.288133",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T23:33:56.552209",
+      "shell": "openrouter",
+      "duration_sec": 10.3,
+      "status": "OK",
+      "output_len": 1166
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T23:34:07.186165",
+      "shell": "openrouter",
+      "duration_sec": 10.6,
+      "status": "OK",
+      "output_len": 926
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T23:34:07.187337",
+      "start": "2026-05-25T23:34:07.187328"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T23:34:13.359401",
+      "output_len": 1050
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T23:34:13.359489",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T23:34:13.360925",
+      "score": 0.75,
+      "passed": true,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T23:34:13.361845",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 27.1
+}

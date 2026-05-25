@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-947807",
+  "goal": "Design a fail-safe data pipeline for real-time financial data processing",
+  "started_at": "2026-05-25T22:39:34.031698",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:39:34.031899",
+      "task_id": "task-876e1003",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:39:34.032098",
+      "memory_confidence": 1.0,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:39:34.032243",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:39:40.362116",
+      "shell": "openrouter",
+      "duration_sec": 6.3,
+      "status": "OK",
+      "output_len": 1186
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:39:47.208172",
+      "shell": "openrouter",
+      "duration_sec": 6.8,
+      "status": "OK",
+      "output_len": 816
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:39:47.209710",
+      "start": "2026-05-25T22:39:47.209696"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:39:53.011006",
+      "output_len": 959
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:39:55.986205",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:39:55.988576",
+      "score": 0.65,
+      "passed": true,
+      "source_count": 1,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:39:55.989176",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 22.0
+}

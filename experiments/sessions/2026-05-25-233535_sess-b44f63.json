@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-b44f63",
+  "goal": "日本の介護ロボット市場における技術課題と社会受容性の分析をしてください",
+  "started_at": "2026-05-25T23:35:09.173323",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T23:35:09.173839",
+      "task_id": "task-d8fd0690",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T23:35:09.174207",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T23:35:09.174399",
+      "persona": "analyst"
+    },
+    {
+      "step": "think/analyst",
+      "ts": "2026-05-25T23:35:17.388208",
+      "shell": "openrouter",
+      "duration_sec": 8.2,
+      "status": "OK",
+      "output_len": 875
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T23:35:22.817044",
+      "shell": "openrouter",
+      "duration_sec": 5.4,
+      "status": "OK",
+      "output_len": 775
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T23:35:22.818360",
+      "start": "2026-05-25T23:35:22.818348"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T23:35:28.940670",
+      "output_len": 838
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T23:35:35.194622",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T23:35:35.195785",
+      "score": 0.7000000000000001,
+      "passed": true,
+      "source_count": 1,
+      "source_diversity": 0,
+      "has_date": true,
+      "has_numbers": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T23:35:35.196342",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 26.0
+}

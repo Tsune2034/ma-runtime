@@ -1,0 +1,100 @@
+{
+  "session_id": "sess-e3dd56",
+  "goal": "Descreva como os princípios da teoria do controle podem ser aplicados a sistemas de IA autônomos",
+  "started_at": "2026-05-25T23:31:58.564740",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T23:31:58.564955",
+      "task_id": "task-7d91d467",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T23:31:58.565447",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T23:31:58.565775",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T23:32:05.085125",
+      "shell": "openrouter",
+      "duration_sec": 6.5,
+      "status": "OK",
+      "output_len": 2578
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T23:32:09.845244",
+      "shell": "openrouter",
+      "duration_sec": 4.8,
+      "status": "OK",
+      "output_len": 600
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T23:32:09.846256",
+      "start": "2026-05-25T23:32:09.846247"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T23:32:17.571891",
+      "output_len": 1076
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T23:32:17.571969",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T23:32:17.574209",
+      "score": 0.45,
+      "passed": false,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "policy-engine",
+      "ts": "2026-05-25T23:32:17.574266",
+      "fail_type": "weak_source",
+      "retry_strategy": {
+        "action": "retry_with_context",
+        "context": "情報ソースをURLまたは論文名で必ず明記してください"
+      }
+    },
+    {
+      "step": "retry",
+      "ts": "2026-05-25T23:32:17.574284",
+      "action": "retry_with_context",
+      "retry_count": 1,
+      "fail_type": "weak_source"
+    },
+    {
+      "step": "judge-retry",
+      "ts": "2026-05-25T23:32:23.221202",
+      "score": 0.65,
+      "passed": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T23:32:23.222369",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": "weak_source",
+    "retry_count": 1
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 24.7
+}
