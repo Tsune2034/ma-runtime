@@ -322,6 +322,22 @@ In MA Runtime, the LEGAL_LATCH does not evaluate whether a generated output is h
 
 The practical consequence, observed in our data: 4 sessions (8%) were terminated before any harmful action could occur, with zero false negatives (no harmful execution reached DONE status). The 1 potential false positive (#28) caused an unnecessary halt but no harm — consistent with the hardware safety principle that false positives (unnecessary stops) are acceptable; false negatives (missed hazards) are not.
 
+### 6.1.1 Planned Comparison Experiment: Topology vs Checker
+
+The claim that topology-based safety (MA Runtime) differs meaningfully from checker-style safety (Parallax) must be validated by experiment, not assertion. The following ablation is planned for the next experimental phase:
+
+**Design**: Execute the same N=151 goal set through two conditions:
+- **Condition A (Topology)**: MA Runtime v3 as described in this paper — LEGAL_LATCH halts execution before EXECUTE stage
+- **Condition B (Checker)**: MA Runtime with LEGAL_LATCH replaced by a post-generation classifier applied after EXECUTE — same keyword list, same threshold, different position in the pipeline
+
+**Primary metric**: False negative rate — cases where a LEGAL_LATCH-class goal reaches DONE status and produces a harmful output that a human reviewer judges as action-ready harmful content.
+
+**Secondary metrics**: False positive rate; mean execution time; JUDGE score distribution.
+
+**Null hypothesis (H0)**: False negative rates are not significantly different between Condition A and Condition B.
+
+The result will be reported as-is. If H0 is not rejected, the topology claim requires revision. If H0 is rejected in favor of Condition A, the architectural distinction is empirically supported. No conclusion is assumed in advance.
+
 ### 6.2 C-Contact Effectiveness
 
 The C-contact fail-over was not triggered in any of the N=151 sessions (primary shell remained available throughout). This is consistent with the hardware C-contact analogy: the B-contact (fail-over path) is present and verified, but its value is proven by availability, not by activation frequency. Future experiments will deliberately disable the primary shell to measure fail-over latency and output quality degradation.
