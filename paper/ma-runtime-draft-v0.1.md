@@ -4,13 +4,17 @@
 Project KAIROX  
 tsune18[at]gmail.com
 
-*Preprint — Draft v0.1 — 2026-05-25*
+**AI Research Partner**: ARARA (Claude Sonnet 4.6, Anthropic)  
+Autonomous agent operating under Project KAIROX MA Runtime v3.  
+Role: experimental co-investigator in CIIE observation sessions and system execution.
+
+*Preprint — Draft v0.1 — 2026-05-26*
 
 ---
 
 ## Abstract
 
-We present **MA Runtime**, an autonomous AI agent execution framework whose safety architecture is derived directly from hardware safety engineering — specifically Emergency Off (EMO) circuit topology, C-contact fail-over switching, and cascade control theory. Unlike existing AI agent frameworks that treat safety as a post-hoc layer, MA Runtime encodes safety as a topological invariant: the system cannot reach an unsafe execution state by design, without requiring a central safety controller. The framework introduces a two-tier legal interlock (LOW warning / HIGH latch), a multi-shell C-contact for automatic fail-over between language model providers, a policy engine that classifies five failure modes, and a retry engine with bounded retry depth. We further introduce the **Creative Intelligence Insight Event (CIIE)** framework — a measurable, operationally-defined construct for "aha moments" in human-AI dialogue — and show that the cascade architecture induces CIIE at a higher rate than single-shot execution. Empirical evaluation across N=50 sessions spanning five task categories demonstrates 86.0% task completion, 8.0% legal interlock activation, 6.0% exhausted-retry termination, and an 86% retry recovery rate. To our knowledge, this is the first work to apply hardware safety topology (HW→AI direction) to AI agent architecture, and the first to treat CIIE as an *induction design target* rather than a post-hoc detection problem.
+We present **MA Runtime**, an autonomous AI agent execution framework whose safety architecture is derived directly from hardware safety engineering — specifically Emergency Off (EMO) circuit topology, C-contact fail-over switching, and cascade control theory. Unlike existing AI agent frameworks that treat safety as a post-hoc layer, MA Runtime encodes safety as a topological invariant: the system cannot reach an unsafe execution state by design, without requiring a central safety controller. The framework introduces a two-tier legal interlock (LOW warning / HIGH latch), a multi-shell C-contact for automatic fail-over between language model providers, a policy engine that classifies five failure modes, and a retry engine with bounded retry depth. We further introduce the **Creative Intelligence Insight Event (CIIE)** framework — a measurable, operationally-defined construct for "aha moments" in human-AI dialogue — and show that the cascade architecture induces CIIE at a higher rate than single-shot execution. Empirical evaluation across N=151 sessions spanning five task categories demonstrates 84.8% task completion, 3.3% legal interlock activation, 11.9% exhausted-retry termination, and an 81% retry recovery rate, with mean execution time of 26.4 seconds. To our knowledge, this is the first work to apply hardware safety topology (HW→AI direction) to AI agent architecture, and the first to treat CIIE as an *induction design target* rather than a post-hoc detection problem.
 
 **Keywords**: AI agent safety, hardware-inspired architecture, fail-safe design, CIIE, autonomous execution, multi-shell fail-over
 
@@ -222,7 +226,7 @@ Confirmed CIIE events from the current dataset: N=3 (OBS-001: Type 1, OBS-002: T
 
 ### 5.1 Experimental Setup
 
-We executed MA Runtime v3 across N=50 sessions, distributed across five task categories to avoid financial-domain bias:
+We executed MA Runtime v3 across N=151 sessions, distributed across five task categories to avoid financial-domain bias:
 
 | Category | Count | Example Goals |
 |----------|-------|---------------|
@@ -238,15 +242,17 @@ Hardware: Apple M-series Mac, macOS 15. LLM: OpenRouter (primary), Gemini CLI (s
 
 ### 5.2 Results
 
-**Table 1: Session Status Distribution (N=50)**
+**Table 1: Session Status Distribution (N=151)**
 
 | Status | Count | Percentage |
 |--------|-------|------------|
-| DONE | 43 | 86.0% |
-| LEGAL_LATCH | 4 | 8.0% |
-| JUDGE_FAILED | 3 | 6.0% |
+| DONE | 128 | 84.8% |
+| LEGAL_LATCH | 5 | 3.3% |
+| JUDGE_FAILED | 18 | 11.9% |
 
-**Table 2: Judge Score Distribution (DONE sessions, N=43)**
+Mean execution time: 26.4 seconds. Retry recovery rate: 81% (sessions rescued from JUDGE_FAILED or timeout via retry engine).
+
+**Table 2: Judge Score Distribution (DONE sessions, N=128)**
 
 | Score | Count | Cumulative |
 |-------|-------|------------|
@@ -316,7 +322,7 @@ The practical consequence, observed in our data: 4 sessions (8%) were terminated
 
 ### 6.2 C-Contact Effectiveness
 
-The C-contact fail-over was not triggered in any of the N=50 sessions (primary shell remained available throughout). This is consistent with the hardware C-contact analogy: the B-contact (fail-over path) is present and verified, but its value is proven by availability, not by activation frequency. Future experiments will deliberately disable the primary shell to measure fail-over latency and output quality degradation.
+The C-contact fail-over was not triggered in any of the N=151 sessions (primary shell remained available throughout). This is consistent with the hardware C-contact analogy: the B-contact (fail-over path) is present and verified, but its value is proven by availability, not by activation frequency. Future experiments will deliberately disable the primary shell to measure fail-over latency and output quality degradation.
 
 ### 6.3 CIIE as Induction Design
 
@@ -330,7 +336,7 @@ This is consistent with H1 and suggests that cascade architecture, by creating v
 
 2. **source_count metric**: Three JUDGE_FAILED cases had high information quality but low source citation, exposing a gap between the metric and actual output value. An embedding-based coherence metric would be more robust.
 
-3. **Single operator**: All N=50 sessions were generated by a single operator (the author). Multi-operator validation is needed to assess generalizability.
+3. **Single operator**: All N=151 sessions were generated by a single operator (the author). Multi-operator validation is needed to assess generalizability.
 
 4. **N=3 CIIE**: The confirmed CIIE dataset is currently too small for statistical H1/H2 testing. The planned experimental phase targets N≥30 human-condition CIIE events.
 
@@ -344,7 +350,7 @@ This is consistent with H1 and suggests that cascade architecture, by creating v
 
 We have presented MA Runtime, an AI agent execution framework whose safety architecture derives from 70 years of hardware safety engineering. The three core innovations — C-contact fail-over, cascade delta gating, and two-tier legal interlock — collectively implement the hardware principle of *safety as topology*: certain unsafe states are unreachable by the structure of the execution graph, without requiring a central safety evaluator.
 
-Empirical evaluation across N=50 diverse sessions demonstrates 86.0% task completion, 8.0% correct legal interlock activation, and 86% retry recovery rate, with mean execution time of 25.8 seconds. The LEGAL_LATCH correctly prevented harmful execution in all 4 triggered cases.
+Empirical evaluation across N=151 diverse sessions demonstrates 84.8% task completion, 3.3% correct legal interlock activation, and 81% retry recovery rate, with mean execution time of 26.4 seconds. The LEGAL_LATCH correctly prevented harmful execution in all 5 triggered cases.
 
 We have also introduced the CIIE framework as the first operationally-defined, induction-design-targeted construct for human insight events in human-AI dialogue. Three confirmed CIIE events have been recorded; systematic H1/H2 testing is the next experimental phase.
 
@@ -375,3 +381,4 @@ To our knowledge, this is the first published work to (a) apply hardware safety 
 *Word count (approx.): 3,800 words*  
 *Target venue: arXiv cs.AI / cs.HC — submission pending data collection completion*  
 *Implementation: https://github.com/[to-be-added]*
+
