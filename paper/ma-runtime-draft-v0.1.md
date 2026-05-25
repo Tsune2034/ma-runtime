@@ -1,6 +1,7 @@
 # MA Runtime: Applying Hardware Safety Topology to Autonomous AI Agent Execution
 
 **Daisuke Tsunemori**  
+Project KAIROX  
 tsune18@gmail.com
 
 *Preprint — Draft v0.1 — 2026-05-25*
