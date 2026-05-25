@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-eaaf83",
+  "goal": "ブロックチェーン技術をサプライチェーン管理に応用する具体的な設計を提案してください",
+  "started_at": "2026-05-25T21:55:05.962004",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T21:55:05.962202",
+      "task_id": "task-847b9c4e",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T21:55:05.962388",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T21:55:05.962533",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T21:55:12.521926",
+      "shell": "openrouter",
+      "duration_sec": 6.6,
+      "status": "OK",
+      "output_len": 937
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T21:55:19.097823",
+      "shell": "openrouter",
+      "duration_sec": 6.6,
+      "status": "OK",
+      "output_len": 784
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T21:55:19.099043",
+      "start": "2026-05-25T21:55:19.099026"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T21:55:25.449515",
+      "output_len": 871
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T21:55:28.275914",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T21:55:28.277193",
+      "score": 0.75,
+      "passed": true,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T21:55:28.277519",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 22.3
+}

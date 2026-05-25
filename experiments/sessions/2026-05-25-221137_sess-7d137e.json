@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-7d137e",
+  "goal": "都市部と地方の所得格差が教育機会に与える影響を社会学的に分析してください",
+  "started_at": "2026-05-25T22:11:19.561398",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:11:19.561583",
+      "task_id": "task-25d28aae",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:11:19.561770",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:11:19.561905",
+      "persona": "analyst"
+    },
+    {
+      "step": "think/analyst",
+      "ts": "2026-05-25T22:11:25.283666",
+      "shell": "openrouter",
+      "duration_sec": 5.7,
+      "status": "OK",
+      "output_len": 784
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:11:30.591517",
+      "shell": "openrouter",
+      "duration_sec": 5.3,
+      "status": "OK",
+      "output_len": 700
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:11:30.593225",
+      "start": "2026-05-25T22:11:30.593208"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:11:37.794863",
+      "output_len": 747
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:11:37.794947",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:11:37.797654",
+      "score": 0.75,
+      "passed": true,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:11:37.798260",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 18.2
+}

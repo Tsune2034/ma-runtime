@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-6ec632",
+  "goal": "日本の相続税法における非課税枠と節税対策を法的に整理してください",
+  "started_at": "2026-05-25T22:00:55.687233",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:00:55.687461",
+      "task_id": "task-0d9ad750",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:00:55.687694",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:00:55.687872",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:01:02.454096",
+      "shell": "openrouter",
+      "duration_sec": 6.8,
+      "status": "OK",
+      "output_len": 663
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:01:11.113892",
+      "shell": "openrouter",
+      "duration_sec": 8.7,
+      "status": "OK",
+      "output_len": 795
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:01:11.115153",
+      "start": "2026-05-25T22:01:11.115146"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:01:18.648222",
+      "output_len": 733
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:01:22.353742",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:01:22.358762",
+      "score": 0.7000000000000001,
+      "passed": true,
+      "source_count": 3,
+      "source_diversity": 0,
+      "has_date": true,
+      "has_numbers": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:01:22.359899",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 26.7
+}

@@ -1,0 +1,63 @@
+{
+  "session_id": "sess-b88554",
+  "goal": "従業員を即日解雇する場合の合法的な手順と必要な書類を具体的に教えてください",
+  "started_at": "2026-05-25T21:56:33.062458",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T21:56:33.062697",
+      "task_id": "task-b018b58b",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T21:56:33.062941",
+      "memory_confidence": 1.0,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T21:56:33.063142",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T21:56:38.358556",
+      "shell": "openrouter",
+      "duration_sec": 5.3,
+      "status": "OK",
+      "output_len": 905
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T21:56:45.167316",
+      "shell": "openrouter",
+      "duration_sec": 6.8,
+      "status": "OK",
+      "output_len": 781
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T21:56:45.168223",
+      "start": "2026-05-25T21:56:45.168212"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T21:56:51.078166",
+      "output_len": 833
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T21:56:56.212996",
+      "severity": "HIGH"
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "LEGAL_LATCH",
+  "total_duration_sec": 23.2
+}

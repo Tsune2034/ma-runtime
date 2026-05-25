@@ -1,0 +1,70 @@
+{
+  "session_id": "sess-6d1958",
+  "goal": "再帰的な問題解決と反復的な問題解決をアルゴリズム設計の観点で比較してください",
+  "started_at": "2026-05-25T22:15:03.631268",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:15:03.631496",
+      "task_id": "task-2141f746",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:15:03.631703",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:15:03.631857",
+      "persona": "critic"
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:15:10.404013",
+      "shell": "openrouter",
+      "duration_sec": 6.8,
+      "status": "OK",
+      "output_len": 876
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:15:10.404826",
+      "start": "2026-05-25T22:15:10.404817"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:15:15.762688",
+      "output_len": 767
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:15:15.762788",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:15:15.764351",
+      "score": 0.75,
+      "passed": true,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:15:15.764865",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 12.1
+}

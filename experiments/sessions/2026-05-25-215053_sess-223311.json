@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-223311",
+  "goal": "日本の再生可能エネルギー政策の最新動向を調査して、2025年以降の主要な変化を3点まとめてください",
+  "started_at": "2026-05-25T21:50:39.163906",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T21:50:39.164088",
+      "task_id": "task-8ac77849",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T21:50:39.164415",
+      "memory_confidence": 0.948,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T21:50:39.164560",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T21:50:44.539347",
+      "shell": "openrouter",
+      "duration_sec": 5.4,
+      "status": "OK",
+      "output_len": 727
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T21:50:48.941428",
+      "shell": "openrouter",
+      "duration_sec": 4.4,
+      "status": "OK",
+      "output_len": 602
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T21:50:48.942572",
+      "start": "2026-05-25T21:50:48.942551"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T21:50:53.659136",
+      "output_len": 700
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T21:50:53.659201",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T21:50:53.661373",
+      "score": 0.65,
+      "passed": true,
+      "source_count": 1,
+      "source_diversity": 0,
+      "has_date": true,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T21:50:53.662259",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 14.5
+}

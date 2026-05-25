@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-7e242a",
+  "goal": "プロンプトエンジニアリングのベストプラクティスと評価手法を体系的に整理してください",
+  "started_at": "2026-05-25T22:14:11.537418",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:14:11.537643",
+      "task_id": "task-6d6787be",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:14:11.537912",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:14:11.538121",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:14:19.015782",
+      "shell": "openrouter",
+      "duration_sec": 7.5,
+      "status": "OK",
+      "output_len": 1376
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:14:26.654294",
+      "shell": "openrouter",
+      "duration_sec": 7.6,
+      "status": "OK",
+      "output_len": 836
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:14:26.655326",
+      "start": "2026-05-25T22:14:26.655316"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:14:33.496298",
+      "output_len": 1533
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:14:33.496422",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:14:33.498304",
+      "score": 0.65,
+      "passed": true,
+      "source_count": 1,
+      "source_diversity": 0,
+      "has_date": true,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:14:33.498987",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 22.0
+}

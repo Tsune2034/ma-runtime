@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-69370e",
+  "goal": "GraphQLとRESTの設計哲学の違いを実装例で比較してください",
+  "started_at": "2026-05-25T21:59:13.975106",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T21:59:13.975298",
+      "task_id": "task-18c7e3dd",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T21:59:13.975505",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T21:59:13.975672",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T21:59:19.759391",
+      "shell": "openrouter",
+      "duration_sec": 5.8,
+      "status": "OK",
+      "output_len": 1268
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T21:59:26.205967",
+      "shell": "openrouter",
+      "duration_sec": 6.4,
+      "status": "OK",
+      "output_len": 1393
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T21:59:26.207134",
+      "start": "2026-05-25T21:59:26.207118"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T21:59:34.107381",
+      "output_len": 1587
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T21:59:34.107521",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T21:59:34.110319",
+      "score": 0.65,
+      "passed": true,
+      "source_count": 1,
+      "source_diversity": 1,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T21:59:34.111449",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 20.1
+}

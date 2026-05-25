@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-962f8a",
+  "goal": "LLMのファインチューニングとRAGを使い分ける基準を技術的に整理してください",
+  "started_at": "2026-05-25T22:09:39.450758",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:09:39.450890",
+      "task_id": "task-6346d474",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:09:39.451055",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:09:39.451178",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:09:50.438623",
+      "shell": "openrouter",
+      "duration_sec": 11.0,
+      "status": "OK",
+      "output_len": 1264
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:10:04.888656",
+      "shell": "openrouter",
+      "duration_sec": 14.4,
+      "status": "OK",
+      "output_len": 1042
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:10:04.890085",
+      "start": "2026-05-25T22:10:04.890067"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:10:11.384802",
+      "output_len": 913
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:10:15.070927",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:10:15.073688",
+      "score": 0.75,
+      "passed": true,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:10:15.075994",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 35.6
+}

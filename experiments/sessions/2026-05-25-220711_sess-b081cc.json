@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-b081cc",
+  "goal": "自然言語処理におけるAttention機構の数学的仕組みを説明してください",
+  "started_at": "2026-05-25T22:06:51.127560",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:06:51.127760",
+      "task_id": "task-b61b058e",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:06:51.128007",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:06:51.128186",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:06:57.371612",
+      "shell": "openrouter",
+      "duration_sec": 6.2,
+      "status": "OK",
+      "output_len": 1028
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:07:03.957756",
+      "shell": "openrouter",
+      "duration_sec": 6.6,
+      "status": "OK",
+      "output_len": 769
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:07:03.959797",
+      "start": "2026-05-25T22:07:03.959767"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:07:11.483024",
+      "output_len": 1193
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:07:11.483148",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:07:11.485864",
+      "score": 0.65,
+      "passed": true,
+      "source_count": 2,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:07:11.486520",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 20.4
+}

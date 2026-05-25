@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-778931",
+  "goal": "日本企業がインドに進出する際の労働法上の注意点を整理してください",
+  "started_at": "2026-05-25T21:55:28.351590",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T21:55:28.351819",
+      "task_id": "task-5ed3f83c",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T21:55:28.352049",
+      "memory_confidence": 1.0,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T21:55:28.352230",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T21:55:35.843042",
+      "shell": "openrouter",
+      "duration_sec": 7.5,
+      "status": "OK",
+      "output_len": 1097
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T21:55:41.492919",
+      "shell": "openrouter",
+      "duration_sec": 5.6,
+      "status": "OK",
+      "output_len": 812
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T21:55:41.494432",
+      "start": "2026-05-25T21:55:41.494418"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T21:55:46.590598",
+      "output_len": 953
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T21:55:51.866501",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T21:55:51.870305",
+      "score": 0.65,
+      "passed": true,
+      "source_count": 1,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T21:55:51.871685",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 23.5
+}

@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-746c8f",
+  "goal": "量子コンピュータが暗号通貨のセキュリティに与える影響を技術的に分析してください",
+  "started_at": "2026-05-25T21:55:57.397822",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T21:55:57.398002",
+      "task_id": "task-2e5abb25",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T21:55:57.398231",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T21:55:57.398414",
+      "persona": "analyst"
+    },
+    {
+      "step": "think/analyst",
+      "ts": "2026-05-25T21:56:01.966415",
+      "shell": "openrouter",
+      "duration_sec": 4.6,
+      "status": "OK",
+      "output_len": 681
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T21:56:06.888407",
+      "shell": "openrouter",
+      "duration_sec": 4.9,
+      "status": "OK",
+      "output_len": 616
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T21:56:06.889797",
+      "start": "2026-05-25T21:56:06.889777"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T21:56:11.393630",
+      "output_len": 587
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T21:56:11.393690",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T21:56:11.395891",
+      "score": 0.75,
+      "passed": true,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T21:56:11.396600",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 14.0
+}

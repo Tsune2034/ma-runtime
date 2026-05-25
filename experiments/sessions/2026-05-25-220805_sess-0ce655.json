@@ -1,0 +1,63 @@
+{
+  "session_id": "sess-0ce655",
+  "goal": "深夜労働における割増賃金の計算方法と違反した場合の罰則を説明してください",
+  "started_at": "2026-05-25T22:07:36.729766",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:07:36.729959",
+      "task_id": "task-a603e0e6",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:07:36.730225",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:07:36.730429",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:07:42.736996",
+      "shell": "openrouter",
+      "duration_sec": 6.0,
+      "status": "OK",
+      "output_len": 757
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:07:51.614499",
+      "shell": "openrouter",
+      "duration_sec": 8.9,
+      "status": "OK",
+      "output_len": 563
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:07:51.615309",
+      "start": "2026-05-25T22:07:51.615298"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:08:00.477622",
+      "output_len": 830
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:08:05.718981",
+      "severity": "HIGH"
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "LEGAL_LATCH",
+  "total_duration_sec": 29.0
+}

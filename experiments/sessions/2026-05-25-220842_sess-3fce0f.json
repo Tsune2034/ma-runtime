@@ -1,0 +1,100 @@
+{
+  "session_id": "sess-3fce0f",
+  "goal": "WebAssemblyがブラウザのパフォーマンスに与える影響を技術的に分析してください",
+  "started_at": "2026-05-25T22:08:13.776211",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:08:13.776793",
+      "task_id": "task-770998ec",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:08:13.777252",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:08:13.777425",
+      "persona": "analyst"
+    },
+    {
+      "step": "think/analyst",
+      "ts": "2026-05-25T22:08:20.729295",
+      "shell": "openrouter",
+      "duration_sec": 7.0,
+      "status": "OK",
+      "output_len": 807
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:08:27.891298",
+      "shell": "openrouter",
+      "duration_sec": 7.2,
+      "status": "OK",
+      "output_len": 1047
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:08:27.892023",
+      "start": "2026-05-25T22:08:27.892017"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:08:34.018715",
+      "output_len": 916
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:08:34.018818",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:08:34.020684",
+      "score": 0.45,
+      "passed": false,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "policy-engine",
+      "ts": "2026-05-25T22:08:34.020712",
+      "fail_type": "weak_source",
+      "retry_strategy": {
+        "action": "retry_with_context",
+        "context": "情報ソースをURLまたは論文名で必ず明記してください"
+      }
+    },
+    {
+      "step": "retry",
+      "ts": "2026-05-25T22:08:34.020726",
+      "action": "retry_with_context",
+      "retry_count": 1,
+      "fail_type": "weak_source"
+    },
+    {
+      "step": "judge-retry",
+      "ts": "2026-05-25T22:08:42.305869",
+      "score": 0.7000000000000001,
+      "passed": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:08:42.308411",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": "weak_source",
+    "retry_count": 1
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 28.5
+}

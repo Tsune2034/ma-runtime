@@ -1,0 +1,100 @@
+{
+  "session_id": "sess-48c793",
+  "goal": "TypeScriptの型システムで型安全なAPIクライアントを設計してください",
+  "started_at": "2026-05-25T22:01:28.717617",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:01:28.717819",
+      "task_id": "task-657499ca",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:01:28.718034",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:01:28.718207",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:01:43.350025",
+      "shell": "openrouter",
+      "duration_sec": 14.6,
+      "status": "OK",
+      "output_len": 1978
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:01:49.568020",
+      "shell": "openrouter",
+      "duration_sec": 6.2,
+      "status": "OK",
+      "output_len": 986
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:01:49.569105",
+      "start": "2026-05-25T22:01:49.569094"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:01:55.309038",
+      "output_len": 942
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:01:55.309129",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:01:55.311543",
+      "score": 0.45,
+      "passed": false,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "policy-engine",
+      "ts": "2026-05-25T22:01:55.311575",
+      "fail_type": "weak_source",
+      "retry_strategy": {
+        "action": "retry_with_context",
+        "context": "情報ソースをURLまたは論文名で必ず明記してください"
+      }
+    },
+    {
+      "step": "retry",
+      "ts": "2026-05-25T22:01:55.311596",
+      "action": "retry_with_context",
+      "retry_count": 1,
+      "fail_type": "weak_source"
+    },
+    {
+      "step": "judge-retry",
+      "ts": "2026-05-25T22:02:01.377623",
+      "score": 0.65,
+      "passed": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:02:01.378411",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": "weak_source",
+    "retry_count": 1
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 32.7
+}

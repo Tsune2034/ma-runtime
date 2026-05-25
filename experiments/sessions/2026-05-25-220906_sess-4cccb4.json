@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-4cccb4",
+  "goal": "日本の地方創生政策の効果を人口動態データで評価してください",
+  "started_at": "2026-05-25T22:08:42.410090",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:08:42.410228",
+      "task_id": "task-25c7fc1a",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:08:42.410400",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:08:42.410519",
+      "persona": "analyst"
+    },
+    {
+      "step": "think/analyst",
+      "ts": "2026-05-25T22:08:49.363321",
+      "shell": "openrouter",
+      "duration_sec": 7.0,
+      "status": "OK",
+      "output_len": 738
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:08:58.128845",
+      "shell": "openrouter",
+      "duration_sec": 8.8,
+      "status": "OK",
+      "output_len": 776
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:08:58.130035",
+      "start": "2026-05-25T22:08:58.130029"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:09:06.008428",
+      "output_len": 669
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:09:06.008475",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:09:06.010690",
+      "score": 0.75,
+      "passed": true,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": true,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:09:06.011289",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 23.6
+}

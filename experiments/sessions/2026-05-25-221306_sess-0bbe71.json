@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-0bbe71",
+  "goal": "ナラティブ・セラピーの技法を職場のメンタルヘルス支援に応用する方法を提案してください",
+  "started_at": "2026-05-25T22:12:35.733239",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:12:35.733409",
+      "task_id": "task-7877f23a",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:12:35.733747",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:12:35.733881",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:12:42.713969",
+      "shell": "openrouter",
+      "duration_sec": 7.0,
+      "status": "OK",
+      "output_len": 860
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:12:48.644069",
+      "shell": "openrouter",
+      "duration_sec": 5.9,
+      "status": "OK",
+      "output_len": 810
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:12:48.645350",
+      "start": "2026-05-25T22:12:48.645341"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:13:00.887337",
+      "output_len": 961
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:13:06.922457",
+      "severity": "LOW"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:13:06.926210",
+      "score": 0.75,
+      "passed": true,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:13:06.927417",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 31.2
+}

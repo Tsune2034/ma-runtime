@@ -1,0 +1,63 @@
+{
+  "session_id": "sess-0142ff",
+  "goal": "オープンソースライセンスの種類と商用利用時の注意点を法的に整理してください",
+  "started_at": "2026-05-25T22:04:30.595724",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:04:30.595939",
+      "task_id": "task-015c91a5",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:04:30.596135",
+      "memory_confidence": 1.0,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:04:30.596291",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:04:36.813179",
+      "shell": "openrouter",
+      "duration_sec": 6.2,
+      "status": "OK",
+      "output_len": 1294
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:04:42.316717",
+      "shell": "openrouter",
+      "duration_sec": 5.5,
+      "status": "OK",
+      "output_len": 879
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:04:42.317703",
+      "start": "2026-05-25T22:04:42.317687"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:04:47.328164",
+      "output_len": 1235
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:04:52.867146",
+      "severity": "HIGH"
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "LEGAL_LATCH",
+  "total_duration_sec": 22.3
+}

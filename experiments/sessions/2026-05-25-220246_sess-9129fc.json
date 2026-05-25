@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-9129fc",
+  "goal": "マイクロサービスアーキテクチャにおけるデータ整合性を保つパターンを3つ説明してください",
+  "started_at": "2026-05-25T22:02:27.925860",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:02:27.926028",
+      "task_id": "task-1f497cec",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:02:27.926263",
+      "memory_confidence": 1.0,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:02:27.926440",
+      "persona": "analyst"
+    },
+    {
+      "step": "think/analyst",
+      "ts": "2026-05-25T22:02:34.125926",
+      "shell": "openrouter",
+      "duration_sec": 6.2,
+      "status": "OK",
+      "output_len": 712
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:02:40.247950",
+      "shell": "openrouter",
+      "duration_sec": 6.1,
+      "status": "OK",
+      "output_len": 751
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:02:40.248921",
+      "start": "2026-05-25T22:02:40.248912"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:02:46.410901",
+      "output_len": 778
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:02:46.411005",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:02:46.413031",
+      "score": 0.75,
+      "passed": true,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:02:46.413609",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 18.5
+}

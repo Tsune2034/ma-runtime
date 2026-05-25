@@ -1,0 +1,100 @@
+{
+  "session_id": "sess-363ada",
+  "goal": "半導体製造プロセスにおけるCVDとPVDの違いと用途を技術的に比較してください",
+  "started_at": "2026-05-25T22:04:52.963799",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:04:52.964754",
+      "task_id": "task-470ab5fc",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:04:52.964975",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:04:52.965139",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:04:59.740700",
+      "shell": "openrouter",
+      "duration_sec": 6.8,
+      "status": "OK",
+      "output_len": 1021
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:05:15.364520",
+      "shell": "openrouter",
+      "duration_sec": 15.6,
+      "status": "OK",
+      "output_len": 949
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:05:15.365491",
+      "start": "2026-05-25T22:05:15.365481"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:05:24.644651",
+      "output_len": 966
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:05:24.644760",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:05:24.646528",
+      "score": 0.45,
+      "passed": false,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "policy-engine",
+      "ts": "2026-05-25T22:05:24.646552",
+      "fail_type": "weak_source",
+      "retry_strategy": {
+        "action": "retry_with_context",
+        "context": "情報ソースをURLまたは論文名で必ず明記してください"
+      }
+    },
+    {
+      "step": "retry",
+      "ts": "2026-05-25T22:05:24.646568",
+      "action": "retry_with_context",
+      "retry_count": 1,
+      "fail_type": "weak_source"
+    },
+    {
+      "step": "judge-retry",
+      "ts": "2026-05-25T22:05:34.561775",
+      "score": 0.65,
+      "passed": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:05:34.563742",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": "weak_source",
+    "retry_count": 1
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 41.6
+}

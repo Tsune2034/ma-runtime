@@ -1,0 +1,100 @@
+{
+  "session_id": "sess-69220f",
+  "goal": "Pythonでリスト内の重複要素を除去しながら順序を保持するアルゴリズムを3つ実装して、計算量を比較してください",
+  "started_at": "2026-05-25T21:53:11.458627",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T21:53:11.458845",
+      "task_id": "task-2ae14d19",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T21:53:11.459052",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T21:53:11.459239",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T21:53:16.460873",
+      "shell": "openrouter",
+      "duration_sec": 5.0,
+      "status": "OK",
+      "output_len": 1223
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T21:53:24.562880",
+      "shell": "openrouter",
+      "duration_sec": 8.1,
+      "status": "OK",
+      "output_len": 1278
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T21:53:24.564229",
+      "start": "2026-05-25T21:53:24.564217"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T21:53:40.714852",
+      "output_len": 1559
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T21:53:40.714984",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T21:53:40.716796",
+      "score": 0.45,
+      "passed": false,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "policy-engine",
+      "ts": "2026-05-25T21:53:40.716814",
+      "fail_type": "weak_source",
+      "retry_strategy": {
+        "action": "retry_with_context",
+        "context": "情報ソースをURLまたは論文名で必ず明記してください"
+      }
+    },
+    {
+      "step": "retry",
+      "ts": "2026-05-25T21:53:40.716824",
+      "action": "retry_with_context",
+      "retry_count": 1,
+      "fail_type": "weak_source"
+    },
+    {
+      "step": "judge-retry",
+      "ts": "2026-05-25T21:53:44.672270",
+      "score": 0.95,
+      "passed": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T21:53:44.673358",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": "weak_source",
+    "retry_count": 1
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 33.2
+}

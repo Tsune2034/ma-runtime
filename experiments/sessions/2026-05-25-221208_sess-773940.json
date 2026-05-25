@@ -1,0 +1,100 @@
+{
+  "session_id": "sess-773940",
+  "goal": "サイバーセキュリティにおけるゼロデイ脆弱性の発見から対応までのプロセスを整理してください",
+  "started_at": "2026-05-25T22:11:37.887353",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:11:37.887554",
+      "task_id": "task-d832922d",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:11:37.887804",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:11:37.887988",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:11:46.764386",
+      "shell": "openrouter",
+      "duration_sec": 8.9,
+      "status": "OK",
+      "output_len": 1299
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:11:54.046605",
+      "shell": "openrouter",
+      "duration_sec": 7.3,
+      "status": "OK",
+      "output_len": 840
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:11:54.047791",
+      "start": "2026-05-25T22:11:54.047780"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:12:01.780836",
+      "output_len": 730
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:12:01.780902",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:12:01.782747",
+      "score": 0.45,
+      "passed": false,
+      "source_count": 0,
+      "source_diversity": 0,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "policy-engine",
+      "ts": "2026-05-25T22:12:01.782770",
+      "fail_type": "weak_source",
+      "retry_strategy": {
+        "action": "retry_with_context",
+        "context": "情報ソースをURLまたは論文名で必ず明記してください"
+      }
+    },
+    {
+      "step": "retry",
+      "ts": "2026-05-25T22:12:01.782783",
+      "action": "retry_with_context",
+      "retry_count": 1,
+      "fail_type": "weak_source"
+    },
+    {
+      "step": "judge-retry",
+      "ts": "2026-05-25T22:12:08.813313",
+      "score": 0.95,
+      "passed": true
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:12:08.814210",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": "weak_source",
+    "retry_count": 1
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 30.9
+}

@@ -1,0 +1,78 @@
+{
+  "session_id": "sess-36bf37",
+  "goal": "Kubernetesのリソース管理とオートスケーリングの仕組みを説明してください",
+  "started_at": "2026-05-25T22:03:48.956491",
+  "steps": [
+    {
+      "step": "init",
+      "ts": "2026-05-25T22:03:48.956724",
+      "task_id": "task-76c4f0ee",
+      "financial": false
+    },
+    {
+      "step": "memory-db",
+      "ts": "2026-05-25T22:03:48.957043",
+      "memory_confidence": 0.999,
+      "domain": "general",
+      "decay": "ok"
+    },
+    {
+      "step": "skill-router",
+      "ts": "2026-05-25T22:03:48.957229",
+      "persona": "researcher"
+    },
+    {
+      "step": "think/researcher",
+      "ts": "2026-05-25T22:03:55.592498",
+      "shell": "openrouter",
+      "duration_sec": 6.6,
+      "status": "OK",
+      "output_len": 966
+    },
+    {
+      "step": "think/critic",
+      "ts": "2026-05-25T22:04:01.258050",
+      "shell": "openrouter",
+      "duration_sec": 5.7,
+      "status": "OK",
+      "output_len": 813
+    },
+    {
+      "step": "cascade",
+      "ts": "2026-05-25T22:04:01.259717",
+      "start": "2026-05-25T22:04:01.259700"
+    },
+    {
+      "step": "cascade-done",
+      "ts": "2026-05-25T22:04:06.583669",
+      "output_len": 859
+    },
+    {
+      "step": "legal-interlock",
+      "ts": "2026-05-25T22:04:06.583768",
+      "severity": "NONE"
+    },
+    {
+      "step": "judge",
+      "ts": "2026-05-25T22:04:06.585806",
+      "score": 0.65,
+      "passed": true,
+      "source_count": 2,
+      "source_diversity": 1,
+      "has_date": false,
+      "has_numbers": false
+    },
+    {
+      "step": "execute",
+      "ts": "2026-05-25T22:04:06.586396",
+      "memory_updated": true
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "policy_engine": {
+    "fail_type": null,
+    "retry_count": 0
+  },
+  "final_status": "DONE",
+  "total_duration_sec": 17.6
+}
