@@ -1,7 +1,6 @@
 # MA Runtime: Applying Hardware Safety Topology to Autonomous AI Agent Execution
 
 **Daisuke Tsunemori**  
-One Hour Value Inc., Japan  
 tsune18@gmail.com
 
 *Preprint — Draft v0.1 — 2026-05-25*
