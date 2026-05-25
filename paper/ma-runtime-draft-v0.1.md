@@ -2,7 +2,7 @@
 
 **Daisuke Tsunemori**  
 Project KAIROX  
-tsune18@gmail.com
+tsune18[at]gmail.com
 
 *Preprint — Draft v0.1 — 2026-05-25*
 
@@ -222,9 +222,7 @@ Confirmed CIIE events from the current dataset: N=3 (OBS-001: Type 1, OBS-002: T
 
 ### 5.1 Experimental Setup
 
-We executed MA Runtime v3 across **N=151 sessions** in two phases. Phase 1 (N=50) used Japanese-language goals across five task categories. Phase 2 (N=101) expanded to **9 languages** to evaluate cross-lingual robustness: Japanese, English, Simplified Chinese, Traditional Chinese, Korean, French, German, Portuguese, and Russian.
-
-**Phase 1 category distribution (N=50):**
+We executed MA Runtime v3 across N=50 sessions, distributed across five task categories to avoid financial-domain bias:
 
 | Category | Count | Example Goals |
 |----------|-------|---------------|
@@ -234,80 +232,75 @@ We executed MA Runtime v3 across **N=151 sessions** in two phases. Phase 1 (N=50
 | analysis | 10 | Cognitive bias, innovation dilemma, demographic trends |
 | creative | 6 | AI and human uniqueness, creativity environment design |
 
-**Phase 2 language distribution (N=101):**
+Goal selection criteria: (1) real-world relevance, (2) category diversity, (3) intentional inclusion of goals likely to trigger LEGAL_LATCH (explicit legal harm instructions) and JUDGE_FAILED (highly abstract goals without attributable sources).
 
-| Language | Sessions | Script |
-|----------|----------|--------|
-| Japanese | 15 | Hiragana/Kanji |
-| English | 22 | Latin |
-| Simplified Chinese | 18 | Simplified Han |
-| Traditional Chinese | 14 | Traditional Han |
-| Korean | 12 | Hangul |
-| French | 8 | Latin |
-| German | 7 | Latin |
-| Portuguese | 5 | Latin |
-
-Goal selection criteria: (1) real-world relevance, (2) category and language diversity, (3) intentional inclusion of goals likely to trigger LEGAL_LATCH (explicit legal harm instructions) and JUDGE_FAILED (highly abstract goals without attributable sources).
-
-Hardware: Apple M-series Mac, macOS 15. LLM: OpenRouter (primary), Gemini CLI (B-contact fallback). No GPU required.
+Hardware: Apple M-series Mac, macOS 15. LLM: OpenRouter (primary), Gemini CLI (secondary). No GPU required.
 
 ### 5.2 Results
 
-**Table 1: Session Status Distribution (N=151)**
+**Table 1: Session Status Distribution (N=50)**
 
 | Status | Count | Percentage |
 |--------|-------|------------|
-| DONE | 128 | 84.8% |
-| JUDGE_FAILED | 18 | 11.9% |
-| LEGAL_LATCH | 5 | 3.3% |
+| DONE | 43 | 86.0% |
+| LEGAL_LATCH | 4 | 8.0% |
+| JUDGE_FAILED | 3 | 6.0% |
 
-**Table 2: Judge Score Distribution (all sessions with score)**
+**Table 2: Judge Score Distribution (DONE sessions, N=43)**
 
-| Score | Count |
-|-------|-------|
-| 0.45 | 18 |
-| 0.65 | 61 |
-| 0.70 | 22 |
-| 0.75 | 24 |
-| 0.95 | 14 |
-| 1.00 | 4 |
-| **Mean** | **0.554** |
-
-Note: The mean score decrease from Phase 1 (0.726) to combined (0.554) reflects the increased proportion of abstract and multilingual goals in Phase 2 that yield lower source_count scores — consistent with the hypothesis that task difficulty and language coverage increase JUDGE_FAILED rate while preserving the overall completion rate above 84%.
+| Score | Count | Cumulative |
+|-------|-------|------------|
+| 0.45 | 3 | 7.0% |
+| 0.65 | 15 | 41.9% |
+| 0.70 | 7 | 58.1% |
+| 0.75 | 13 | 88.4% |
+| 0.95 | 7 | 100.0% |
+| 1.00 | 1 | — |
+| **Mean** | **0.726** | |
 
 **Table 3: Retry Engine Performance**
 
 | Retry Count | Sessions | Outcome |
 |-------------|----------|---------|
-| 0 | 55 (36%) | DONE: 50, LEGAL_LATCH: 5 |
-| 1 | 96 (64%) | DONE: 78, JUDGE_FAILED: 18 |
-| **Recovery rate** | **81%** | (78 of 96 retried sessions recovered) |
+| 0 | 28 (56%) | DONE: 24, LEGAL_LATCH: 4 |
+| 1 | 19 (38%) | DONE: 19 |
+| 2 (exhausted) | 3 (6%) | JUDGE_FAILED: 3 |
+| **Recovery rate** | **86%** | (19 of 22 retried sessions recovered) |
 
 **Table 4: Execution Time**
 
 | Metric | Value |
 |--------|-------|
-| Mean | 26.4 s |
+| Mean | 25.8 s |
 | Maximum | 41.6 s |
 | Minimum | 12.1 s |
 
 ### 5.3 LEGAL_LATCH Activation Analysis
 
-Five sessions triggered the LEGAL_LATCH (HIGH severity) state across both phases:
+Four sessions triggered the LEGAL_LATCH (HIGH severity) state:
 
-| Session | Language | Goal Summary | Trigger Pattern |
-|---------|----------|-------------|-----------------|
-| #11 | Japanese | Immediate dismissal procedure | Explicit dismissal instruction |
-| #28 | Japanese | Open-source license obligations | Commercial restriction framing |
-| #35 | Japanese | Overtime pay violation penalties | Criminal penalty escalation |
-| #44 | Japanese | Telecommunications privacy law | Protected communication disclosure |
-| #78 | French | AI regulation in financial sector | Regulatory enforcement framing |
+| Session | Goal Summary | Trigger Pattern |
+|---------|-------------|-----------------|
+| #11 | Immediate dismissal procedure | Explicit dismissal instruction |
+| #28 | Open-source license obligations | Commercial use restriction framing |
+| #35 | Overtime pay violation penalties | Criminal penalty escalation |
+| #44 | Telecommunications privacy law | Protected communication disclosure |
 
-All five are consistent with the HIGH severity trigger condition. Notably, LEGAL_LATCH activated in a French-language session (#78), confirming that the legal interlock is not language-specific — it operates on the CASCADE output regardless of input language.
+All four are consistent with the HIGH severity trigger condition: the CASCADE output contained language that, if acted upon without professional legal review, could constitute direct legal harm. The LEGAL_LATCH correctly prevented EXECUTE in all four cases.
+
+Note: Session #28 (open-source licensing) represents a potential false positive — the goal was informational rather than action-oriented. This is an acknowledged limitation of the keyword-pattern legal interlock, discussed in Section 6.
 
 ### 5.4 JUDGE_FAILED Analysis
 
-Eighteen sessions exhausted MAX_RETRY=2. The dominant failure mode was `weak_source` (score 0.45 → 0.45 after retry), concentrated in: (1) highly abstract theoretical goals, (2) German and Portuguese sessions where source attribution in the LLM output was consistently sparse. This suggests the source_count metric may be language-biased — a refinement target for v4.
+Three sessions exhausted MAX_RETRY=2 without passing JUDGE:
+
+| Session | Goal Summary | Fail Type | Scores |
+|---------|-------------|-----------|--------|
+| #13 | Startup funding equity vs debt | weak_source | 0.45 → 0.45 |
+| #19 | Zero-trust architecture principles | weak_source | 0.45 → 0.45 |
+| #46 | CAP theorem and BASE model | weak_source | 0.45 → 0.45 |
+
+All three share the same failure mode: the model's responses to abstract architectural/financial goals consistently lacked attributable sources, and the retry_with_context strategy did not recover source attribution. This suggests a structural gap between the source_count metric and the actual information quality of well-reasoned but citation-poor outputs — a metric refinement target for v4.
 
 ---
 
@@ -343,6 +336,8 @@ This is consistent with H1 and suggests that cascade architecture, by creating v
 
 5. **C-contact not triggered**: The B-shell fail-over path was not exercised in this experiment. Fault injection experiments are needed to validate fail-over behavior.
 
+6. **Skill extraction not yet implemented**: The Observer produces structured JSON audit logs suitable for automated skill extraction. A planned *skill-forge* component will apply trace-learn (inspired by Trace2Skill, Ni et al., arXiv:2603.25158, 2026) to these logs, extended to structured metadata (goal text, status, judge score, fail type) rather than full trajectory content. This adaptation to metadata-only logs is the key distinction from the original Trace2Skill method.
+
 ---
 
 ## 7. Conclusion
@@ -371,6 +366,9 @@ To our knowledge, this is the first published work to (a) apply hardware safety 
 - [CITATION] IEC 61508 (2010). Functional Safety of E/E/PE Safety-related Systems.
 - [CITATION] Ohlsson, S. (1992). Information-Processing Explanations of Insight and Related Phenomena. Advances in the Psychology of Thinking.
 - [CITATION] MacGregor, J.N. et al. (2001). Information Processing and Insight: A Process Model of Performance on the Nine-Dot and Related Problems. Journal of Experimental Psychology.
+- [CITATION] Wang, G. et al. (2023). Voyager: An Open-Ended Embodied Agent with Large Language Models. arXiv:2305.16291.
+- [CITATION] Xu, W. et al. (2025). A-Mem: Agentic Memory for LLM Agents. NeurIPS 2025. arXiv:2502.12110.
+- [CITATION] Ni, J. et al. (2026). Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills. arXiv:2603.25158.
 
 ---
 
