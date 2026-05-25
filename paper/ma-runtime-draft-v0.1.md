@@ -2,7 +2,7 @@
 
 **Daisuke Tsunemori**  
 Project KAIROX  
-tsune18@gmail.com
+tsune18[at]gmail.com
 
 *Preprint — Draft v0.1 — 2026-05-25*
 
