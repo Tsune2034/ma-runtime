@@ -58,6 +58,8 @@ Constitutional AI [CITATION] embeds behavioral constraints as training-time prin
 
 Guard-rail systems (NeMo Guardrails [CITATION], Llama Guard [CITATION]) insert classifiers between agent outputs and downstream actions. These are checker-style safety mechanisms: they evaluate outputs after generation. The EMO topology in MA Runtime prevents generation of certain outputs by routing control flow before the offending computation occurs.
 
+Closest in spirit to our approach, Parallax [CITATION] (arXiv:2604.12986, 2026) proposes strict separation between an AI agent's *thinking* and *acting* components, arguing that agents which think must never directly act. Parallax realizes this separation through container-level process isolation — a systems-security substrate. MA Runtime realizes the same principle through a different substrate: hardware relay topology. Where Parallax enforces the think/act boundary at the OS process boundary, MA Runtime enforces it at the execution-graph level via LEGAL_LATCH and C-contact fail-over. The two approaches are complementary: Parallax addresses *who executes*; MA Runtime addresses *what paths execution can reach*.
+
 ### 2.3 Hardware Safety Engineering
 
 IEC 61508 [CITATION] defines Safety Integrity Levels (SIL) for functional safety in industrial control systems. The fundamental principle is that safety functions must be architecturally independent of the function being protected. EMO circuits [CITATION] implement this principle in relay logic: the emergency stop path is physically separate from the control path.
@@ -375,6 +377,7 @@ To our knowledge, this is the first published work to (a) apply hardware safety 
 - [CITATION] Wang, G. et al. (2023). Voyager: An Open-Ended Embodied Agent with Large Language Models. arXiv:2305.16291.
 - [CITATION] Xu, W. et al. (2025). A-Mem: Agentic Memory for LLM Agents. NeurIPS 2025. arXiv:2502.12110.
 - [CITATION] Ni, J. et al. (2026). Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills. arXiv:2603.25158.
+- [CITATION] Parallax (2026). Why AI Agents That Think Must Never Act. arXiv:2604.12986.
 
 ---
 
