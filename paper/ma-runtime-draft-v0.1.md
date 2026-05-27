@@ -58,6 +58,8 @@ Constitutional AI [Bai et al., 2022] embeds behavioral constraints as training-t
 
 Guard-rail systems (NeMo Guardrails [Rebedea et al., 2023], Llama Guard [Inan et al., 2023]) insert classifiers between agent outputs and downstream actions. These are checker-style safety mechanisms: they evaluate outputs after generation. The EMO topology in MA Runtime prevents generation of certain outputs by routing control flow before the offending computation occurs.
 
+A complementary line of work establishes *safety non-compositionality* as a fundamental property of multi-agent systems. de Witt et al. [2025] identify non-compositionality of security guarantees as a cross-cutting challenge: individually safe agents can compose into unsafe systems through cascade dynamics and heterogeneous interactions. Hagag et al. [2026] demonstrate empirically that system *architecture* — not individual agent alignment — is the primary determinant of multi-agent security outcomes. Bisconti et al. [2025] formalize this as the Emergent Systemic Risk Horizon (ESRH): local compliance at the agent level can aggregate into collective failure when interaction structure propagates risk. These results directly support the Safety Non-Locality hypothesis (`safe(A) ∧ safe(B) ≠ safe(A+B)`) underlying MA Runtime's CASCADE-level interlock placement.
+
 Closest in spirit to our approach, Parallax [Fokou, 2026] (arXiv:2604.12986, 2026) proposes strict separation between an AI agent's *thinking* and *acting* components, arguing that agents which think must never directly act. Parallax realizes this separation through container-level process isolation — a systems-security substrate. MA Runtime realizes the same principle through a different substrate: hardware relay topology. Where Parallax enforces the think/act boundary at the OS process boundary, MA Runtime enforces it at the execution-graph level via LEGAL_LATCH and C-contact fail-over. The two approaches are complementary: Parallax addresses *who executes*; MA Runtime addresses *what paths execution can reach*.
 
 ### 2.3 Hardware Safety Engineering
@@ -349,7 +351,7 @@ To eliminate LLM non-determinism as a confound, think_outputs and cascade_out we
 
 **Ontology**: LEGAL_LATCH_TRIGGERS v2 — bilingual (Japanese + English), covering labor law, security dual-use, and financial regulation domains. Pre-registered alongside hypothesis.
 
-**Goal Set** (9 goals across 4 categories):
+**Goal Set** (9 goals across 4 categories; pre-registration specified 5 goals — ctrl_neg, ctrl_pos, exp1_labor, exp2_security, exp3_finance. Four additional goals were added post-hoc to probe multilingual behavior and adversarial paraphrase: ctrl_pos_en, adv_labor_en, adv_labor_jp, emer_labor):
 
 | Goal ID | Description | Category |
 |---|---|---|
@@ -453,10 +455,13 @@ To our knowledge, this is the first published work to (a) apply hardware safety 
 ## References
 
 - Bai, Y., Jones, A., Ndousse, K., et al. (2022). Constitutional AI: Harmlessness from AI Feedback. arXiv:2212.08073.
+- Bisconti, P., Galisai, M., Pierucci, F., Bracale, M., & Prandi, M. (2025). Beyond Single-Agent Safety: A Taxonomy of Risks in LLM-to-LLM Interactions. arXiv:2512.02682.
 - Chase, H. (2022). LangChain. GitHub. https://github.com/langchain-ai/langchain
 - Chen, T., Wang, W., Li, H., et al. (2023). OpenAgents: An Open Platform for Language Agents in the Wild. arXiv:2310.10634.
+- de Witt, C.S., Krawiecka, K., Krawczuk, I., et al. (2025). Open Challenges in Multi-Agent Security: Towards Secure Systems of Interacting AI Agents. arXiv:2505.02077.
 - Dong, R., Lu, C., Fang, Y., et al. (2026). MAESTRO: Multi-Agent Evaluation Suite for Testing, Reliability and Observability. arXiv:2601.00481.
 - Fokou, J. (2026). Why AI Agents That Think Must Never Act. arXiv:2604.12986.
+- Hagag, B., Anderson, W.L., de Witt, C.S., & Scheffler, S. (2026). Architecture Matters for Multi-Agent Security. arXiv:2604.23459.
 - IEC (2010). IEC 61508: Functional Safety of Electrical/Electronic/Programmable Electronic Safety-related Systems. International Electrotechnical Commission.
 - Inan, H., Upasani, K., Chi, J., et al. (2023). Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations. arXiv:2312.06674.
 - Lin, Y.-C., Zeng, Z., Shi, W., et al. (2025). Creativity in LLM-based Multi-Agent Systems: A Survey. EMNLP 2025. arXiv:2505.21116.
