@@ -4,7 +4,6 @@
 > **Status**: Draft v0.2 — Data collection complete (N=51). Under revision for arXiv submission.
 > **Last updated**: 2026-05-27
 > **Author**: Daisuke Tsunemori — Independent Researcher
-> **Contact**: tsune18@gmail.com
 > **Repository**: https://github.com/Tsune2034/ma-runtime
 
 ---

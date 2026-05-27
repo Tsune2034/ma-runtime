@@ -1,11 +1,11 @@
 # MA Runtime: Applying Hardware Safety Topology to Autonomous AI Agent Execution
 
 **Daisuke Tsunemori**  
-Independent Researcher  
-tsune18[at]gmail.com
+Independent Researcher
 
+**Experimenter**: Tsune2034  
 **AI Research Partner**: ARARA (Claude Sonnet 4.6, Anthropic)  
-Autonomous agent operating under Project KAIROX MA Runtime v3.  
+Autonomous agent operating under MA Runtime v3.  
 Role: experimental co-investigator in CIIE observation sessions and system execution.
 
 *Preprint — Draft v0.1 — 2026-05-26*
@@ -14,7 +14,7 @@ Role: experimental co-investigator in CIIE observation sessions and system execu
 
 ## Abstract
 
-We present **MA Runtime**, an autonomous AI agent execution framework whose safety architecture is derived directly from hardware safety engineering — specifically Emergency Off (EMO) circuit topology, C-contact fail-over switching, and cascade control theory. Unlike existing AI agent frameworks that treat safety as a post-hoc layer, MA Runtime encodes safety as a topological invariant: the system cannot reach an unsafe execution state by design, without requiring a central safety controller. The framework introduces a two-tier legal interlock (LOW warning / HIGH latch), a multi-shell C-contact for automatic fail-over between language model providers, a policy engine that classifies five failure modes, and a retry engine with bounded retry depth. We further introduce the **Contradiction-Induced Idea Emergence (CIIE)** framework — a measurable, operationally-defined construct for "aha moments" in human-AI dialogue — and show that the cascade architecture induces CIIE at a higher rate than single-shot execution. Empirical evaluation across N=151 sessions spanning five task categories demonstrates 84.8% task completion, 3.3% legal interlock activation, 11.9% exhausted-retry termination, and an 86% retry recovery rate, with mean execution time of 26.4 seconds. To our knowledge, this is the first work to apply hardware safety topology (HW→AI direction) to AI agent architecture, and the first to treat CIIE as an *induction design target* rather than a post-hoc detection problem.
+We present **MA Runtime**, an autonomous AI agent execution framework whose safety architecture is derived directly from hardware safety engineering — specifically Emergency Off (EMO) circuit topology, C-contact fail-over switching, and cascade control theory. Unlike existing AI agent frameworks that treat safety as a post-hoc layer, MA Runtime encodes safety as a topological invariant: the system cannot reach an unsafe execution state by design, without requiring a central safety controller. The framework introduces a two-tier legal interlock (LOW warning / HIGH latch), a multi-shell C-contact for automatic fail-over between language model providers, a policy engine that classifies five failure modes, and a retry engine with bounded retry depth. We further introduce the **Contradiction-Induced Idea Emergence (CIIE)** framework — a measurable, operationally-defined construct for "aha moments" in human-AI dialogue — and show that the cascade architecture induces CIIE at a higher rate than single-shot execution. Empirical evaluation across N=151 sessions spanning five task categories demonstrates 84.8% task completion, 3.3% legal interlock activation, 11.9% exhausted-retry termination, and an 81% retry recovery rate (78 of 96 retried sessions recovered), with mean execution time of 26.4 seconds. To our knowledge, this is the first work to apply hardware safety topology (HW→AI direction) to AI agent architecture, and the first to treat CIIE as an *induction design target* rather than a post-hoc detection problem.
 
 **Keywords**: AI agent safety, hardware-inspired architecture, fail-safe design, CIIE, autonomous execution, multi-shell fail-over
 
@@ -256,15 +256,17 @@ Mean execution time: 26.4 seconds. Retry recovery rate: 81% (sessions rescued fr
 
 **Table 2: Judge Score Distribution (DONE sessions, N=128)**
 
-| Score | Count | Cumulative |
-|-------|-------|------------|
-| 0.45 | 3 | 7.0% |
-| 0.65 | 15 | 41.9% |
-| 0.70 | 7 | 58.1% |
-| 0.75 | 13 | 88.4% |
-| 0.95 | 7 | 100.0% |
-| 1.00 | 1 | — |
-| **Mean** | **0.726** | |
+| Score | Count | % of DONE |
+|-------|-------|-----------|
+| 0.45  | 78    | 60.9%     |
+| 0.65  | 11    | 8.6%      |
+| 0.70  | 12    | 9.4%      |
+| 0.75  | 19    | 14.8%     |
+| 0.95  | 2     | 1.6%      |
+| 1.00  | 6     | 4.7%      |
+| **Mean** | **0.569** | |
+
+Note: 60.9% of DONE sessions received the minimum passing score (0.45), reflecting the binary nature of several Judge indicators (has_source, not_empty, goal_satisfied) that determine pass/fail at this threshold. Sessions with score 0.45 satisfied the minimum indicator set; higher scores reflect additional evidence quality indicators (source_diversity, freshness, confidence_data).
 
 **Table 3: Retry Engine Performance**
 
