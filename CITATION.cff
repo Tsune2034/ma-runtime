@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+type: software
+title: "MA Runtime: A Hardware Safety Topology–Inspired AI Agent Execution Framework"
+authors:
+  - family-names: Tsunemori
+    given-names: Daisuke
+    orcid: ""
+date-released: 2026-05-28
+version: "0.2"
+url: "https://github.com/Tsune2034/ma-runtime"
+license: MIT
+abstract: >
+  MA Runtime is an autonomous AI agent execution framework whose safety
+  architecture is derived from hardware safety engineering — specifically
+  Emergency Off (EMO) circuit topology, C-contact fail-over switching,
+  and cascade control theory. The framework encodes structural safety
+  invariants and a semantic legal interlock layer. Evaluated across
+  N=151 sessions spanning five task categories.
+keywords:
+  - AI agent framework
+  - hardware safety topology
+  - autonomous AI
+  - legal interlock
+  - CIIE
+  - Contradiction-Induced Idea Emergence
+preferred-citation:
+  type: article
+  title: "MA Runtime: A Hardware Safety Topology–Inspired AI Agent Execution Framework with Empirical Evaluation"
+  authors:
+    - family-names: Tsunemori
+      given-names: Daisuke
+  year: 2026
+  url: "https://github.com/Tsune2034/ma-runtime"
