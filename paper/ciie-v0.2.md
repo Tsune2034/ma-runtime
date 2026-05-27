@@ -3,7 +3,7 @@
 
 > **Status**: Draft v0.2 — Data collection complete (N=51). Under revision for arXiv submission.
 > **Last updated**: 2026-05-27
-> **Author**: Daisuke Tsunemori — Project KAIROX, One Hour Value Inc.
+> **Author**: Daisuke Tsunemori — Independent Researcher
 > **Contact**: tsune18@gmail.com
 > **Repository**: https://github.com/Tsune2034/ma-runtime
 
@@ -39,7 +39,7 @@ We further note that arXiv searches for "Contradiction-Induced Idea Emergence," 
 
 Wallas (1926) proposed a four-stage model of creativity: Preparation → Incubation → Illumination → Verification. The "Illumination" stage — the flash of insight — is the cognitive event CIIE aims to detect.
 
-Jung-Beeman and Bowden (2003, 2004) demonstrated that Aha moments correlate with a burst of gamma-wave activity in the right anterior temporal gyrus, representing sudden semantic integration of previously disconnected concepts. This provides the neurological anchor for CIIE's behavioral proxies.
+Bowden and Jung-Beeman (2003); Jung-Beeman et al. (2004) demonstrated that Aha moments correlate with a burst of gamma-wave activity in the right anterior temporal gyrus, representing sudden semantic integration of previously disconnected concepts. This provides the neurological anchor for CIIE's behavioral proxies.
 
 Dubey et al. (2021) established that "Aha! Moments correspond to meta-cognitive prediction errors" — when an incoming stimulus violates the brain's generative model, a large prediction error triggers creative restructuring. This is directly analogous to CIIE Type 1: the contradiction output of AI agents generates a prediction error in the human observer.
 
@@ -49,11 +49,11 @@ Altshuller's TRIZ methodology (1950s–) demonstrated that resolving technical c
 
 ### 2.3 Multi-Agent Systems and Creativity
 
-The survey "Creativity in LLM-based Multi-Agent Systems" (arXiv 2505.21116, EMNLP 2025) provides a comprehensive overview of how LLM-driven multi-agent systems generate creative outputs. Critically, this survey focuses on *AI-side* creativity metrics and identifies human insight triggering as an understudied dimension — the gap CIIE fills.
+The survey "Creativity in LLM-based Multi-Agent Systems" (Lin et al., 2025; arXiv:2505.21116) provides a comprehensive overview of how LLM-driven multi-agent systems generate creative outputs. Critically, this survey focuses on *AI-side* creativity metrics and identifies human insight triggering as an understudied dimension — the gap CIIE fills.
 
 Du et al. (2023, arXiv 2305.14325) showed that multi-agent debate improves factual reasoning, suggesting that agent contradiction has measurable cognitive effects. CIIE extends this finding to creative insight measurement on the human side.
 
-Liang et al. (2024, Oxford) demonstrated that multi-agent collaboration improves *scientific idea generation quality* (VirSci framework). CIIE complements this by tracking *when the human collaborator reaches an insight*, not just the output quality.
+Su et al. (2024) demonstrated that multi-agent collaboration improves *scientific idea generation quality* (VirSci framework). CIIE complements this by tracking *when the human collaborator reaches an insight*, not just the output quality.
 
 ### 2.4 Aha Moments in AI Systems
 
@@ -255,18 +255,19 @@ CIIE is not the endpoint. It is a starting point: the first systematic evidence 
 ## References
 
 1. Wallas, G. (1926). *The Art of Thought*. Harcourt, Brace.
-2. Jung-Beeman, M., & Bowden, E. M. (2003). Aha! Insight experience correlates with solution activation in the right hemisphere. *Psychonomic Bulletin and Review*.
+2. Bowden, E.M., & Jung-Beeman, M. (2003). Aha! Insight experience correlates with solution activation in the right hemisphere. *Psychonomic Bulletin & Review*, 10, 730–737.
 3. Jung-Beeman, M., et al. (2004). Neural activity when people solve verbal problems with insight. *PLOS Biology*, 2(4).
 4. Kounios, J., & Beeman, M. (2015). *The Eureka Factor*. Random House.
 5. Dubey, R., Ho, M. K., Mehta, H., & Griffiths, T. (2021). Aha! Moments correspond to meta-cognitive prediction errors. *CogSci 2021*.
 6. Friston, K. (2010). The free-energy principle: a unified brain theory? *Nature Reviews Neuroscience*, 11(2).
 7. Du, Y., et al. (2023). Improving Factuality and Reasoning in Language Models through Multiagent Debate. arXiv:2305.14325.
 8. DeepSeek-AI. (2025). DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning. arXiv:2501.12948.
-9. Sun, Y., et al. (2025). Can Aha Moments Be Fake? Identifying True and Decorative Thinking Steps in Chain-of-Thought. arXiv:2510.24941.
-10. Anonymous. (2025). Creativity in LLM-based Multi-Agent Systems: A Survey. arXiv:2505.21116. To appear in EMNLP 2025.
+9. Zhao, J., Sun, Y., Shi, W., & Song, D. (2025). Can Aha Moments Be Fake? Identifying True and Decorative Thinking Steps in Chain-of-Thought. arXiv:2510.24941.
+10. Lin, Y.-C., et al. (2025). Creativity in LLM-based Multi-Agent Systems: A Survey. arXiv:2505.21116.
 11. Altshuller, G. (1996). *And Suddenly the Inventor Appeared: TRIZ, the Creative Problem Solving*. Technical Innovation Center.
-12. MIT CSAIL. (2025). The 2025 AI Agent Index. arXiv:2602.17753.
+12. Staufer, L., et al. (2026). The 2025 AI Agent Index: Documenting Technical and Safety Features of Deployed Agentic AI Systems. arXiv:2602.17753.
 13. Tsunemori, D. (2026). MA Runtime v3: Applying Hardware Safety Topology to Autonomous AI Agent Execution. github.com/Tsune2034/ma-runtime.
+14. Su, H., Chen, R., et al. (2024). Many Heads Are Better Than One: Improved Scientific Idea Generation by A LLM-Based Multi-Agent System. arXiv:2410.09403.
 
 ---
 
@@ -284,4 +285,4 @@ CIIE is not the endpoint. It is a starting point: the first systematic evidence 
 
 ---
 
-*Draft v0.2 — 2026-05-27 — Daisuke Tsunemori / Project KAIROX*
+*Draft v0.2 — 2026-05-27 — Daisuke Tsunemori / Independent Researcher*

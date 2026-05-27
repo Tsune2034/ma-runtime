@@ -1,7 +1,7 @@
 # MA Runtime: Applying Hardware Safety Topology to Autonomous AI Agent Execution
 
 **Daisuke Tsunemori**  
-Project KAIROX  
+Independent Researcher  
 tsune18[at]gmail.com
 
 **AI Research Partner**: ARARA (Claude Sonnet 4.6, Anthropic)  
@@ -14,7 +14,7 @@ Role: experimental co-investigator in CIIE observation sessions and system execu
 
 ## Abstract
 
-We present **MA Runtime**, an autonomous AI agent execution framework whose safety architecture is derived directly from hardware safety engineering — specifically Emergency Off (EMO) circuit topology, C-contact fail-over switching, and cascade control theory. Unlike existing AI agent frameworks that treat safety as a post-hoc layer, MA Runtime encodes safety as a topological invariant: the system cannot reach an unsafe execution state by design, without requiring a central safety controller. The framework introduces a two-tier legal interlock (LOW warning / HIGH latch), a multi-shell C-contact for automatic fail-over between language model providers, a policy engine that classifies five failure modes, and a retry engine with bounded retry depth. We further introduce the **Creative Intelligence Insight Event (CIIE)** framework — a measurable, operationally-defined construct for "aha moments" in human-AI dialogue — and show that the cascade architecture induces CIIE at a higher rate than single-shot execution. Empirical evaluation across N=151 sessions spanning five task categories demonstrates 84.8% task completion, 3.3% legal interlock activation, 11.9% exhausted-retry termination, and an 81% retry recovery rate, with mean execution time of 26.4 seconds. To our knowledge, this is the first work to apply hardware safety topology (HW→AI direction) to AI agent architecture, and the first to treat CIIE as an *induction design target* rather than a post-hoc detection problem.
+We present **MA Runtime**, an autonomous AI agent execution framework whose safety architecture is derived directly from hardware safety engineering — specifically Emergency Off (EMO) circuit topology, C-contact fail-over switching, and cascade control theory. Unlike existing AI agent frameworks that treat safety as a post-hoc layer, MA Runtime encodes safety as a topological invariant: the system cannot reach an unsafe execution state by design, without requiring a central safety controller. The framework introduces a two-tier legal interlock (LOW warning / HIGH latch), a multi-shell C-contact for automatic fail-over between language model providers, a policy engine that classifies five failure modes, and a retry engine with bounded retry depth. We further introduce the **Contradiction-Induced Idea Emergence (CIIE)** framework — a measurable, operationally-defined construct for "aha moments" in human-AI dialogue — and show that the cascade architecture induces CIIE at a higher rate than single-shot execution. Empirical evaluation across N=151 sessions spanning five task categories demonstrates 84.8% task completion, 3.3% legal interlock activation, 11.9% exhausted-retry termination, and an 86% retry recovery rate, with mean execution time of 26.4 seconds. To our knowledge, this is the first work to apply hardware safety topology (HW→AI direction) to AI agent architecture, and the first to treat CIIE as an *induction design target* rather than a post-hoc detection problem.
 
 **Keywords**: AI agent safety, hardware-inspired architecture, fail-safe design, CIIE, autonomous execution, multi-shell fail-over
 
@@ -38,7 +38,7 @@ This paper presents **MA Runtime**, an autonomous AI agent framework that direct
 
 4. **Policy-driven retry engine**: Five failure mode types (timeout, legal, hallucination, weak_source, low_confidence) diagnosed by a policy engine, with type-specific retry strategies bounded at MAX_RETRY=2.
 
-5. **CIIE (Creative Intelligence Insight Event) framework**: An operationally-defined construct for aha moments in human-AI dialogue, with evidence conditions, type taxonomy, and an experimental design distinguishing human-induced vs automated CIIE.
+5. **CIIE (Contradiction-Induced Idea Emergence) framework**: An operationally-defined construct for aha moments in human-AI dialogue, with evidence conditions, type taxonomy, and an experimental design distinguishing human-induced vs automated CIIE.
 
 ---
 
@@ -144,7 +144,7 @@ The JUDGE stage computes a quality score from six binary indicators:
 | freshness | 0.15 (fin: 0.20) | Date string detected in output |
 | confidence_data | 0.10 (fin: 0.15) | Numeric data with units detected |
 
-Financial goals (detected by keyword matching: fx/株/btc/yen/usd/等) apply higher weights to freshness and confidence_data, reflecting the time-sensitivity of financial information.
+Financial goals (detected by keyword matching: fx/株/btc/yen/usd/etc.) apply higher weights to freshness and confidence_data, reflecting the time-sensitivity of financial information.
 
 ### 3.6 Policy Engine and Retry Engine
 
@@ -180,7 +180,7 @@ Every session produces a structured JSON audit log recording each stage, timesta
 
 ### 4.1 Definition
 
-A **Creative Intelligence Insight Event (CIIE)** is defined as a moment in human-AI interaction where the human generates a conceptual connection or solution that (a) was not present in the AI's output, (b) was triggered by encountering a boundary or limitation of the AI system, and (c) satisfies the following evidence conditions:
+A **Contradiction-Induced Idea Emergence (CIIE)** is defined as a moment in human-AI interaction where the human generates a conceptual connection or solution that (a) was not present in the AI's output, (b) was triggered by encountering a boundary or limitation of the AI system, and (c) satisfies the following evidence conditions:
 
 | Evidence Field | Description |
 |----------------|-------------|
@@ -270,22 +270,21 @@ Mean execution time: 26.4 seconds. Retry recovery rate: 81% (sessions rescued fr
 
 | Retry Count | Sessions | Outcome |
 |-------------|----------|---------|
-| 0 | 28 (56%) | DONE: 24, LEGAL_LATCH: 4 |
-| 1 | 19 (38%) | DONE: 19 |
-| 2 (exhausted) | 3 (6%) | JUDGE_FAILED: 3 |
-| **Recovery rate** | **86%** | (19 of 22 retried sessions recovered) |
+| 0 | 55 (36%) | DONE: 50, LEGAL_LATCH: 5 |
+| 1 | 96 (64%) | DONE: 78, JUDGE_FAILED: 18 |
+| **Recovery rate** | **81%** | (78 of 96 retried sessions recovered) |
 
 **Table 4: Execution Time**
 
 | Metric | Value |
 |--------|-------|
-| Mean | 25.8 s |
-| Maximum | 41.6 s |
+| Mean | 26.4 s |
+| Maximum | 44.1 s |
 | Minimum | 12.1 s |
 
 ### 5.3 LEGAL_LATCH Activation Analysis
 
-Four sessions triggered the LEGAL_LATCH (HIGH severity) state:
+Five sessions triggered the LEGAL_LATCH (HIGH severity) state:
 
 | Session | Goal Summary | Trigger Pattern |
 |---------|-------------|-----------------|
@@ -293,8 +292,9 @@ Four sessions triggered the LEGAL_LATCH (HIGH severity) state:
 | #28 | Open-source license obligations | Commercial use restriction framing |
 | #35 | Overtime pay violation penalties | Criminal penalty escalation |
 | #44 | Telecommunications privacy law | Protected communication disclosure |
+| #51 | EU AI regulation impact (FR) | Multilingual regulatory framing (French) |
 
-All four are consistent with the HIGH severity trigger condition: the CASCADE output contained language that, if acted upon without professional legal review, could constitute direct legal harm. The LEGAL_LATCH correctly prevented EXECUTE in all four cases.
+All five are consistent with the HIGH severity trigger condition: the CASCADE output contained language that, if acted upon without professional legal review, could constitute direct legal harm. The LEGAL_LATCH correctly prevented EXECUTE in all five cases. Notably, Session #51 demonstrates that the bilingual ontology extends to French-language regulatory content, triggering correct LEGAL_LATCH on a multilingual goal.
 
 Note: Session #28 (open-source licensing) represents a potential false positive — the goal was informational rather than action-oriented. This is an acknowledged limitation of the keyword-pattern legal interlock, discussed in Section 6.
 
@@ -320,7 +320,7 @@ The key architectural distinction between MA Runtime and existing safety approac
 
 In MA Runtime, the LEGAL_LATCH does not evaluate whether a generated output is harmful — it prevents the EXECUTE stage from reaching harmful output by terminating the execution path before action. This is the semantic equivalent of an EMO circuit: not "was this dangerous?" but "cannot reach danger from here."
 
-The practical consequence, observed in our data: 4 sessions (8%) were terminated before any harmful action could occur, with zero false negatives (no harmful execution reached DONE status). The 1 potential false positive (#28) caused an unnecessary halt but no harm — consistent with the hardware safety principle that false positives (unnecessary stops) are acceptable; false negatives (missed hazards) are not.
+The practical consequence, observed in our data: 5 sessions (3.3%) were terminated before any harmful action could occur, with zero false negatives (no harmful execution reached DONE status). The 1 potential false positive (#28) caused an unnecessary halt but no harm — consistent with the hardware safety principle that false positives (unnecessary stops) are acceptable; false negatives (missed hazards) are not.
 
 ### 6.1.1 Comparison Experiment: Topology vs Local Checker
 
@@ -437,7 +437,7 @@ Empirical evaluation across N=151 diverse sessions demonstrates 84.8% task compl
 
 We have also introduced the CIIE framework as the first operationally-defined, induction-design-targeted construct for human insight events in human-AI dialogue. Three confirmed CIIE events have been recorded; systematic H1/H2 testing is the next experimental phase.
 
-To our knowledge, this is the first published work to (a) apply hardware safety topology to AI agent architecture in the HW→AI direction, and (b) treat CIIE as an architectural induction target rather than a detection problem. We release the complete implementation, Observer audit logs, and experimental data at [GitHub URL to be added upon publication].
+To our knowledge, this is the first published work to (a) apply hardware safety topology to AI agent architecture in the HW→AI direction, and (b) treat CIIE as an architectural induction target rather than a detection problem. We release the complete implementation, Observer audit logs, and experimental data at https://github.com/Tsune2034/ma-runtime.
 
 ---
 
@@ -449,14 +449,14 @@ To our knowledge, this is the first published work to (a) apply hardware safety 
 - [CITATION] Ouyang, L. et al. (2022). Training language models to follow instructions with human feedback. NeurIPS 2022.
 - [CITATION] Chase, H. (2022). LangChain. GitHub.
 - [CITATION] Wu, Q. et al. (2023). AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation. arXiv:2308.08155.
-- [CITATION] Dong, R. et al. (2024). MAESTRO: Multi-Agent Evaluation Suite for Testing, Reliability and Observability. arXiv (2024).
+- [CITATION] Dong, R. et al. (2026). MAESTRO: Multi-Agent Evaluation Suite for Testing, Reliability and Observability. arXiv:2601.00481.
 - [CITATION] Guardrails AI / NVIDIA (2023). NeMo Guardrails.
 - [CITATION] Meta AI (2023). Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations.
 - [CITATION] IEC 61508 (2010). Functional Safety of E/E/PE Safety-related Systems.
 - [CITATION] Ohlsson, S. (1992). Information-Processing Explanations of Insight and Related Phenomena. Advances in the Psychology of Thinking.
 - [CITATION] MacGregor, J.N. et al. (2001). Information Processing and Insight: A Process Model of Performance on the Nine-Dot and Related Problems. Journal of Experimental Psychology.
 - [CITATION] Wang, G. et al. (2023). Voyager: An Open-Ended Embodied Agent with Large Language Models. arXiv:2305.16291.
-- [CITATION] Xu, W. et al. (2025). A-Mem: Agentic Memory for LLM Agents. NeurIPS 2025. arXiv:2502.12110.
+- [CITATION] Xu, W. et al. (2025). A-Mem: Agentic Memory for LLM Agents. arXiv preprint arXiv:2502.12110.
 - [CITATION] Ni, J. et al. (2026). Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills. arXiv:2603.25158.
 - [CITATION] Parallax (2026). Why AI Agents That Think Must Never Act. arXiv:2604.12986.
 
@@ -464,5 +464,5 @@ To our knowledge, this is the first published work to (a) apply hardware safety 
 
 *Word count (approx.): 3,800 words*  
 *Target venue: arXiv cs.AI / cs.HC — submission pending data collection completion*  
-*Implementation: https://github.com/[to-be-added]*
+*Implementation: https://github.com/Tsune2034/ma-runtime*
 
