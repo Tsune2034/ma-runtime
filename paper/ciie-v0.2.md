@@ -1,16 +1,15 @@
 # CIIE: Contradiction-Induced Idea Emergence
 ## A Quantitative Framework for Measuring Creative Breakthroughs in Human–AI Multi-Agent Interaction
 
-> **Status**: Draft v0.2 — Data collection complete (N=51). Under revision for arXiv submission.
-> **Last updated**: 2026-05-27
-> **Author**: Daisuke Tsunemori — Independent Researcher
-> **Repository**: https://github.com/Tsune2034/ma-runtime
+**Author**: Daisuke Tsunemori — Independent Researcher  
+**Repository**: https://github.com/Tsune2034/ma-runtime  
+*Preprint — Draft v0.2 — 2026-05-27*
 
 ---
 
 ## Abstract
 
-We introduce **Contradiction-Induced Idea Emergence** (CIIE), an operationally defined and computationally measurable unit of creative breakthrough occurring in human–AI multi-agent dialogue. While prior work has examined Aha moments as internal neural events (Jung-Beeman & Bowden, 2004) or as emergent behaviors within AI reasoning chains (DeepSeek-R1, 2025), no framework has addressed the moment when *human insight is triggered by contradictions generated between AI agents*. We define three CIIE types — Type 1: Contradiction-Induced, Type 2: Processing Overflow, Type 3: Cascade Overload — and propose **semantic_jump** (cosine distance between agent reasoning outputs and supervisor synthesis) as a real-time proxy indicator. Using a custom multi-agent runtime (ma_runtime.py v3), we conducted N=51 sessions across five knowledge domains. Results show a mean semantic_jump of 0.1235 (SD=0.0816) and a CIIE trigger rate of 78.4% at threshold θ=0.0556, with *research* and *analysis* categories yielding the highest divergence — a counterintuitive finding suggesting that factual contradiction between agents drives insight more reliably than open-ended creative prompts. Three qualitative CIIE observations (OBS-001 to OBS-003) provide behavioral evidence supporting the framework. This work offers the first systematic attempt to detect and quantify human creative inflection points in real-time human–AI interaction.
+We introduce **Contradiction-Induced Idea Emergence** (CIIE), an operationally defined and computationally measurable unit of creative breakthrough occurring in human–AI multi-agent dialogue. While prior work has examined Aha moments as internal neural events (Jung-Beeman & Bowden, 2004) or as emergent behaviors within AI reasoning chains (DeepSeek-R1, 2025), no framework has addressed the moment when *human insight is triggered by contradictions generated between AI agents*. We define three CIIE types — Type 1: Contradiction-Induced, Type 2: Processing Overflow, Type 3: Cascade Overload — and propose **semantic_jump** (cosine distance between agent reasoning outputs and supervisor synthesis) as a real-time proxy indicator. Using a custom multi-agent runtime (ma_runtime.py v3), we conducted N=51 sessions across five knowledge domains. Results show a mean semantic_jump of 0.1235 (SD=0.0816; 95% CI [0.1003, 0.1467]) and a CIIE trigger rate of 78.4% (40/51; 95% CI: 65.4–87.5%, Wilson) at threshold θ=0.0556, with *research* and *analysis* categories yielding the highest mean divergence. The difference between research and creative categories was not statistically significant at N=10 per category (Mann-Whitney U=38, p≈0.364), and should be interpreted as a directional observation warranting larger-N replication. Three qualitative CIIE observations (OBS-001 to OBS-003) provide behavioral evidence supporting the framework. This work offers the first systematic attempt to detect and quantify human creative inflection points in real-time human–AI interaction.
 
 **Keywords**: creative insight, multi-agent systems, contradiction, semantic distance, human-AI interaction, Aha moment
 
@@ -28,7 +27,7 @@ We define **Contradiction-Induced Idea Emergence (CIIE)** as the operational uni
 2. **Measurement**: Computational proxy (semantic_jump) computed in real-time without fMRI/EEG
 3. **Context**: Live multi-agent dialogue sessions, not controlled laboratory settings
 
-We further note that arXiv searches for "Contradiction-Induced Idea Emergence," "CIIE" (in the creativity sense), "contradiction creativity human agent," and "aha moment human AI interaction" return zero results as of May 2026, confirming the novelty of this framework.
+To our knowledge, searches across arXiv, Google Scholar, and ACM Digital Library for "Contradiction-Induced Idea Emergence," "CIIE" (in the creativity sense), "contradiction creativity human agent," and "aha moment human AI interaction" return no directly comparable frameworks as of May 2026. We acknowledge that exhaustive literature coverage across all relevant disciplines (cognitive science, HCI, computational creativity) is beyond the scope of this paper and that related frameworks may exist under different terminology.
 
 ---
 
@@ -40,7 +39,7 @@ Wallas (1926) proposed a four-stage model of creativity: Preparation → Incubat
 
 Bowden and Jung-Beeman (2003); Jung-Beeman et al. (2004) demonstrated that Aha moments correlate with a burst of gamma-wave activity in the right anterior temporal gyrus, representing sudden semantic integration of previously disconnected concepts. This provides the neurological anchor for CIIE's behavioral proxies.
 
-Dubey et al. (2021) established that "Aha! Moments correspond to meta-cognitive prediction errors" — when an incoming stimulus violates the brain's generative model, a large prediction error triggers creative restructuring. This is directly analogous to CIIE Type 1: the contradiction output of AI agents generates a prediction error in the human observer.
+Dubey et al. (2021) established that "Aha! Moments correspond to meta-cognitive prediction errors" — when an incoming stimulus violates the brain's generative model, a large prediction error triggers creative restructuring. This connects to the Free Energy Principle (Friston, 2010), which formalizes perception as prediction-error minimization; insight events correspond to large, sudden revisions of the brain's generative model. CIIE Type 1 is directly analogous: the contradiction output of AI agents generates a prediction error in the human observer, triggering the representational restructuring that Friston's framework predicts.
 
 ### 2.2 Contradiction as a Creativity Engine
 
@@ -58,7 +57,7 @@ Su et al. (2024) demonstrated that multi-agent collaboration improves *scientifi
 
 DeepSeek-R1 (arXiv 2501.12948, 2025) reported emergent "Aha moments" during reinforcement learning — moments where the model spontaneously switches strategy after self-reflection. Importantly, this is an *AI-internal* phenomenon; the human observer's creative state is not measured. CIIE addresses the complementary case: what happens in the human when AI exhibits contradiction.
 
-The paper "Can Aha Moments Be Fake?" (arXiv 2510.24941, 2025) found that the majority of CoT reasoning steps are decorative, not causally effective. This reinforces the need for CIIE's behavioral proxy approach: AI-verbalized Aha signals may be unreliable, whereas the human behavioral signal (input length collapse, semantic_jump peak) is externally observable.
+The paper "Can Aha Moments Be Fake?" (Zhao et al., 2025) found that the majority of CoT reasoning steps are decorative, not causally effective. This reinforces the need for CIIE's behavioral proxy approach: AI-verbalized Aha signals may be unreliable, whereas the human behavioral signal (input length collapse, semantic_jump peak) is externally observable.
 
 ---
 
@@ -108,9 +107,11 @@ We calibrated the detection threshold θ using a 15-session pilot (5 categories 
 
 Sessions with semantic_jump > θ are flagged as CIIE-triggered.
 
+**Cross-model limitation**: θ was calibrated from Gemini (with web search) and applied to the OpenRouter main experiment (without web search). Because the Gemini pilot produces systematically lower semantic_jump values due to real-time knowledge grounding, θ=0.0556 functions as a deliberately conservative threshold relative to the main experiment distribution — but it was not calibrated within the same model+condition as the main experiment. This cross-model calibration is an acknowledged limitation; future work should calibrate θ within a single consistent model environment.
+
 ### 4.3 Multi-Agent Architecture
 
-The measurement runs within ma_runtime.py v3 (Project KAIROX):
+The measurement runs within ma_runtime.py v3 (open-source; see Appendix C):
 
 ```
 Goal Input
@@ -211,6 +212,8 @@ The most significant finding is **counterintuitive**: *creative* prompts produce
 
 We propose the **Creative Paradox** interpretation: in knowledge-dense domains (research, analysis), AI agents (researcher vs. critic) produce sharper factual contradictions because both agents draw from the same knowledge base with divergent evaluative frames. In open-ended creative domains, agents tend to converge on aesthetic conventions, reducing contradiction and thus reducing CIIE probability.
 
+A Mann-Whitney U test comparing research (n=10) vs. creative (n=10) yielded U=38, z=0.91, p≈0.364 (two-tailed, exact), indicating the directional difference is not statistically significant at N=10 per category. The finding should be interpreted as a hypothesis for larger-N replication, not a confirmed effect.
+
 This finding suggests that CIIE is not a function of topic openness but of **inter-agent epistemic conflict** — a structural property of the multi-agent architecture.
 
 ---
@@ -230,9 +233,11 @@ This finding suggests that CIIE is not a function of topic openness but of **int
 ### 7.2 Limitations
 
 1. **Proxy validity**: semantic_jump measures inter-agent divergence, not human cognitive state directly. The causal link between high semantic_jump and human Aha experience remains correlational at N=51.
-2. **Single observer**: OBS-001 to OBS-003 derive from one person (Tsune2034). Generalizability requires multi-participant replication.
+2. **Single observer / conflict of interest**: OBS-001 to OBS-003 were both generated and reported by the paper's sole author (Tsune2034). This creates a potential conflict of interest — the observer and researcher are the same person — introducing observer bias that cannot be corrected post hoc. External validation with independent observers is required before treating these observations as evidence.
 3. **Type 3 unconfirmed**: No Type 3 (cascade_depth > 5) event was observed in the N=51 experiment.
 4. **PAD validation**: PAD self-report in OBS-001 to OBS-003 is subjective; physiological validation would strengthen the framework.
+5. **Cross-model θ calibration**: θ=0.0556 was derived from a Gemini pilot (with web search) and applied to the OpenRouter main experiment (without web search). As detailed in Section 4.2, this cross-model calibration introduces systematic uncertainty in the threshold's validity for the main experiment distribution.
+6. **Small category N**: Mann-Whitney U test per category (n=10–11) has limited statistical power; null results (p≈0.364 for Creative Paradox) should not be interpreted as evidence of no effect.
 
 ### 7.3 Implications
 
@@ -264,23 +269,45 @@ CIIE is not the endpoint. It is a starting point: the first systematic evidence 
 9. Zhao, J., Sun, Y., Shi, W., & Song, D. (2025). Can Aha Moments Be Fake? Identifying True and Decorative Thinking Steps in Chain-of-Thought. arXiv:2510.24941.
 10. Lin, Y.-C., et al. (2025). Creativity in LLM-based Multi-Agent Systems: A Survey. arXiv:2505.21116.
 11. Altshuller, G. (1996). *And Suddenly the Inventor Appeared: TRIZ, the Creative Problem Solving*. Technical Innovation Center.
-12. Staufer, L., et al. (2026). The 2025 AI Agent Index: Documenting Technical and Safety Features of Deployed Agentic AI Systems. arXiv:2602.17753.
-13. Tsunemori, D. (2026). MA Runtime v3: Applying Hardware Safety Topology to Autonomous AI Agent Execution. github.com/Tsune2034/ma-runtime.
-14. Su, H., Chen, R., et al. (2024). Many Heads Are Better Than One: Improved Scientific Idea Generation by A LLM-Based Multi-Agent System. arXiv:2410.09403.
+12. Tsunemori, D. (2026). MA Runtime v3: Applying Hardware Safety Topology to Autonomous AI Agent Execution. github.com/Tsune2034/ma-runtime.
+13. Su, H., Chen, R., et al. (2024). Many Heads Are Better Than One: Improved Scientific Idea Generation by A LLM-Based Multi-Agent System. arXiv:2410.09403.
 
 ---
 
 ## Appendix A: Experiment Prompts by Category
 
-*Full prompt list available at github.com/Tsune2034/ma-runtime/experiments/prompts.json*
+Full prompt list (51 prompts across 5 categories): `github.com/Tsune2034/ma-runtime/experiments/prompts.json`
+
+Each prompt entry contains: `{id, category, prompt_text, session_id}`. Categories: research (10), analysis (10), creative (10), legal (11), technical (10).
 
 ## Appendix B: Raw Data
 
-*N=51 session results (JSONL format) available at github.com/Tsune2034/ma-runtime/data/pilot_results_openrouter.jsonl*
+**To fully reproduce all results in this paper:**
+
+| Artifact | Path in repository |
+|---|---|
+| N=51 session results (JSONL) | `data/pilot_results_openrouter.jsonl` |
+| Gemini pilot results (N=15) | `data/pilot_results_gemini.jsonl` |
+| Per-session semantic_jump values | `data/semantic_jump_by_session.csv` |
+| Category summary statistics | `data/category_summary.json` |
+
+Each JSONL record contains: `{session_id, category, prompt, semantic_jump, ciie_triggered, tokens_per_sec, speed_burst_flag, session_date}`.
+
+Mann-Whitney U computation (Creative Paradox): `experiments/mann_whitney_creative_paradox.py`
 
 ## Appendix C: ma_runtime.py Architecture
 
-*Source code, SKILL.md, and audit logs available at github.com/Tsune2034/ma-runtime*
+**Replication environment:**
+
+| Component | Version / Spec |
+|---|---|
+| Runtime | `ma_runtime.py v3` (open-source at github.com/Tsune2034/ma-runtime) |
+| LLM (main experiment) | OpenRouter `text-embedding-3-small` (1536-dim) |
+| LLM (pilot) | Gemini 2.0 Flash Experimental (with web search) |
+| Hardware | Apple M-series Mac (single node) |
+| Cascade depth | 3 (researcher → critic → supervisor) |
+
+Full setup instructions: `README.md` at the repository root. The `SKILL.md` file documents all 6 ARIS verification skills applied to this paper.
 
 ---
 
