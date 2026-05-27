@@ -109,6 +109,8 @@ Sessions with semantic_jump > θ are flagged as CIIE-triggered.
 
 **Cross-model limitation**: θ was calibrated from Gemini (with web search) and applied to the OpenRouter main experiment (without web search). Because the Gemini pilot produces systematically lower semantic_jump values due to real-time knowledge grounding, θ=0.0556 functions as a deliberately conservative threshold relative to the main experiment distribution — but it was not calibrated within the same model+condition as the main experiment. This cross-model calibration is an acknowledged limitation; future work should calibrate θ within a single consistent model environment.
 
+**Threshold sensitivity**: At θ=0.04, CIIE rate increases to 90.2% (46/51); at θ=0.07, it decreases to 74.5% (38/51); at θ=0.10, it decreases to 52.9% (27/51). The high CIIE rate is therefore partly a function of the conservative θ=0.0556 threshold. A principled within-model θ calibration study is needed before drawing strong conclusions about absolute CIIE prevalence.
+
 ### 4.3 Multi-Agent Architecture
 
 The measurement runs within ma_runtime.py v3 (open-source; see Appendix C):
@@ -212,7 +214,7 @@ The most significant finding is **counterintuitive**: *creative* prompts produce
 
 We propose the **Creative Paradox** interpretation: in knowledge-dense domains (research, analysis), AI agents (researcher vs. critic) produce sharper factual contradictions because both agents draw from the same knowledge base with divergent evaluative frames. In open-ended creative domains, agents tend to converge on aesthetic conventions, reducing contradiction and thus reducing CIIE probability.
 
-A Mann-Whitney U test comparing research (n=10) vs. creative (n=10) yielded U=38, z=0.91, p≈0.364 (two-tailed, exact), indicating the directional difference is not statistically significant at N=10 per category. The finding should be interpreted as a hypothesis for larger-N replication, not a confirmed effect.
+A Mann-Whitney U test comparing research (n=10) vs. creative (n=10) yielded U=38, z=0.91, p≈0.364 (two-tailed, exact). At n=10 per group, the test is severely underpowered (estimated power < 20% to detect a medium effect size). The result should be interpreted as statistically inconclusive — neither confirming nor ruling out a true difference — and is flagged as a hypothesis for larger-N replication rather than a confirmed or disconfirmed effect.
 
 This finding suggests that CIIE is not a function of topic openness but of **inter-agent epistemic conflict** — a structural property of the multi-agent architecture.
 
@@ -237,7 +239,8 @@ This finding suggests that CIIE is not a function of topic openness but of **int
 3. **Type 3 unconfirmed**: No Type 3 (cascade_depth > 5) event was observed in the N=51 experiment.
 4. **PAD validation**: PAD self-report in OBS-001 to OBS-003 is subjective; physiological validation would strengthen the framework.
 5. **Cross-model θ calibration**: θ=0.0556 was derived from a Gemini pilot (with web search) and applied to the OpenRouter main experiment (without web search). As detailed in Section 4.2, this cross-model calibration introduces systematic uncertainty in the threshold's validity for the main experiment distribution.
-6. **Small category N**: Mann-Whitney U test per category (n=10–11) has limited statistical power; null results (p≈0.364 for Creative Paradox) should not be interpreted as evidence of no effect.
+6. **Small category N / underpowered test**: Mann-Whitney U test per category (n=10–11) has severely limited statistical power (estimated < 20% to detect a medium effect). Null results (p≈0.364 for Creative Paradox) are statistically inconclusive, not evidence of no effect.
+7. **No human validation of semantic_jump**: No correlation analysis between the automated semantic_jump metric and independent human creativity ratings or expert judgment has been performed. The proxy validity rests on theoretical motivation (prediction-error analogy) rather than empirical calibration against human-labeled ground truth. External validation is required before semantic_jump can be treated as a reliable CIIE detector.
 
 ### 7.3 Implications
 

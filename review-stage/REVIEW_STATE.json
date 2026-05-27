@@ -1,0 +1,48 @@
+{
+  "round": 2,
+  "status": "in_progress",
+  "papers": {
+    "ma-runtime": {
+      "round1_verdict": "READY",
+      "round1_score": 8,
+      "round2_fixes_applied": [
+        "Abstract: 'N=3 confirmed CIIE' -> 'N=3 preliminary case study observations'",
+        "Section 3.4: correctness-by-construction bridge to Dijkstra 1975 / Gries 1981",
+        "Section 5.2 Table 2: explicit note that all DONE sessions passed judge score threshold",
+        "Abstract: topology claim scoped to C-contact+delta gate only; legal interlock declared as semantic checker",
+        "Abstract: CIIE 'higher rate' claim removed; replaced with 'theoretical design argument'"
+      ],
+      "round2_gemini_verdict": "NOT_READY",
+      "round2_gemini_score": 4,
+      "round2_status": "fixes_applied_pending_recheck",
+      "note": "Gemini Round 2 ran before Round 2 fixes were visible. Critical fixes now applied. Needs Round 3 review."
+    },
+    "ciie-v0.2": {
+      "round1_verdict": "NEEDS_MINOR_REVISION",
+      "round1_score": 6,
+      "round2_fixes_applied": [
+        "Section 6.3: Mann-Whitney framing -> 'statistically inconclusive, severely underpowered (<20% power)'",
+        "Section 4.2: theta sensitivity analysis added with actual computed values",
+        "Section 7.2: Limitation #7 added (no human validation of semantic_jump)"
+      ],
+      "round2_gemini_verdict": "QUOTA_EXHAUSTED",
+      "round2_status": "fixes_applied_pending_gemini_review",
+      "note": "Gemini quota exhausted. Round 2 review pending quota reset (~19h)."
+    },
+    "maki-v0.1": {
+      "round1_verdict": "NOT_READY",
+      "round1_score": 4,
+      "round2_fixes_applied": [
+        "Sections 4.2/4.3: 100% success rate reframed as proof-of-concept on single controlled task",
+        "Section 3.5: EtherCAT analogy scope note added",
+        "Section 5.5: No-baseline limitation substantially strengthened",
+        "Section 5.2: reproducibility framing -> proof-of-concept validation"
+      ],
+      "round2_gemini_verdict": "QUOTA_EXHAUSTED",
+      "round2_status": "fixes_applied_pending_gemini_review",
+      "note": "Gemini quota exhausted. Round 2 review pending quota reset (~19h)."
+    }
+  },
+  "gemini_quota_reset_approx": "2026-05-29T11:00:00+09:00",
+  "timestamp": "2026-05-28"
+}
