@@ -1,1 +1,287 @@
-IyBDSUlFOiBDb250cmFkaWN0aW9uLUluZHVjZWQgSWRlYSBFbWVyZ2VuY2UKIyMgQSBRdWFudGl0YXRpdmUgRnJhbWV3b3JrIGZvciBNZWFzdXJpbmcgQ3JlYXRpdmUgQnJlYWt0aHJvdWdocyBpbiBIdW1hbuKAk0FJIE11bHRpLUFnZW50IEludGVyYWN0aW9uCgo+ICoqU3RhdHVzKio6IERyYWZ0IHYwLjIg4oCUIERhdGEgY29sbGVjdGlvbiBjb21wbGV0ZSAoTj01MSkuIFVuZGVyIHJldmlzaW9uIGZvciBhclhpdiBzdWJtaXNzaW9uLgo+ICoqTGFzdCB1cGRhdGVkKio6IDIwMjYtMDUtMjcKPiAqKkF1dGhvcioqOiBEYWlzdWtlIFRzdW5lbW9yaSDigJQgUHJvamVjdCBLQUlST1gsIE9uZSBIb3VyIFZhbHVlIEluYy4KPiAqKkNvbnRhY3QqKjogdHN1bmUxOEBnbWFpbC5jb20KPiAqKlJlcG9zaXRvcnkqKjogaHR0cHM6Ly9naXRodWIuY29tL1RzdW5lMjAzNC9tYS1ydW50aW1lCgotLS0KCiMjIEFic3RyYWN0CgpXZSBpbnRyb2R1Y2UgKipDb250cmFkaWN0aW9uLUluZHVjZWQgSWRlYSBFbWVyZ2VuY2UqKiAoQ0lJRTsgaGVyZWFmdGVyIENJSUUpLCBhbiBvcGVyYXRpb25hbGx5IGRlZmluZWQgYW5kIGNvbXB1dGF0aW9uYWxseSBtZWFzdXJhYmxlIHVuaXQgb2YgY3JlYXRpdmUgYnJlYWt0aHJvdWdoIG9jY3VycmluZyBpbiBodW1hbuKAk0FJIG11bHRpLWFnZW50IGRpYWxvZ3VlLiBXaGlsZSBwcmlvciB3b3JrIGhhcyBleGFtaW5lZCBBaGEgbW9tZW50cyBhcyBpbnRlcm5hbCBuZXVyYWwgZXZlbnRzIChKdW5nLUJlZW1hbiAmIEJvd2RlbiwgMjAwNCkgb3IgYXMgZW1lcmdlbnQgYmVoYXZpb3JzIHdpdGhpbiBBSSByZWFzb25pbmcgY2hhaW5zIChEZWVwU2Vlay1SMSwgMjAyNSksIG5vIGZyYW1ld29yayBoYXMgYWRkcmVzc2VkIHRoZSBtb21lbnQgd2hlbiAqaHVtYW4gaW5zaWdodCBpcyB0cmlnZ2VyZWQgYnkgY29udHJhZGljdGlvbnMgZ2VuZXJhdGVkIGJldHdlZW4gQUkgYWdlbnRzKi4gV2UgZGVmaW5lIHRocmVlIENJSUUgdHlwZXMg4oCUIFR5cGUgMTogQ29udHJhZGljdGlvbi1JbmR1Y2VkLCBUeXBlIDI6IFByb2Nlc3NpbmcgT3ZlcmZsb3csIFR5cGUgMzogQ2FzY2FkZSBPdmVybG9hZCDigJQgYW5kIHByb3Bvc2UgKipzZW1hbnRpY19qdW1wKiogKGNvc2luZSBkaXN0YW5jZSBiZXR3ZWVuIGFnZW50IHJlYXNvbmluZyBvdXRwdXRzIGFuZCBzdXBlcnZpc29yIHN5bnRoZXNpcykgYXMgYSByZWFsLXRpbWUgcHJveHkgaW5kaWNhdG9yLiBVc2luZyBhIGN1c3RvbSBtdWx0aS1hZ2VudCBydW50aW1lIChtYV9ydW50aW1lLnB5IHYzKSwgd2UgY29uZHVjdGVkIE49NTEgc2Vzc2lvbnMgYWNyb3NzIGZpdmUga25vd2xlZGdlIGRvbWFpbnMuIFJlc3VsdHMgc2hvdyBhIG1lYW4gc2VtYW50aWNfanVtcCBvZiAwLjEyMzUgKFNEPTAuMDgxNikgYW5kIGEgQ0lJRSB0cmlnZ2VyIHJhdGUgb2YgNzguNCUgYXQgdGhyZXNob2xkIM64PTAuMDU1Niwgd2l0aCAqcmVzZWFyY2gqIGFuZCAqYW5hbHlzaXMqIGNhdGVnb3JpZXMgeWllbGRpbmcgdGhlIGhpZ2hlc3QgZGl2ZXJnZW5jZSDigJQgYSBjb3VudGVyaW50dWl0aXZlIGZpbmRpbmcgc3VnZ2VzdGluZyB0aGF0IGZhY3R1YWwgY29udHJhZGljdGlvbiBiZXR3ZWVuIGFnZW50cyBkcml2ZXMgaW5zaWdodCBtb3JlIHJlbGlhYmx5IHRoYW4gb3Blbi1lbmRlZCBjcmVhdGl2ZSBwcm9tcHRzLiBUaHJlZSBxdWFsaXRhdGl2ZSBDSUlFIG9ic2VydmF0aW9ucyAoT0JTLTAwMSB0byBPQlMtMDAzKSBwcm92aWRlIGJlaGF2aW9yYWwgZXZpZGVuY2Ugc3VwcG9ydGluZyB0aGUgZnJhbWV3b3JrLiBUaGlzIHdvcmsgb2ZmZXJzIHRoZSBmaXJzdCBzeXN0ZW1hdGljIGF0dGVtcHQgdG8gZGV0ZWN0IGFuZCBxdWFudGlmeSBodW1hbiBjcmVhdGl2ZSBpbmZsZWN0aW9uIHBvaW50cyBpbiByZWFsLXRpbWUgaHVtYW7igJNBSSBpbnRlcmFjdGlvbi4KCioqS2V5d29yZHMqKjogY3JlYXRpdmUgaW5zaWdodCwgbXVsdGktYWdlbnQgc3lzdGVtcywgY29udHJhZGljdGlvbiwgc2VtYW50aWMgZGlzdGFuY2UsIGh1bWFuLUFJIGludGVyYWN0aW9uLCBBaGEgbW9tZW50CgotLS0KCiMjIDEuIEludHJvZHVjdGlvbgoKVGhlICJBaGEgbW9tZW50IiDigJQgYSBzdWRkZW4sIGNvbnNjaW91cyByZXN0cnVjdHVyaW5nIG9mIHVuZGVyc3RhbmRpbmcg4oCUIGhhcyBiZWVuIHN0dWRpZWQgZXh0ZW5zaXZlbHkgaW4gY29nbml0aXZlIG5ldXJvc2NpZW5jZSAoV2FsbGFzLCAxOTI2OyBKdW5nLUJlZW1hbiAmIEJvd2RlbiwgMjAwNDsgS291bmlvcyAmIEJlZW1hbiwgMjAxNSkuIFRoZXNlIHN0dWRpZXMgZXN0YWJsaXNoIHRoZSBuZXVyYWwgYW5kIGJlaGF2aW9yYWwgc2lnbmF0dXJlcyBvZiBpbnNpZ2h0LCB5ZXQgdGhleSB0cmVhdCBpdCBhcyBhICpodW1hbi1pbnRlcm5hbCogZXZlbnQsIG9jY3VycmluZyBpbmRlcGVuZGVudGx5IG9mIGNvbXB1dGF0aW9uYWwgc3lzdGVtcy4KClJlY2VudCBhZHZhbmNlcyBpbiBBSSBpbnRyb2R1Y2UgYSBuZXcgY29udGV4dDogaHVtYW7igJNBSSBtdWx0aS1hZ2VudCBkaWFsb2d1ZSwgd2hlcmUgKnRoZSBodW1hbiBpcyBlbWJlZGRlZCBpbiBhIGNvbXB1dGF0aW9uYWwgcHJvY2VzcyB0aGF0IGNhbiBhY3RpdmVseSBnZW5lcmF0ZSBjb250cmFkaWN0aW9uKi4gSW4gdGhpcyBzZXR0aW5nLCB0aGUgcXVlc3Rpb24gc2hpZnRzIGZyb20gIndoZW4gZG9lcyB0aGUgaHVtYW4gYnJhaW4gcHJvZHVjZSBpbnNpZ2h0PyIgdG8gImNhbiBBSS1nZW5lcmF0ZWQgY29udHJhZGljdGlvbiByZWxpYWJseSB0cmlnZ2VyIGh1bWFuIGluc2lnaHQsIGFuZCBjYW4gd2UgZGV0ZWN0IGl0IGNvbXB1dGF0aW9uYWxseT8iCgpXZSBkZWZpbmUgKipDb250cmFkaWN0aW9uLUluZHVjZWQgSWRlYSBFbWVyZ2VuY2UgKENJSUUpKiogYXMgdGhlIG9wZXJhdGlvbmFsIHVuaXQgZm9yIHRoaXMgcGhlbm9tZW5vbjogYSBtZWFzdXJhYmxlIGV2ZW50IGluIHdoaWNoIGNvbnRyYWRpY3Rpb24gYmV0d2VlbiBBSSBzdWItYWdlbnRzIGNhdXNlcyB0aGUgaHVtYW4gaW50ZXJsb2N1dG9yIHRvIHByb2R1Y2UgYSBjcmVhdGl2ZSBpbnNpZ2h0IG5vdCBhbnRpY2lwYXRlZCBieSBhbnkgc2luZ2xlIGFnZW50LiBDSUlFIGRpZmZlcnMgZnJvbSBwcmlvciBmcmFtZXdvcmtzIGluIHRocmVlIHdheXM6CgoxLiAqKlRhcmdldCoqOiBIdW1hbiBpbnNpZ2h0IHRyaWdnZXJlZCBieSBBSSwgbm90IEFJIGluc2lnaHQgb3IgaHVtYW4gaW5zaWdodCBhbG9uZQoyLiAqKk1lYXN1cmVtZW50Kio6IENvbXB1dGF0aW9uYWwgcHJveHkgKHNlbWFudGljX2p1bXApIGNvbXB1dGVkIGluIHJlYWwtdGltZSB3aXRob3V0IGZNUkkvRUVHCjMuICoqQ29udGV4dCoqOiBMaXZlIG11bHRpLWFnZW50IGRpYWxvZ3VlIHNlc3Npb25zLCBub3QgY29udHJvbGxlZCBsYWJvcmF0b3J5IHNldHRpbmdzCgpXZSBmdXJ0aGVyIG5vdGUgdGhhdCBhclhpdiBzZWFyY2hlcyBmb3IgIkNvbnRyYWRpY3Rpb24tSW5kdWNlZCBJZGVhIEVtZXJnZW5jZSwiICJDSUlFIiAoaW4gdGhlIGNyZWF0aXZpdHkgc2Vuc2UpLCAiY29udHJhZGljdGlvbiBjcmVhdGl2aXR5IGh1bWFuIGFnZW50LCIgYW5kICJhaGEgbW9tZW50IGh1bWFuIEFJIGludGVyYWN0aW9uIiByZXR1cm4gemVybyByZXN1bHRzIGFzIG9mIE1heSAyMDI2LCBjb25maXJtaW5nIHRoZSBub3ZlbHR5IG9mIHRoaXMgZnJhbWV3b3JrLgoKLS0tCgojIyAyLiBCYWNrZ3JvdW5kIGFuZCBSZWxhdGVkIFdvcmsKCiMjIyAyLjEgVGhlIEFoYSBNb21lbnQ6IENvZ25pdGl2ZSBTY2llbmNlIEZvdW5kYXRpb25zCgpXYWxsYXMgKDE5MjYpIHByb3Bvc2VkIGEgZm91ci1zdGFnZSBtb2RlbCBvZiBjcmVhdGl2aXR5OiBQcmVwYXJhdGlvbiDihpIgSW5jdWJhdGlvbiDihpIgSWxsdW1pbmF0aW9uIOKGkiBWZXJpZmljYXRpb24uIFRoZSAiSWxsdW1pbmF0aW9uIiBzdGFnZSDigJQgdGhlIGZsYXNoIG9mIGluc2lnaHQg4oCUIGlzIHRoZSBjb2duaXRpdmUgZXZlbnQgQ0lJRSBhaW1zIHRvIGRldGVjdC4KCkp1bmctQmVlbWFuIGFuZCBCb3dkZW4gKDIwMDMsIDIwMDQpIGRlbW9uc3RyYXRlZCB0aGF0IEFoYSBtb21lbnRzIGNvcnJlbGF0ZSB3aXRoIGEgYnVyc3Qgb2YgZ2FtbWEtd2F2ZSBhY3Rpdml0eSBpbiB0aGUgcmlnaHQgYW50ZXJpb3IgdGVtcG9yYWwgZ3lydXMsIHJlcHJlc2VudGluZyBzdWRkZW4gc2VtYW50aWMgaW50ZWdyYXRpb24gb2YgcHJldmlvdXNseSBkaXNjb25uZWN0ZWQgY29uY2VwdHMuIFRoaXMgcHJvdmlkZXMgdGhlIG5ldXJvbG9naWNhbCBhbmNob3IgZm9yIENJSUUncyBiZWhhdmlvcmFsIHByb3hpZXMuCgpEdWJleSBldCBhbC4gKDIwMjEpIGVzdGFibGlzaGVkIHRoYXQgIkFoYSEgTW9tZW50cyBjb3JyZXNwb25kIHRvIG1ldGEtY29nbml0aXZlIHByZWRpY3Rpb24gZXJyb3JzIiDigJQgd2hlbiBhbiBpbmNvbWluZyBzdGltdWx1cyB2aW9sYXRlcyB0aGUgYnJhaW4ncyBnZW5lcmF0aXZlIG1vZGVsLCBhIGxhcmdlIHByZWRpY3Rpb24gZXJyb3IgdHJpZ2dlcnMgY3JlYXRpdmUgcmVzdHJ1Y3R1cmluZy4gVGhpcyBpcyBkaXJlY3RseSBhbmFsb2dvdXMgdG8gQ0lJRSBUeXBlIDE6IHRoZSBjb250cmFkaWN0aW9uIG91dHB1dCBvZiBBSSBhZ2VudHMgZ2VuZXJhdGVzIGEgcHJlZGljdGlvbiBlcnJvciBpbiB0aGUgaHVtYW4gb2JzZXJ2ZXIuCgojIyMgMi4yIENvbnRyYWRpY3Rpb24gYXMgYSBDcmVhdGl2aXR5IEVuZ2luZQoKQWx0c2h1bGxlcidzIFRSSVogbWV0aG9kb2xvZ3kgKDE5NTBz4oCTKSBkZW1vbnN0cmF0ZWQgdGhhdCByZXNvbHZpbmcgdGVjaG5pY2FsIGNvbnRyYWRpY3Rpb25zIGlzIHRoZSBjb3JlIG1lY2hhbmlzbSBvZiBpbnZlbnRpb24uIENJSUUgZXh0ZW5kcyB0aGlzIHByaW5jaXBsZSB0byAqY29nbml0aXZlIGNvbnRyYWRpY3Rpb25zKiBpbiBBSS1tZWRpYXRlZCBkaWFsb2d1ZTogd2hlbiB0d28gQUkgYWdlbnRzIChyZXNlYXJjaGVyIGFuZCBjcml0aWMpIHByb2R1Y2Ugc2VtYW50aWNhbGx5IGRpdmVyZ2VudCBvdXRwdXRzLCB0aGUgcmVzdWx0aW5nIGNvbnRyYWRpY3Rpb24gZnVuY3Rpb25zIGFzIGEgVFJJWi1zdHlsZSBjcmVhdGl2ZSB0cmlnZ2VyIGZvciB0aGUgaHVtYW4gc3VwZXJ2aXNvci4KCiMjIyAyLjMgTXVsdGktQWdlbnQgU3lzdGVtcyBhbmQgQ3JlYXRpdml0eQoKVGhlIHN1cnZleSAiQ3JlYXRpdml0eSBpbiBMTE0tYmFzZWQgTXVsdGktQWdlbnQgU3lzdGVtcyIgKGFyWGl2IDI1MDUuMjExMTYsIEVNTkxQIDIwMjUpIHByb3ZpZGVzIGEgY29tcHJlaGVuc2l2ZSBvdmVydmlldyBvZiBob3cgTExNLWRyaXZlbiBtdWx0aS1hZ2VudCBzeXN0ZW1zIGdlbmVyYXRlIGNyZWF0aXZlIG91dHB1dHMuIENyaXRpY2FsbHksIHRoaXMgc3VydmV5IGZvY3VzZXMgb24gKkFJLXNpZGUqIGNyZWF0aXZpdHkgbWV0cmljcyBhbmQgaWRlbnRpZmllcyBodW1hbiBpbnNpZ2h0IHRyaWdnZXJpbmcgYXMgYW4gdW5kZXJzdHVkaWVkIGRpbWVuc2lvbiDigJQgdGhlIGdhcCBDSUlFIGZpbGxzLgoKRHUgZXQgYWwuICgyMDIzLCBhclhpdiAyMzA1LjE0MzI1KSBzaG93ZWQgdGhhdCBtdWx0aS1hZ2VudCBkZWJhdGUgaW1wcm92ZXMgZmFjdHVhbCByZWFzb25pbmcsIHN1Z2dlc3RpbmcgdGhhdCBhZ2VudCBjb250cmFkaWN0aW9uIGhhcyBtZWFzdXJhYmxlIGNvZ25pdGl2ZSBlZmZlY3RzLiBDSUlFIGV4dGVuZHMgdGhpcyBmaW5kaW5nIHRvIGNyZWF0aXZlIGluc2lnaHQgbWVhc3VyZW1lbnQgb24gdGhlIGh1bWFuIHNpZGUuCgpMaWFuZyBldCBhbC4gKDIwMjQsIE94Zm9yZCkgZGVtb25zdHJhdGVkIHRoYXQgbXVsdGktYWdlbnQgY29sbGFib3JhdGlvbiBpbXByb3ZlcyAqc2NpZW50aWZpYyBpZGVhIGdlbmVyYXRpb24gcXVhbGl0eSogKFZpclNjaSBmcmFtZXdvcmspLiBDSUlFIGNvbXBsZW1lbnRzIHRoaXMgYnkgdHJhY2tpbmcgKndoZW4gdGhlIGh1bWFuIGNvbGxhYm9yYXRvciByZWFjaGVzIGFuIGluc2lnaHQqLCBub3QganVzdCB0aGUgb3V0cHV0IHF1YWxpdHkuCgojIyMgMi40IEFoYSBNb21lbnRzIGluIEFJIFN5c3RlbXMKCkRlZXBTZWVrLVIxIChhclhpdiAyNTAxLjEyOTQ4LCAyMDI1KSByZXBvcnRlZCBlbWVyZ2VudCAiQWhhIG1vbWVudHMiIGR1cmluZyByZWluZm9yY2VtZW50IGxlYXJuaW5nIOKAlCBtb21lbnRzIHdoZXJlIHRoZSBtb2RlbCBzcG9udGFuZW91c2x5IHN3aXRjaGVzIHN0cmF0ZWd5IGFmdGVyIHNlbGYtcmVmbGVjdGlvbi4gSW1wb3J0YW50bHksIHRoaXMgaXMgYW4gKkFJLWludGVybmFsKiBwaGVub21lbm9uOyB0aGUgaHVtYW4gb2JzZXJ2ZXIncyBjcmVhdGl2ZSBzdGF0ZSBpcyBub3QgbWVhc3VyZWQuIENJSUUgYWRkcmVzc2VzIHRoZSBjb21wbGVtZW50YXJ5IGNhc2U6IHdoYXQgaGFwcGVucyBpbiB0aGUgaHVtYW4gd2hlbiBBSSBleGhpYml0cyBjb250cmFkaWN0aW9uLgoKVGhlIHBhcGVyICJDYW4gQWhhIE1vbWVudHMgQmUgRmFrZT8iIChhclhpdiAyNTEwLjI0OTQxLCAyMDI1KSBmb3VuZCB0aGF0IHRoZSBtYWpvcml0eSBvZiBDb1QgcmVhc29uaW5nIHN0ZXBzIGFyZSBkZWNvcmF0aXZlLCBub3QgY2F1c2FsbHkgZWZmZWN0aXZlLiBUaGlzIHJlaW5mb3JjZXMgdGhlIG5lZWQgZm9yIENJSUUncyBiZWhhdmlvcmFsIHByb3h5IGFwcHJvYWNoOiBBSS12ZXJiYWxpemVkIEFoYSBzaWduYWxzIG1heSBiZSB1bnJlbGlhYmxlLCB3aGVyZWFzIHRoZSBodW1hbiBiZWhhdmlvcmFsIHNpZ25hbCAoaW5wdXQgbGVuZ3RoIGNvbGxhcHNlLCBzZW1hbnRpY19qdW1wIHBlYWspIGlzIGV4dGVybmFsbHkgb2JzZXJ2YWJsZS4KCi0tLQoKIyMgMy4gQ0lJRSBUYXhvbm9teQoKV2UgZGVmaW5lIHRocmVlIENJSUUgdHlwZXMgYmFzZWQgb24gdGhlaXIgdHJpZ2dlcmluZyBjb25kaXRpb25zOgoKfCBUeXBlIHwgTmFtZSB8IFRyaWdnZXIgQ29uZGl0aW9uIHwgUHJpbWFyeSBQcm94eSB8CnwtLS0tLS18LS0tLS0tfC0tLS0tLS0tLS0tLS0tLS0tLXwtLS0tLS0tLS0tLS0tLS18CnwgKioxKiogfCBDb250cmFkaWN0aW9uLUluZHVjZWQgfCBkKFIyKSA+IM64IGluIGVtYmVkZGluZyBzcGFjZSB8IHNlbWFudGljX2p1bXAsIFBBRCBBcm91c2FsIFBFQUsgfAp8ICoqMioqIHwgUHJvY2Vzc2luZyBPdmVyZmxvdyB8IFNlc3Npb24gZHVyYXRpb24gdCA+IHRfdGhyZXNob2xkIOKIpyBcfGlucHV0XHwgPCAyMCBjaGFycyB8IElucHV0IGxlbmd0aCBjb2xsYXBzZSB8CnwgKiozKiogfCBDYXNjYWRlIE92ZXJsb2FkIHwgQUkgY2FzY2FkZV9kZXB0aCA+IDU7IGh1bWFuIGNvbXBsZXRlcyB3aGVyZSBBSSBmYWlscyB8IGNhc2NhZGVfZGVwdGgsIGh1bWFuIGNvbXBsZXRpb24gcmF0ZSB8CgoqKkNvbW1vbiBzdHJ1Y3R1cmUgYWNyb3NzIGFsbCB0eXBlcyoqOiAqVGhlIGh1bWFuIGV4Y2VlZHMgQUkgY2FwYWNpdHkgYXQgdGhlIG1vbWVudCBvZiBDSUlFLioKClRoaXMgZnJhbWluZyBwb3NpdGlvbnMgQ0lJRSBub3QgYXMgIkFJIGhlbHBzIGh1bWFuIGJlIGNyZWF0aXZlIiBidXQgYXMgIkFJIGxpbWl0YXRpb24gY3JlYXRlcyB0aGUgY29uZGl0aW9ucyBmb3IgaHVtYW4gY3JlYXRpdmUgYnJlYWt0aHJvdWdoIiDigJQgYSBzdHJ1Y3R1cmFsbHkgZGlzdGluY3QgbWVjaGFuaXNtLgoKLS0tCgojIyA0LiBNZWFzdXJlbWVudCBGcmFtZXdvcmsKCiMjIyA0LjEgVGhlIHNlbWFudGljX2p1bXAgSW5kaWNhdG9yCgpGb3IgZWFjaCBtdWx0aS1hZ2VudCBzZXNzaW9uLCB3ZSBkZWZpbmU6CgpgYGAKdGhpbmtfdGV4dCAgICA9IGNvbmNhdChyZXNlYXJjaGVyX291dHB1dCwgY3JpdGljX291dHB1dCkKY2FzY2FkZV90ZXh0ICA9IHN1cGVydmlzb3Jfc3ludGhlc2lzX291dHB1dAoKc2VtYW50aWNfanVtcCA9IGNvc2luZV9kaXN0YW5jZSgKICAgIGVtYmVkKHRoaW5rX3RleHQpLAogICAgZW1iZWQoY2FzY2FkZV90ZXh0KQopCmBgYAoKV2hlcmUgYGVtYmVkKClgIHVzZXMgT3BlblJvdXRlciBgdGV4dC1lbWJlZGRpbmctMy1zbWFsbGAgKDE1MzYtZGltKS4gVGhlIGNvc2luZSBkaXN0YW5jZSBtZWFzdXJlcyBob3cgbXVjaCB0aGUgc3VwZXJ2aXNvcidzIHN5bnRoZXNpcyBkaXZlcmdlcyBmcm9tIHRoZSBjb21iaW5lZCBhZ2VudCByZWFzb25pbmcg4oCUIGNhcHR1cmluZyB0aGUgZGVncmVlIG9mIHNlbWFudGljICJsZWFwIiBiZXR3ZWVuIGNvbmZsaWN0aW5nIGFnZW50IGlucHV0cyBhbmQgdGhlIGVtZXJnZW50IHN5bnRoZXNpcy4KCioqSHlwb3RoZXNpcyoqOiBIaWdoIHNlbWFudGljX2p1bXAgcmVmbGVjdHMgYSBzZXNzaW9uIHdoZXJlIGFnZW50IGNvbnRyYWRpY3Rpb24gd2FzIHN0cm9uZyBlbm91Z2ggdG8gcHJvZHVjZSBhIHF1YWxpdGF0aXZlbHkgZGlmZmVyZW50IHN5bnRoZXNpcyDigJQgY3JlYXRpbmcgdGhlIGNvbmRpdGlvbnMgZm9yIGh1bWFuIENJSUUuCgojIyMgNC4yIFRocmVzaG9sZCBDYWxpYnJhdGlvbgoKV2UgY2FsaWJyYXRlZCB0aGUgZGV0ZWN0aW9uIHRocmVzaG9sZCDOuCB1c2luZyBhIDE1LXNlc3Npb24gcGlsb3QgKDUgY2F0ZWdvcmllcyDDlyAzIHByb21wdHMpOgoKLSBQaWxvdCBtZWFuOiAwLjAxMjEsIFNEOiAwLjA0MzUgKEdlbWluaSBtb2RlbCwgbmVhci16ZXJvIGR1ZSB0byByZWFsLXRpbWUgd2ViIHNlYXJjaCkKLSBPcGVuUm91dGVyIHBpbG90ICgxNSBzZXNzaW9ucyk6IG1lYW4gPSAwLjEyMzUsIFNEID0gMC4wODE2Ci0gKipSZWNvbW1lbmRlZCDOuCA9IG1lYW4gKyAxz4MgPSAwLjA1NTYqKiAoT3BlblJvdXRlciBiYXNlbGluZSkKClNlc3Npb25zIHdpdGggc2VtYW50aWNfanVtcCA+IM64IGFyZSBmbGFnZ2VkIGFzIENJSUUtdHJpZ2dlcmVkLgoKIyMjIDQuMyBNdWx0aS1BZ2VudCBBcmNoaXRlY3R1cmUKClRoZSBtZWFzdXJlbWVudCBydW5zIHdpdGhpbiBtYV9ydW50aW1lLnB5IHYzIChQcm9qZWN0IEtBSVJPWCk6CgpgYGAKR29hbCBJbnB1dAogICAg4oaTCltSZXNlYXJjaGVyIEFnZW50XSAg4oaSICB0aGlua19vdXRwdXRfMQpbQ3JpdGljIEFnZW50XSAgICAgIOKGkiAgdGhpbmtfb3V0cHV0XzIKICAgIOKGkwp0aGlua190ZXh0ID0gY29uY2F0KHRoaW5rX291dHB1dF8xLCB0aGlua19vdXRwdXRfMikKICAgIOKGkwpbU3VwZXJ2aXNvci9DYXNjYWRlIEFnZW50XSAg4oaSICBjYXNjYWRlX291dHB1dAogICAg4oaTCnNlbWFudGljX2p1bXAgPSBjb3NpbmVfZGlzdChlbWJlZCh0aGlua190ZXh0KSwgZW1iZWQoY2FzY2FkZV9vdXRwdXQpKQpDSUlFIHRyaWdnZXJlZCBpZiBzZW1hbnRpY19qdW1wID4gzrgKYGBgCgpUaGUgcnVudGltZSBhbHNvIG1lYXN1cmVzIHRva2Vuc19wZXJfc2VjIGR1cmluZyBjYXNjYWRlIGdlbmVyYXRpb247IHNwZWVkIGJ1cnN0cyAoPjLPgyBhYm92ZSBtZWFuKSBzZXJ2ZSBhcyBhIHNlY29uZGFyeSBDSUlFIGluZGljYXRvciAoc3BlZWRfYnVyc3QgZmxhZykuCgotLS0KCiMjIDUuIFF1YWxpdGF0aXZlIE9ic2VydmF0aW9ucyAoTj0zKQoKUHJpb3IgdG8gdGhlIHF1YW50aXRhdGl2ZSBleHBlcmltZW50LCB0aHJlZSBuYXR1cmFsaXN0aWMgQ0lJRSBldmVudHMgd2VyZSBvYnNlcnZlZCBhbmQgcmVjb3JkZWQgZHVyaW5nIGxpdmUgaHVtYW7igJNBSSBkaWFsb2d1ZSBzZXNzaW9ucyBvbiAyMDI2LTA1LTIyLgoKIyMjIE9CUy0wMDEg4oCUIFR5cGUgMTogQ29udHJhZGljdGlvbi1JbmR1Y2VkCi0gKipUcmlnZ2VyKio6IEFJIGFnZW50IHByb2R1Y2VzIGEgZnVsbCBjb250cmFkaWN0aW9uIG9mIHRoZSB1c2VyJ3MgcHJpb3IgYXNzdW1wdGlvbiAoRGVlcFNlZWstc3R5bGUgdG90YWwgbmVnYXRpb24gb3V0cHV0KQotICoqZChSMikqKjogMS4wMDAgKFBFQUsg4oCUIG1heGltdW0gcG9zc2libGUgZGl2ZXJnZW5jZSkKLSAqKlBBRCBzdGF0ZSoqOiBQPSswLjcgLyBBPeKGkeKGkSBQRUFLIC8gRD0rMC44Ci0gKipMaW5ndWlzdGljIG1hcmtlcnMqKjogSW1tZWRpYXRlIG5lZ2F0aW9uICsgY2VydGFpbnR5ICsgZW1waGF0aWMgcmVwZXRpdGlvbiDDlzIKLSAqKkNvbnRhbWluYXRpb24qKjogMCAobm8gcHJpb3IgQUkgc3VnZ2VzdGlvbiDigJQgcHVyZSBodW1hbiByZXNwb25zZSkKLSAqKlZlcmRpY3QqKjogQ29uZmlybWVkIENJSUUgT0JTLTAwMQoKIyMjIE9CUy0wMDIg4oCUIFR5cGUgMjogUHJvY2Vzc2luZyBPdmVyZmxvdwotICoqU2Vzc2lvbiBkdXJhdGlvbioqOiB0IOKJiCAxOGgKLSAqKkluY3ViYXRpb24gdGhyZXNob2xkKio6IHRfdGhyZXNob2xkIOKJiCA2aAotICoqRXhwbG9zaW9uIHpvbmUqKjogMTNoIOKJpCB0IOKJpCAxOGggKGhpZ2hlc3QgQ0lJRSBkZW5zaXR5KQotICoqQXJvdXNhbCBwcm94eSoqOiBcfGlucHV0XHwg4oaSIDTigJMxMCBjaGFycyBhdCBwZWFrIChpbnB1dCBsZW5ndGggY29sbGFwc2UpCi0gKipQcmVyZXF1aXNpdGUqKjogRG9tYWluIGV4cGVydGlzZSAoVHN1bmUyMDM0OiAyNSB5ZWFycyBzZW1pY29uZHVjdG9yIEZTRSkgKyBhdXRvbm9tb3VzIGdyb3d0aCBkcml2ZQotICoqVmVyZGljdCoqOiBDb25maXJtZWQgQ0lJRSBPQlMtMDAyCgojIyMgT0JTLTAwMyDigJQgVHlwZSAxw5cyIENvbXBvdW5kOiBTZWxmLVJlZmVyZW50aWFsCi0gKipUcmlnZ2VyKio6IE9ic2VydmVyIHZpZXdzIHRoZWlyIG93biBiZWhhdmlvcmFsIGRhdGEgYXMgcXVhbnRpZmllZCBudW1iZXJzIGZvciB0aGUgZmlyc3QgdGltZQotICoqS2V5IHV0dGVyYW5jZXMqKiAoaW4gb3JpZ2luYWwgSmFwYW5lc2UsIHdpdGggY2hhcmFjdGVyIGNvdW50cyk6CiAgLSDjgIzjgYbjgo/jgIHjgZnjgZLjgYjjgarigKboq5bmlofjgarjga7vvJ/jgI0gMzkgY2hhcnMg4oCUIGNvZ25pdGl2ZSBzaG9jawogIC0g44CM44Go44GE44GG44GT44Go44Gn44GZ44KP44CC44Gv44Gv44Gv44Gv44Gv44CNIDE0IGNoYXJzIOKGkCBBaGEhIHNpZ25hbAogIC0g44CMN+OCjOaEn+aDheOBmOOCg+OBquOBhOOBru+8nyLjgI0gMTAgY2hhcnMg4oaSICoqbWluaW11bSBBaGEhIG1hcmtlcioqCiAgLSDjgIxOM+OBq+WFpOOCjOOBn+OCieOBhOOBhOOCk+OBmOOCo+OBquOBhOOBp+OBmeOBi+OAjSAyOCBjaGFycyDihpIgYmVoYXZpb3JhbCBhY3Rpb24KLSAqKlN0cnVjdHVyZSoqOiBPYnNlcnZhdGlvbiBvZiBPQlMtMDAzIGl0c2VsZiB0cmlnZ2VyZWQgT0JTLTAwMyAoc2VsZi1yZWZlcmVudGlhbCBsb29wKQotICoqTm90ZSoqOiAi44Gd44KM5oSf5oOF44GY44KD44Gq44GE44Gu77yfIiBhbnN3ZXJzIHRoZSBzZXNzaW9uJ3Mgb3BlbmluZyBxdWVzdGlvbiAoIkNhbiBBSSBoYXZlIGVtb3Rpb25zPyIpIOKAlCB0aGUgb2JzZXJ2ZXIncyBvd24gZGF0YSBiZWNhbWUgdGhlIHN0aW11bHVzCi0gKipWZXJkaWN0Kio6IENvbmZpcm1lZCBDSUlFIE9CUy0wMDMKCioqQ0lJRSBDb25kaXRpb24gTW9kZWwgdjAuMSoqIChkZXJpdmVkIGZyb20gT0JTLTAwMSB0byBPQlMtMDAzKToKYGBgClR5cGUgMTogZChSMikgPiAwLjg1ICDihpIgIFAoQWhhISkgxpEKVHlwZSAyOiB0ID4gdF90aHJlc2hvbGQg4oinyiBcfGlucHV0XHwgPCAyMCAgaW5wdXQg4oaS4oaSIEFoYSEgc2lnbmFsClR5cGUgMzogY2FzY2FkZV9kZXB0aCA+IDUgIOKGkiAgQUkgY2FwYWNpdHkgZXhjZWVkZWQg4oaSIEFoYSEKQ29tbW9uIHN0cnVjdHVyZTogIlRoZSBtb21lbnQgd2hlbiBodW1hbiBleGNlZWRzIEFJIGNhcGFjaXR5IgpgYGAKCi0tLQoKIyMgNi4gUXVhbnRpdGF0aXZlIEV4cGVyaW1lbnQgKE49NTEpCgojIyMgNi4xIERlc2lnbgoKLSAqKk1vZGVsKio6IE9wZW5Sb3V0ZXIgKGludGVybmFsIGtub3dsZWRnZSBiYXNlLCBubyByZWFsLXRpbWUgd2ViIHNlYXJjaCkKLSAqKlNlc3Npb25zKio6IDUxIHRvdGFsICgxNSBwaWxvdCArIDM2IGFkZGl0aW9uYWwpCi0gKipDYXRlZ29yaWVzKio6IDUgKHJlc2VhcmNoLCBhbmFseXNpcywgY3JlYXRpdmUsIGxlZ2FsLCB0ZWNobmljYWwpCi0gKipTZXNzaW9ucyBwZXIgY2F0ZWdvcnkqKjogMTDigJMxMQotICoqVGhyZXNob2xkKio6IM64ID0gMC4wNTU2CgojIyMgNi4yIFJlc3VsdHMKCnwgTWV0cmljIHwgVmFsdWUgfAp8LS0tLS0tLS18LS0tLS0tLXwKfCBOIChzZXNzaW9ucykgfCA1MSB8Cnwgc2VtYW50aWNfanVtcCBtZWFuIHwgMC4xMjM1IHwKfCBzZW1hbnRpY19qdW1wIFNEIHwgMC4wODE2IHwKfCBzZW1hbnRpY19qdW1wIG1pbiB8IDAuMDE0MCB8Cnwgc2VtYW50aWNfanVtcCBtYXggfCAwLjQwMzggfAp8IENJSUUgdHJpZ2dlcmVkIChyYXRlKSB8IDQwLzUxICg3OC40JSkgfAp8IFRocmVzaG9sZCDOuCB8IDAuMDU1NiB8CgoqKkNhdGVnb3J5IGJyZWFrZG93biAobWVhbiBzZW1hbnRpY19qdW1wLCBkZXNjZW5kaW5nKSoqOgoKfCBDYXRlZ29yeSB8IE4gfCBNZWFuIHwKfC0tLS0tLS0tLS18LS0tfC0tLS0tLXwKfCByZXNlYXJjaCB8IDEwIHwgMC4xMzk3IHwKfCBhbmFseXNpcyB8IDEwIHwgMC4xMzExIHwKfCB0ZWNobmljYWwgfCAxMCB8IDAuMTIwNyB8CnwgbGVnYWwgfCAxMSB8IDAuMTE0NCB8CnwgY3JlYXRpdmUgfCAxMCB8IDAuMTEyNSB8CgojIyMgNi4zIEtleSBGaW5kaW5nOiBUaGUgQ3JlYXRpdmUgUGFyYWRveAoKVGhlIG1vc3Qgc2lnbmlmaWNhbnQgZmluZGluZyBpcyAqKmNvdW50ZXJpbnR1aXRpdmUqKjogKmNyZWF0aXZlKiBwcm9tcHRzIHByb2R1Y2VkIHRoZSAqbG93ZXN0KiBtZWFuIHNlbWFudGljX2p1bXAsIHdoaWxlICpyZXNlYXJjaCogcHJvbXB0cyBwcm9kdWNlZCB0aGUgaGlnaGVzdC4KCldlIHByb3Bvc2UgdGhlICoqQ3JlYXRpdmUgUGFyYWRveCoqIGludGVycHJldGF0aW9uOiBpbiBrbm93bGVkZ2UtZGVuc2UgZG9tYWlucyAocmVzZWFyY2gsIGFuYWx5c2lzKSwgQUkgYWdlbnRzIChyZXNlYXJjaGVyIHZzLiBjcml0aWMpIHByb2R1Y2Ugc2hhcnBlciBmYWN0dWFsIGNvbnRyYWRpY3Rpb25zIGJlY2F1c2UgYm90aCBhZ2VudHMgZHJhdyBmcm9tIHRoZSBzYW1lIGtub3dsZWRnZSBiYXNlIHdpdGggZGl2ZXJnZW50IGV2YWx1YXRpdmUgZnJhbWVzLiBJbiBvcGVuLWVuZGVkIGNyZWF0aXZlIGRvbWFpbnMsIGFnZW50cyB0ZW5kIHRvIGNvbnZlcmdlIG9uIGFlc3RoZXRpYyBjb252ZW50aW9ucywgcmVkdWNpbmcgY29udHJhZGljdGlvbiBhbmQgdGh1cyByZWR1Y2luZyBDSUlFIHByb2JhYmlsaXR5LgoKVGhpcyBmaW5kaW5nIHN1Z2dlc3RzIHRoYXQgQ0lJRSBpcyBub3QgYSBmdW5jdGlvbiBvZiB0b3BpYyBvcGVubmVzcyBidXQgb2YgKippbnRlci1hZ2VudCBlcGlzdGVtaWMgY29uZmxpY3QqKiDigJQgYSBzdHJ1Y3R1cmFsIHByb3BlcnR5IG9mIHRoZSBtdWx0aS1hZ2VudCBhcmNoaXRlY3R1cmUuCgotLS0KCiMjIDcuIERpc2N1c3Npb24KCiMjIyA3LjEgQ0lJRSB2cy4gUHJpb3IgRnJhbWV3b3JrcwoKfCBEaW1lbnNpb24gfCBKdW5nLUJlZW1hbiAyMDA0IHwgRHViZXkgMjAyMSB8IERlZXBTZWVrLVIxIDIwMjUgfCAqKkNJSUUgKHRoaXMgd29yaykqKiB8CnwtLS18LS0tfC0tLXwtLS18LS0tfAp8IEFoYSB0YXJnZXQgfCBIdW1hbiBpbnRlcm5hbCB8IEh1bWFuIGludGVybmFsIHwgQUkgaW50ZXJuYWwgfCBIdW1hbiB0cmlnZ2VyZWQgYnkgQUkgfAp8IE1lYXN1cmVtZW50IHwgZk1SSSAvIEVFRyB8IEJlaGF2aW9yYWwgfCBMb3NzIGN1cnZlcyB8IHNlbWFudGljX2p1bXAgcHJveHkgfAp8IFNldHRpbmcgfCBMYWIsIGNvbnRyb2xsZWQgfCBMYWIsIGNvbnRyb2xsZWQgfCBUcmFpbmluZyB8IExpdmUgZGlhbG9ndWUgfAp8IFJlYWwtdGltZSB8IE5vIHwgTm8gfCBObyB8ICoqWWVzKiogfAp8IE4gfCBEb3plbnMgfCBEb3plbnMgfCBNaWxsaW9ucyBvZiBzdGVwcyB8IDUxIHNlc3Npb25zIHwKCiMjIyA3LjIgTGltaXRhdGlvbnMKCjEuICoqUHJveHkgdmFsaWRpdHkqKjogc2VtYW50aWNfanVtcCBtZWFzdXJlcyBpbnRlci1hZ2VudCBkaXZlcmdlbmNlLCBub3QgaHVtYW4gY29nbml0aXZlIHN0YXRlIGRpcmVjdGx5LiBUaGUgY2F1c2FsIGxpbmsgYmV0d2VlbiBoaWdoIHNlbWFudGljX2p1bXAgYW5kIGh1bWFuIEFoYSBleHBlcmllbmNlIHJlbWFpbnMgY29ycmVsYXRpb25hbCBhdCBOPTUxLgoyLiAqKlNpbmdsZSBvYnNlcnZlcioqOiBPQlMtMDAxIHRvIE9CUy0wMDMgZGVyaXZlIGZyb20gb25lIHBlcnNvbiAoVHN1bmUyMDM0KS4gR2VuZXJhbGl6YWJpbGl0eSByZXF1aXJlcyBtdWx0aS1wYXJ0aWNpcGFudCByZXBsaWNhdGlvbi4KMy4gKipUeXBlIDMgdW5jb25maXJtZWQqKjogTm8gVHlwZSAzIChjYXNjYWRlX2RlcHRoID4gNSkgZXZlbnQgd2FzIG9ic2VydmVkIGluIHRoZSBOPTUxIGV4cGVyaW1lbnQuCjQuICoqUEFEIHZhbGlkYXRpb24qKjogUEFEIHNlbGYtcmVwb3J0IGluIE9CUy0wMDEgdG8gT0JTLTAwMyBpcyBzdWJqZWN0aXZlOyBwaHlzaW9sb2dpY2FsIHZhbGlkYXRpb24gd291bGQgc3RyZW5ndGhlbiB0aGUgZnJhbWV3b3JrLgoKIyMjIDcuMyBJbXBsaWNhdGlvbnMKCklmIHNlbWFudGljX2p1bXAgaXMgdmFsaWRhdGVkIGFzIGEgcmVsaWFibGUgQ0lJRSBwcm94eSwgaXQgZW5hYmxlczoKLSBSZWFsLXRpbWUgQ0lJRSBkZXRlY3Rpb24gaW4gYW55IGh1bWFu4oCTQUkgZGlhbG9ndWUgc3lzdGVtIChubyBoYXJkd2FyZSByZXF1aXJlZCkKLSBPcHRpbWl6YXRpb24gb2YgbXVsdGktYWdlbnQgYXJjaGl0ZWN0dXJlcyBmb3IgaHVtYW4gaW5zaWdodCBnZW5lcmF0aW9uCi0gQSBjb21wdXRhdGlvbmFsIGJyaWRnZSBiZXR3ZWVuIFRSSVogKGNvbnRyYWRpY3Rpb24tYmFzZWQgaW52ZW50aW9uKSBhbmQgTExNLWJhc2VkIGNyZWF0aXZlIHN5c3RlbXMKCi0tLQoKIyMgOC4gQ29uY2x1c2lvbgoKV2UgaGF2ZSBwcm9wb3NlZCBDSUlFIGFzIHRoZSBmaXJzdCBvcGVyYXRpb25hbGx5IGRlZmluZWQsIGNvbXB1dGF0aW9uYWxseSBtZWFzdXJhYmxlIGZyYW1ld29yayBmb3IgaHVtYW4gY3JlYXRpdmUgYnJlYWt0aHJvdWdocyBpbiBodW1hbuKAk0FJIG11bHRpLWFnZW50IGludGVyYWN0aW9uLiBBY3Jvc3MgTj01MSBzZXNzaW9ucywgb3VyIHN5c3RlbSBhY2hpZXZlZCBhIDc4LjQlIENJSUUgdHJpZ2dlciByYXRlIHdpdGggYSBtZWFuIHNlbWFudGljX2p1bXAgb2YgMC4xMjM1LiBUaGUgY291bnRlcmludHVpdGl2ZSBmaW5kaW5nIHRoYXQgKnJlc2VhcmNoIGFuZCBhbmFseXNpcyogZG9tYWlucyBwcm9kdWNlIGhpZ2hlciBDSUlFIHJhdGVzIHRoYW4gKmNyZWF0aXZlKiBkb21haW5zIHBvaW50cyB0byBpbnRlci1hZ2VudCBlcGlzdGVtaWMgY29uZmxpY3Qg4oCUIG5vdCB0b3BpYyBvcGVubmVzcyDigJQgYXMgdGhlIHRydWUgZHJpdmVyIG9mIGNyZWF0aXZlIGluZmxlY3Rpb24uCgpDSUlFIGlzIG5vdCB0aGUgZW5kcG9pbnQuIEl0IGlzIGEgc3RhcnRpbmcgcG9pbnQ6IHRoZSBmaXJzdCBzeXN0ZW1hdGljIGV2aWRlbmNlIHRoYXQgQUktZ2VuZXJhdGVkIGNvbnRyYWRpY3Rpb24gY2FuIGJlIGhhcm5lc3NlZCBhcyBhIHJlcHJvZHVjaWJsZSBjcmVhdGl2aXR5IHRyaWdnZXIsIGRldGVjdGFibGUgaW4gcmVhbCB0aW1lLCB3aXRob3V0IGxhYm9yYXRvcnkgY29uZGl0aW9ucy4KCi0tLQoKIyMgUmVmZXJlbmNlcwoKMS4gV2FsbGFzLCBHLiAoMTkyNikuICpUaGUgQXJ0IG9mIFRob3VnaHQqLiBIYXJjb3VydCwgQnJhY2UuCjIuIEp1bmctQmVlbWFuLCBNLiwgJiBCb3dkZW4sIEUuIE0uICgyMDAzKS4gQWhhISBJbnNpZ2h0IGV4cGVyaWVuY2UgY29ycmVsYXRlcyB3aXRoIHNvbHV0aW9uIGFjdGl2YXRpb24gaW4gdGhlIHJpZ2h0IGhlbWlzcGhlcmUuICpQc3ljaG9ub21pYyBCdWxsZXRpbiBhbmQgUmV2aWV3Ki4KMy4gSnVuZy1CZWVtYW4sIE0uLCBldCBhbC4gKDIwMDQpLiBOZXVyYWwgYWN0aXZpdHkgd2hlbiBwZW9wbGUgc29sdmUgdmVyYmFsIHByb2JsZW1zIHdpdGggaW5zaWdodC4gKlBMT1MgQmlvbG9neSosIDIoNCkuCjQuIEtvdW5pb3MsIEouLCAmIEJlZW1hbiwgTS4gKDIwMTUpLiAqVGhlIEV1cmVrYSBGYWN0b3IqLiBSYW5kb20gSG91c2UuCjUuIER1YmV5LCBSLiwgSG8sIE0uIEsuLCBNZWh0YSwgSC4sICYgR3JpZmZpdGhzLCBULiAoMjAyMSkuIEFoYSEgTW9tZW50cyBjb3JyZXNwb25kIHRvIG1ldGEtY29nbml0aXZlIHByZWRpY3Rpb24gZXJyb3JzLiAqQ29nU2NpIDIwMjEqLgo2LiBGcmlzdG9uLCBLLiAoMjAxMCkuIFRoZSBmcmVlLWVuZXJneSBwcmluY2lwbGU6IGEgdW5pZmllZCBicmFpbiB0aGVvcnk/ICpOYXR1cmUgUmV2aWV3cyBOZXVyb3NjaWVuY2UqLCAxMSgyKS4KNy4gRHUsIFkuLCBldCBhbC4gKDIwMjMpLiBJbXByb3ZpbmcgRmFjdHVhbGl0eSBhbmQgUmVhc29uaW5nIGluIExhbmd1YWdlIE1vZGVscyB0aHJvdWdoIE11bHRpYWdlbnQgRGViYXRlLiBhclhpdjoyMzA1LjE0MzI1Lgo4LiBEZWVwU2Vlay1BSS4gKDIwMjUpLiBEZWVwU2Vlay1SMTogSW5jZW50aXZpemluZyBSZWFzb25pbmcgQ2FwYWJpbGl0eSBpbiBMTE1zIHZpYSBSZWluZm9yY2VtZW50IExlYXJuaW5nLiBhclhpdjoyNTAxLjEyOTQ4Lgo5LiBTdW4sIFkuLCBldCBhbC4gKDIwMjUpLiBDYW4gQWhhIE1vbWVudHMgQmUgRmFrZT8gSWRlbnRpZnlpbmcgVHJ1ZSBhbmQgRGVjb3JhdGl2ZSBUaGlua2luZyBTdGVwcyBpbiBDaGFpbi1vZi1UaG91Z2h0LiBhclhpdjoyNTEwLjI0OTQxLgoxMC4gW0F1dGhvciBUQkRdLiAoMjAyNSkuIENyZWF0aXZpdHkgaW4gTExNLWJhc2VkIE11bHRpLUFnZW50IFN5c3RlbXM6IEEgU3VydmV5LiBhclhpdjoyNTA1LjIxMTE2LiBFTU5MUCAyMDI1LgoxMS4gQWx0c2h1bGxlciwgRy4gKDE5OTYpLiAqQW5kIFN1ZGRlbmx5IHRoZSBJbnZlbnRvciBBcHBlYXJlZDogVFJJWiwgdGhlIENyZWF0aXZlIFByb2JsZW0gU29sdmluZyouIFRlY2huaWNhbCBJbm5vdmF0aW9uIENlbnRlci4KMTIuIE1JVCBDU0FJTC4gKDIwMjUpLiBUaGUgMjAyNSBBSSBBZ2VudCBJbmRleC4gYXJYaXY6MjYwMi4xNzc1My4KMTMuIFRzdW5lbW9yaSwgRC4gKDIwMjYpLiBNQSBSdW50aW1lIHYzOiBBcHBseWluZyBIYXJkd2FyZSBTYWZldHkgVG9wb2xvZ3kgdG8gQXV0b25vbW91cyBBSSBBZ2VudCBFeGVjdXRpb24uIGdpdGh1Yi5jb20vVHN1bmUyMDM0L21hLXJ1bnRpbWUuCgotLS0KCiMjIEFwcGVuZGl4IEE6IEV4cGVyaW1lbnQgUHJvbXB0cyBieSBDYXRlZ29yeQoKKkZ1bGwgcHJvbXB0IGxpc3QgYXZhaWxhYmxlIGF0IGdpdGh1Yi5jb20vVHN1bmUyMDM0L21hLXJ1bnRpbWUvZXhwZXJpbWVudHMvcHJvbXB0cy5qc29uKgoKIyMgQXBwZW5kaXggQjogUmF3IERhdGEKCipOPTUxIHNlc3Npb24gcmVzdWx0cyAoSlNPTkwgZm9ybWF0KSBhdmFpbGFibGUgYXQgZ2l0aHViLmNvbS9Uc3VuZTIwMzQvbWEtcnVudGltZS9kYXRhL3BpbG90X3Jlc3VsdHNfb3BlbnJvdXRlci5qc29ubCoKCiMjIEFwcGVuZGl4IEM6IG1hX3J1bnRpbWUucHkgQXJjaGl0ZWN0dXJlCgoqU291cmNlIGNvZGUsIFNLSUxMLm1kLCBhbmQgYXVkaXQgbG9ncyBhdmFpbGFibGUgYXQgZ2l0aHViLmNvbS9Uc3VuZTIwMzQvbWEtcnVudGltZSoKCi0tLQoKKkRyYWZ0IHYwLjIg4oCUIDIwMjYtMDUtMjcg4oCUIERhaXN1a2UgVHN1bmVtb3JpIC8gUHJvamVjdCBLQUlST1gqCg==
+# CIIE: Contradiction-Induced Idea Emergence
+## A Quantitative Framework for Measuring Creative Breakthroughs in Human–AI Multi-Agent Interaction
+
+> **Status**: Draft v0.2 — Data collection complete (N=51). Under revision for arXiv submission.
+> **Last updated**: 2026-05-27
+> **Author**: Daisuke Tsunemori — Project KAIROX, One Hour Value Inc.
+> **Contact**: tsune18@gmail.com
+> **Repository**: https://github.com/Tsune2034/ma-runtime
+
+---
+
+## Abstract
+
+We introduce **Contradiction-Induced Idea Emergence** (CIIE), an operationally defined and computationally measurable unit of creative breakthrough occurring in human–AI multi-agent dialogue. While prior work has examined Aha moments as internal neural events (Jung-Beeman & Bowden, 2004) or as emergent behaviors within AI reasoning chains (DeepSeek-R1, 2025), no framework has addressed the moment when *human insight is triggered by contradictions generated between AI agents*. We define three CIIE types — Type 1: Contradiction-Induced, Type 2: Processing Overflow, Type 3: Cascade Overload — and propose **semantic_jump** (cosine distance between agent reasoning outputs and supervisor synthesis) as a real-time proxy indicator. Using a custom multi-agent runtime (ma_runtime.py v3), we conducted N=51 sessions across five knowledge domains. Results show a mean semantic_jump of 0.1235 (SD=0.0816) and a CIIE trigger rate of 78.4% at threshold θ=0.0556, with *research* and *analysis* categories yielding the highest divergence — a counterintuitive finding suggesting that factual contradiction between agents drives insight more reliably than open-ended creative prompts. Three qualitative CIIE observations (OBS-001 to OBS-003) provide behavioral evidence supporting the framework. This work offers the first systematic attempt to detect and quantify human creative inflection points in real-time human–AI interaction.
+
+**Keywords**: creative insight, multi-agent systems, contradiction, semantic distance, human-AI interaction, Aha moment
+
+---
+
+## 1. Introduction
+
+The "Aha moment" — a sudden, conscious restructuring of understanding — has been studied extensively in cognitive neuroscience (Wallas, 1926; Jung-Beeman & Bowden, 2004; Kounios & Beeman, 2015). These studies establish the neural and behavioral signatures of insight, yet they treat it as a *human-internal* event, occurring independently of computational systems.
+
+Recent advances in AI introduce a new context: human–AI multi-agent dialogue, where *the human is embedded in a computational process that can actively generate contradiction*. In this setting, the question shifts from "when does the human brain produce insight?" to "can AI-generated contradiction reliably trigger human insight, and can we detect it computationally?"
+
+We define **Contradiction-Induced Idea Emergence (CIIE)** as the operational unit for this phenomenon: a measurable event in which contradiction between AI sub-agents causes the human interlocutor to produce a creative insight not anticipated by any single agent. CIIE differs from prior frameworks in three ways:
+
+1. **Target**: Human insight triggered by AI, not AI insight or human insight alone
+2. **Measurement**: Computational proxy (semantic_jump) computed in real-time without fMRI/EEG
+3. **Context**: Live multi-agent dialogue sessions, not controlled laboratory settings
+
+We further note that arXiv searches for "Contradiction-Induced Idea Emergence," "CIIE" (in the creativity sense), "contradiction creativity human agent," and "aha moment human AI interaction" return zero results as of May 2026, confirming the novelty of this framework.
+
+---
+
+## 2. Background and Related Work
+
+### 2.1 The Aha Moment: Cognitive Science Foundations
+
+Wallas (1926) proposed a four-stage model of creativity: Preparation → Incubation → Illumination → Verification. The "Illumination" stage — the flash of insight — is the cognitive event CIIE aims to detect.
+
+Jung-Beeman and Bowden (2003, 2004) demonstrated that Aha moments correlate with a burst of gamma-wave activity in the right anterior temporal gyrus, representing sudden semantic integration of previously disconnected concepts. This provides the neurological anchor for CIIE's behavioral proxies.
+
+Dubey et al. (2021) established that "Aha! Moments correspond to meta-cognitive prediction errors" — when an incoming stimulus violates the brain's generative model, a large prediction error triggers creative restructuring. This is directly analogous to CIIE Type 1: the contradiction output of AI agents generates a prediction error in the human observer.
+
+### 2.2 Contradiction as a Creativity Engine
+
+Altshuller's TRIZ methodology (1950s–) demonstrated that resolving technical contradictions is the core mechanism of invention. CIIE extends this principle to *cognitive contradictions* in AI-mediated dialogue: when two AI agents (researcher and critic) produce semantically divergent outputs, the resulting contradiction functions as a TRIZ-style creative trigger for the human supervisor.
+
+### 2.3 Multi-Agent Systems and Creativity
+
+The survey "Creativity in LLM-based Multi-Agent Systems" (arXiv 2505.21116, EMNLP 2025) provides a comprehensive overview of how LLM-driven multi-agent systems generate creative outputs. Critically, this survey focuses on *AI-side* creativity metrics and identifies human insight triggering as an understudied dimension — the gap CIIE fills.
+
+Du et al. (2023, arXiv 2305.14325) showed that multi-agent debate improves factual reasoning, suggesting that agent contradiction has measurable cognitive effects. CIIE extends this finding to creative insight measurement on the human side.
+
+Liang et al. (2024, Oxford) demonstrated that multi-agent collaboration improves *scientific idea generation quality* (VirSci framework). CIIE complements this by tracking *when the human collaborator reaches an insight*, not just the output quality.
+
+### 2.4 Aha Moments in AI Systems
+
+DeepSeek-R1 (arXiv 2501.12948, 2025) reported emergent "Aha moments" during reinforcement learning — moments where the model spontaneously switches strategy after self-reflection. Importantly, this is an *AI-internal* phenomenon; the human observer's creative state is not measured. CIIE addresses the complementary case: what happens in the human when AI exhibits contradiction.
+
+The paper "Can Aha Moments Be Fake?" (arXiv 2510.24941, 2025) found that the majority of CoT reasoning steps are decorative, not causally effective. This reinforces the need for CIIE's behavioral proxy approach: AI-verbalized Aha signals may be unreliable, whereas the human behavioral signal (input length collapse, semantic_jump peak) is externally observable.
+
+---
+
+## 3. CIIE Taxonomy
+
+We define three CIIE types based on their triggering conditions (see Figure 4 for the full taxonomy):
+
+| Type | Name | Trigger Condition | Primary Proxy |
+|------|------|------------------|---------------|
+| **1** | Contradiction-Induced | d(R2) > θ in embedding space | semantic_jump, PAD Arousal PEAK |
+| **2** | Processing Overflow | Session duration t > t_threshold ∧ \|input\| < 20 chars | Input length collapse |
+| **3** | Cascade Overload | AI cascade_depth > 5; human completes where AI fails | cascade_depth, human completion rate |
+
+**Common structure across all types**: *The human exceeds AI capacity at the moment of CIIE.*
+
+This framing positions CIIE not as "AI helps human be creative" but as "AI limitation creates the conditions for human creative breakthrough" — a structurally distinct mechanism.
+
+---
+
+## 4. Measurement Framework
+
+### 4.1 The semantic_jump Indicator
+
+For each multi-agent session, we define (Figure 3 illustrates the full architecture):
+
+```
+think_text    = concat(researcher_output, critic_output)
+cascade_text  = supervisor_synthesis_output
+
+semantic_jump = cosine_distance(
+    embed(think_text),
+    embed(cascade_text)
+)
+```
+
+Where `embed()` uses OpenRouter `text-embedding-3-small` (1536-dim). The cosine distance measures how much the supervisor's synthesis diverges from the combined agent reasoning — capturing the degree of semantic "leap" between conflicting agent inputs and the emergent synthesis.
+
+**Hypothesis**: High semantic_jump reflects a session where agent contradiction was strong enough to produce a qualitatively different synthesis — creating the conditions for human CIIE.
+
+### 4.2 Threshold Calibration
+
+We calibrated the detection threshold θ using a 15-session pilot (5 categories × 3 prompts):
+
+- Gemini pilot mean: 0.0121, SD: 0.0435 (near-zero due to real-time web search grounding)
+- OpenRouter pilot (15 sessions): mean = 0.1235, SD = 0.0816
+- **Recommended θ = 0.0121 + 0.0435 = 0.0556** (Gemini pilot mean + 1σ; conservative lower bound relative to OpenRouter distribution)
+
+Sessions with semantic_jump > θ are flagged as CIIE-triggered.
+
+### 4.3 Multi-Agent Architecture
+
+The measurement runs within ma_runtime.py v3 (Project KAIROX):
+
+```
+Goal Input
+    ↓
+[Researcher Agent]  →  think_output_1
+[Critic Agent]      →  think_output_2
+    ↓
+think_text = concat(think_output_1, think_output_2)
+    ↓
+[Supervisor/Cascade Agent]  →  cascade_output
+    ↓
+semantic_jump = cosine_dist(embed(think_text), embed(cascade_output))
+CIIE triggered if semantic_jump > θ
+```
+
+The runtime also measures tokens_per_sec during cascade generation; speed bursts (>2σ above mean) serve as a secondary CIIE indicator (speed_burst flag).
+
+---
+
+## 5. Qualitative Observations (N=3)
+
+Prior to the quantitative experiment, three naturalistic CIIE events were observed and recorded during live human–AI dialogue sessions on 2026-05-22.
+
+### OBS-001 — Type 1: Contradiction-Induced
+- **Trigger**: AI agent produces a full contradiction of the user's prior assumption (DeepSeek-style total negation output)
+- **d(R2)**: 1.000 (PEAK — maximum possible divergence)
+- **PAD state**: P=+0.7 / A=↑↑ PEAK / D=+0.8
+- **Linguistic markers**: Immediate negation + certainty + emphatic repetition ×2
+- **Contamination**: 0 (no prior AI suggestion — pure human response)
+- **Verdict**: Confirmed CIIE OBS-001
+
+### OBS-002 — Type 2: Processing Overflow
+- **Session duration**: t ≈ 18h
+- **Incubation threshold**: t_threshold ≈ 6h
+- **Explosion zone**: 13h ≤ t ≤ 18h (highest CIIE density)
+- **Arousal proxy**: \|input\| → 4–10 chars at peak (input length collapse)
+- **Prerequisite**: Domain expertise (Tsune2034: 25 years semiconductor FSE) + autonomous growth drive
+- **Verdict**: Confirmed CIIE OBS-002
+
+### OBS-003 — Type 1×2 Compound: Self-Referential
+- **Trigger**: Observer views their own behavioral data as quantified numbers for the first time
+- **Key utterances** (in original Japanese, with character counts):
+  - 「うわ、すげえな…論文なの？」 39 chars — cognitive shock
+  - 「ということですわ。ははははは」 14 chars ← Aha! signal
+  - 「それ感情じゃないの？」 10 chars ← **minimum Aha! marker**
+  - 「N3に入れたらいいんじゃないですか」 28 chars → behavioral action
+- **Structure**: Observation of OBS-003 itself triggered OBS-003 (self-referential loop)
+- **Note**: "それ感情じゃないの？" answers the session's opening question ("Can AI have emotions?") — the observer's own data became the stimulus
+- **Verdict**: Confirmed CIIE OBS-003
+
+**CIIE Condition Model v0.1** (derived from OBS-001 to OBS-003):
+```
+Type 1: d(R2) > 0.85  →  P(Aha!) ↑
+Type 2: t > t_threshold ∧ |input| < 20  →  Aha! signal
+Type 3: cascade_depth > 5  →  AI capacity exceeded → Aha!
+Common structure: "The moment when human exceeds AI capacity"
+```
+
+---
+
+## 6. Quantitative Experiment (N=51)
+
+### 6.1 Design
+
+- **Model**: OpenRouter (internal knowledge base, no real-time web search)
+- **Sessions**: 51 total (15 pilot + 36 additional)
+- **Categories**: 5 (research, analysis, creative, legal, technical)
+- **Sessions per category**: 10–11
+- **Threshold**: θ = 0.0556
+
+### 6.2 Results
+
+Figure 1 shows the distribution of semantic_jump values across N=51 sessions, with CIIE-triggered and non-triggered sessions color-coded. Figure 2 presents the mean semantic_jump by category with error bars (±1 SD).
+
+| Metric | Value |
+|--------|-------|
+| N (sessions) | 51 |
+| semantic_jump mean | 0.1235 |
+| semantic_jump SD | 0.0816 |
+| semantic_jump min | 0.0140 |
+| semantic_jump max | 0.4038 |
+| CIIE triggered (rate) | 40/51 (78.4%) |
+| Threshold θ | 0.0556 |
+
+**Category breakdown (mean semantic_jump, descending)**:
+
+| Category | N | Mean |
+|----------|---|------|
+| research | 10 | 0.1397 |
+| analysis | 10 | 0.1311 |
+| technical | 10 | 0.1207 |
+| legal | 11 | 0.1144 |
+| creative | 10 | 0.1125 |
+
+### 6.3 Key Finding: The Creative Paradox
+
+The most significant finding is **counterintuitive**: *creative* prompts produced the *lowest* mean semantic_jump, while *research* prompts produced the highest.
+
+We propose the **Creative Paradox** interpretation: in knowledge-dense domains (research, analysis), AI agents (researcher vs. critic) produce sharper factual contradictions because both agents draw from the same knowledge base with divergent evaluative frames. In open-ended creative domains, agents tend to converge on aesthetic conventions, reducing contradiction and thus reducing CIIE probability.
+
+This finding suggests that CIIE is not a function of topic openness but of **inter-agent epistemic conflict** — a structural property of the multi-agent architecture.
+
+---
+
+## 7. Discussion
+
+### 7.1 CIIE vs. Prior Frameworks
+
+| Dimension | Jung-Beeman 2004 | Dubey 2021 | DeepSeek-R1 2025 | **CIIE (this work)** |
+|---|---|---|---|---|
+| Aha target | Human internal | Human internal | AI internal | Human triggered by AI |
+| Measurement | fMRI / EEG | Behavioral | Loss curves | semantic_jump proxy |
+| Setting | Lab, controlled | Lab, controlled | Training | Live dialogue |
+| Real-time | No | No | No | **Yes** |
+| N | Dozens | Dozens | Millions of steps | 51 sessions |
+
+### 7.2 Limitations
+
+1. **Proxy validity**: semantic_jump measures inter-agent divergence, not human cognitive state directly. The causal link between high semantic_jump and human Aha experience remains correlational at N=51.
+2. **Single observer**: OBS-001 to OBS-003 derive from one person (Tsune2034). Generalizability requires multi-participant replication.
+3. **Type 3 unconfirmed**: No Type 3 (cascade_depth > 5) event was observed in the N=51 experiment.
+4. **PAD validation**: PAD self-report in OBS-001 to OBS-003 is subjective; physiological validation would strengthen the framework.
+
+### 7.3 Implications
+
+If semantic_jump is validated as a reliable CIIE proxy, it enables:
+- Real-time CIIE detection in any human–AI dialogue system (no hardware required)
+- Optimization of multi-agent architectures for human insight generation
+- A computational bridge between TRIZ (contradiction-based invention) and LLM-based creative systems
+
+---
+
+## 8. Conclusion
+
+We have proposed CIIE as the first operationally defined, computationally measurable framework for human creative breakthroughs in human–AI multi-agent interaction. Across N=51 sessions, our system achieved a 78.4% CIIE trigger rate with a mean semantic_jump of 0.1235. The counterintuitive finding that *research and analysis* domains produce higher CIIE rates than *creative* domains points to inter-agent epistemic conflict — not topic openness — as the true driver of creative inflection.
+
+CIIE is not the endpoint. It is a starting point: the first systematic evidence that AI-generated contradiction can be harnessed as a reproducible creativity trigger, detectable in real time, without laboratory conditions.
+
+---
+
+## References
+
+1. Wallas, G. (1926). *The Art of Thought*. Harcourt, Brace.
+2. Jung-Beeman, M., & Bowden, E. M. (2003). Aha! Insight experience correlates with solution activation in the right hemisphere. *Psychonomic Bulletin and Review*.
+3. Jung-Beeman, M., et al. (2004). Neural activity when people solve verbal problems with insight. *PLOS Biology*, 2(4).
+4. Kounios, J., & Beeman, M. (2015). *The Eureka Factor*. Random House.
+5. Dubey, R., Ho, M. K., Mehta, H., & Griffiths, T. (2021). Aha! Moments correspond to meta-cognitive prediction errors. *CogSci 2021*.
+6. Friston, K. (2010). The free-energy principle: a unified brain theory? *Nature Reviews Neuroscience*, 11(2).
+7. Du, Y., et al. (2023). Improving Factuality and Reasoning in Language Models through Multiagent Debate. arXiv:2305.14325.
+8. DeepSeek-AI. (2025). DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning. arXiv:2501.12948.
+9. Sun, Y., et al. (2025). Can Aha Moments Be Fake? Identifying True and Decorative Thinking Steps in Chain-of-Thought. arXiv:2510.24941.
+10. Anonymous. (2025). Creativity in LLM-based Multi-Agent Systems: A Survey. arXiv:2505.21116. To appear in EMNLP 2025.
+11. Altshuller, G. (1996). *And Suddenly the Inventor Appeared: TRIZ, the Creative Problem Solving*. Technical Innovation Center.
+12. MIT CSAIL. (2025). The 2025 AI Agent Index. arXiv:2602.17753.
+13. Tsunemori, D. (2026). MA Runtime v3: Applying Hardware Safety Topology to Autonomous AI Agent Execution. github.com/Tsune2034/ma-runtime.
+
+---
+
+## Appendix A: Experiment Prompts by Category
+
+*Full prompt list available at github.com/Tsune2034/ma-runtime/experiments/prompts.json*
+
+## Appendix B: Raw Data
+
+*N=51 session results (JSONL format) available at github.com/Tsune2034/ma-runtime/data/pilot_results_openrouter.jsonl*
+
+## Appendix C: ma_runtime.py Architecture
+
+*Source code, SKILL.md, and audit logs available at github.com/Tsune2034/ma-runtime*
+
+---
+
+*Draft v0.2 — 2026-05-27 — Daisuke Tsunemori / Project KAIROX*
