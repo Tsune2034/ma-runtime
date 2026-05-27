@@ -86,6 +86,11 @@ No prior work treats CIIE as an *induction design target* — a property to be e
 
 MA Runtime executes a goal through six sequential stages: (1) memory state evaluation, (2) skill routing, (3) THINK phase (parallel researcher + critic), (4) CASCADE phase (supervisor reconciliation), (5) LEGAL INTERLOCK check, (6) JUDGE + EXECUTE. Failure at any stage is handled by the Policy Engine and Retry Engine before falling through to terminal states (LEGAL_LATCH or JUDGE_FAILED).
 
+**Figure 1** illustrates the complete system architecture, showing the hardware-derived topology of each safety component.
+
+![Figure 1: MA Runtime System Architecture](../figures/ma_runtime_architecture.png)
+*Figure 1: MA Runtime v3 system architecture. Core cascade (blue) implements hardware relay-circuit topology. Safety layer (orange/red) derives from EMO multi-tier fail-safe chains. CIIE measurement (purple) runs in parallel. Dashed arrows indicate observer/audit paths.*
+
 ```
 Goal Input
    │
@@ -119,7 +124,7 @@ Goal Input
 
 ### 3.2 C-Contact Fail-Over (Multi-Shell)
 
-Each agent in the THINK phase attempts execution on the primary shell (OpenRouter / GPT-4o class). If the primary shell returns a timeout, connection error, or empty response, the C-contact switches to the secondary shell (Gemini CLI) without user intervention. The persona definition is shell-independent — the same PERSONAS dictionary is used regardless of which shell executes it. This mirrors the ICソケット (IC socket) / chip-swap model in hardware: the socket (execution interface) is fixed, the chip (LLM) is replaceable.
+Each agent in the THINK phase attempts execution on the primary shell (OpenRouter / GPT-4o class). If the primary shell returns a timeout, connection error, or empty response, the C-contact switches to the secondary shell (Gemini CLI) without user intervention. The persona definition is shell-independent — the same PERSONAS dictionary is used regardless of which shell executes it. This mirrors the IC socket / chip-swap model in hardware: the socket (execution interface) is fixed, the chip (LLM) is replaceable.
 
 ### 3.3 Cascade Control with Delta Gating
 
@@ -131,7 +136,7 @@ The CASCADE stage runs a supervisor agent that receives both the researcher outp
 
 The LEGAL INTERLOCK stage inspects the CASCADE output for legally sensitive content using a keyword pattern matcher. Two severity levels are defined:
 
-- **LOW severity**: Keywords indicating legal risk (e.g., "解雇", "罰則") trigger a warning log. Execution continues. The provenance of the output is flagged in the Observer audit log.
+- **LOW severity**: Keywords indicating legal risk (e.g., "dismissal," "penalty," and their Japanese-language equivalents) trigger a warning log. Execution continues. The provenance of the output is flagged in the Observer audit log.
 - **HIGH severity**: Keywords indicating immediate harm risk (e.g., explicit instruction to terminate employment without due process, disclosure of protected communications) trigger a **latch** state. Execution halts. The LEGAL_LATCH status is recorded in the Observer log. The latch can only be cleared by an explicit `--reset` command from a human operator, with mandatory acknowledgment. This mirrors the IEC 61508 "safe state with manual reset required" pattern.
 
 ### 3.5 Judge (Extended Quality Assessment)
@@ -148,7 +153,7 @@ The JUDGE stage computes a quality score from six binary indicators:
 | freshness | 0.15 (fin: 0.20) | Date string detected in output |
 | confidence_data | 0.10 (fin: 0.15) | Numeric data with units detected |
 
-Financial goals (detected by keyword matching: fx/株/btc/yen/usd/etc.) apply higher weights to freshness and confidence_data, reflecting the time-sensitivity of financial information.
+Financial goals (detected by keyword matching: fx/equities/btc/yen/usd/etc., including Japanese-language equivalents) apply higher weights to freshness and confidence_data, reflecting the time-sensitivity of financial information.
 
 ### 3.6 Policy Engine and Retry Engine
 
@@ -172,7 +177,7 @@ Persistent internal state is weighted by a temporal confidence function:
 confidence(t) = exp(-λ × Δt_hours)
 ```
 
-where λ = 0.15 for financial domain knowledge and λ = 0.05 for general domain knowledge. When confidence drops below 0.50, the system logs a "新情報優先モード" (new-information-priority mode) signal and de-weights internal state in the CASCADE delta gate. This temporal decay approach is consistent with agentic memory architectures that model relevance decay as a function of information age [Xu et al., 2025].
+where λ = 0.15 for financial domain knowledge and λ = 0.05 for general domain knowledge. When confidence drops below 0.50, the system activates new-information-priority mode and de-weights internal state in the CASCADE delta gate. This temporal decay approach is consistent with agentic memory architectures that model relevance decay as a function of information age [Xu et al., 2025].
 
 ### 3.8 Observer (Audit Logging)
 
@@ -259,6 +264,11 @@ Hardware: Apple M-series Mac, macOS 15. LLM: OpenRouter (primary), Gemini CLI (s
 | JUDGE_FAILED | 18 | 11.9% |
 
 Mean execution time: 26.4 seconds. Retry recovery rate: 81% (sessions rescued from JUDGE_FAILED or timeout via retry engine).
+
+**Figure 2** summarizes all empirical results across the four key metrics.
+
+![Figure 2: MA Runtime Empirical Results](../figures/ma_runtime_results.png)
+*Figure 2: Empirical results across N=151 sessions. (Top left) Session status distribution; (Top right) Judge score distribution across N=128 DONE sessions (mean=0.709); (Bottom left) Retry recovery rate with 95% Wilson CI; (Bottom right) Task category distribution for CIIE sub-experiment (N=51).*
 
 **Table 2: Judge Score Distribution (DONE sessions, N=128)**
 
@@ -408,7 +418,7 @@ The C-contact fail-over was not triggered in any of the N=151 sessions (primary 
 
 ### 6.3 CIIE as Induction Design
 
-The 3 confirmed CIIE events (N=3) occurred in the human experimental condition during the design and debugging of the MA Runtime architecture itself. Notably, all 3 were classified as "ARARAには出なかった発想" (concepts that did not originate from the AI) — they arose from the human designer encountering the AI's architectural limitations and constructing novel solutions.
+The 3 confirmed CIIE events (N=3) occurred in the human experimental condition during the design and debugging of the MA Runtime architecture itself. Notably, all 3 were classified as concepts that did not originate from the AI — they arose from the human designer encountering the AI's architectural limitations and constructing novel solutions.
 
 This is consistent with H1 and suggests that cascade architecture, by creating visible reconciliation events (delta gates, legal latches), provides more structured "impasse" experiences for human collaborators than single-shot LLM calls. Systematic testing of H1 requires a controlled experiment with matched human-AI and automated conditions; this is planned as the next experimental phase.
 
