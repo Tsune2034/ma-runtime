@@ -1,48 +1,50 @@
 {
-  "round": 2,
-  "status": "in_progress",
+  "round": 4,
+  "status": "COMPLETE",
+  "positive_threshold": "score >= 7/10",
   "papers": {
     "ma-runtime": {
-      "round1_verdict": "READY",
-      "round1_score": 8,
-      "round2_fixes_applied": [
-        "Abstract: 'N=3 confirmed CIIE' -> 'N=3 preliminary case study observations'",
-        "Section 3.4: correctness-by-construction bridge to Dijkstra 1975 / Gries 1981",
-        "Section 5.2 Table 2: explicit note that all DONE sessions passed judge score threshold",
-        "Abstract: topology claim scoped to C-contact+delta gate only; legal interlock declared as semantic checker",
-        "Abstract: CIIE 'higher rate' claim removed; replaced with 'theoretical design argument'"
-      ],
-      "round2_gemini_verdict": "NOT_READY",
-      "round2_gemini_score": 4,
-      "round2_status": "fixes_applied_pending_recheck",
-      "note": "Gemini Round 2 ran before Round 2 fixes were visible. Critical fixes now applied. Needs Round 3 review."
+      "final_verdict": "NEEDS MINOR REVISION",
+      "final_score": 8,
+      "threshold_met": true,
+      "submission_ready": true,
+      "remaining_issues": "REQUIRES_EXPERIMENT only (adversarial bypass, N=3 CIIE, no baseline) — all in Limitations",
+      "rounds": [
+        {"round": 1, "reviewer": "Gemini 2.5 Pro", "verdict": "READY", "score": 8},
+        {"round": 2, "reviewer": "Gemini 2.5 Pro", "verdict": "NOT_READY", "score": 4, "note": "Reviewed pre-fix version"},
+        {"round": 3, "reviewer": "GPT-4o (OpenAI)", "verdict": "NEEDS MINOR REVISION", "score": 8},
+        {"round": 4, "reviewer": "GPT-4o (OpenAI)", "verdict": "NEEDS MINOR REVISION", "score": 8}
+      ]
     },
     "ciie-v0.2": {
-      "round1_verdict": "NEEDS_MINOR_REVISION",
-      "round1_score": 6,
-      "round2_fixes_applied": [
-        "Section 6.3: Mann-Whitney framing -> 'statistically inconclusive, severely underpowered (<20% power)'",
-        "Section 4.2: theta sensitivity analysis added with actual computed values",
-        "Section 7.2: Limitation #7 added (no human validation of semantic_jump)"
-      ],
-      "round2_gemini_verdict": "QUOTA_EXHAUSTED",
-      "round2_status": "fixes_applied_pending_gemini_review",
-      "note": "Gemini quota exhausted. Round 2 review pending quota reset (~19h)."
+      "final_verdict": "NEEDS MINOR REVISION",
+      "final_score": 8,
+      "threshold_met": true,
+      "submission_ready": true,
+      "remaining_issues": "REQUIRES_EXPERIMENT only (semantic_jump validation, cross-model calibration) — both in Abstract+Limitations",
+      "rounds": [
+        {"round": 1, "reviewer": "Gemini 2.5 Pro", "verdict": "NEEDS MINOR REVISION", "score": 6},
+        {"round": 2, "reviewer": "Gemini 2.5 Pro", "verdict": "QUOTA_EXHAUSTED"},
+        {"round": 3, "reviewer": "GPT-4o (OpenAI)", "verdict": "NEEDS MINOR REVISION", "score": 7},
+        {"round": 4, "reviewer": "GPT-4o (OpenAI)", "verdict": "NEEDS MINOR REVISION", "score": 8}
+      ]
     },
     "maki-v0.1": {
-      "round1_verdict": "NOT_READY",
-      "round1_score": 4,
-      "round2_fixes_applied": [
-        "Sections 4.2/4.3: 100% success rate reframed as proof-of-concept on single controlled task",
-        "Section 3.5: EtherCAT analogy scope note added",
-        "Section 5.5: No-baseline limitation substantially strengthened",
-        "Section 5.2: reproducibility framing -> proof-of-concept validation"
-      ],
-      "round2_gemini_verdict": "QUOTA_EXHAUSTED",
-      "round2_status": "fixes_applied_pending_gemini_review",
-      "note": "Gemini quota exhausted. Round 2 review pending quota reset (~19h)."
+      "final_verdict": "NEEDS MINOR REVISION",
+      "final_score": 9,
+      "threshold_met": true,
+      "submission_ready": true,
+      "remaining_issues": "MINOR only — no blockers",
+      "rounds": [
+        {"round": 1, "reviewer": "Gemini 2.5 Pro", "verdict": "NOT READY", "score": 4},
+        {"round": 2, "reviewer": "Gemini 2.5 Pro", "verdict": "QUOTA_EXHAUSTED"},
+        {"round": 3, "reviewer": "GPT-4o (OpenAI)", "verdict": "NEEDS MINOR REVISION", "score": 8},
+        {"round": 4, "reviewer": "GPT-4o (OpenAI)", "verdict": "NEEDS MINOR REVISION", "score": 9, "submission_ready": "YES"}
+      ]
     }
   },
-  "gemini_quota_reset_approx": "2026-05-29T11:00:00+09:00",
+  "loop_complete": true,
+  "reviewer_note": "Switched from Gemini CLI to OpenAI GPT-4o direct API from Round 3 onwards. Faster, no quota issue, better structured output.",
+  "next_step": "Zenodo upload — order: MA Runtime -> CIIE -> MAKI",
   "timestamp": "2026-05-28"
 }
