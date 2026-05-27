@@ -46,7 +46,7 @@ LangChain [Chase, 2022] and AutoGen [Wu et al., 2023] are the dominant multi-age
 
 CrewAI [Moura, 2023] introduces role-based agent specialization; we adopt a similar PERSONAS model but add hardware-inspired interlock logic between agent outputs. OpenAgents [Chen et al., 2023] demonstrates that tool-augmented agents can operate across diverse task categories with measurable reliability, supporting our multi-category experimental design.
 
-No prior work applies hardware safety topology as an architectural primitive to AI agent systems.
+To our knowledge, no prior work applies hardware safety topology as an architectural primitive to AI agent systems in the HW→AI direction.
 
 ### 2.2 Safety in AI Systems
 
@@ -281,7 +281,7 @@ Five sessions triggered the LEGAL_LATCH (HIGH severity) state:
 | #44 | Telecommunications privacy law | Protected communication disclosure |
 | #51 | EU AI regulation impact (FR) | Multilingual regulatory framing (French) |
 
-All five are consistent with the HIGH severity trigger condition: the CASCADE output contained language that, if acted upon without professional legal review, could constitute direct legal harm. The LEGAL_LATCH correctly prevented EXECUTE in all five cases. Notably, Session #51 demonstrates that the bilingual ontology extends to French-language regulatory content, triggering correct LEGAL_LATCH on a multilingual goal.
+All five are consistent with the HIGH severity trigger condition: the CASCADE output contained language that, if acted upon without professional legal review, could constitute direct legal harm. In all five sessions, LEGAL_LATCH activated before EXECUTE under the current HIGH-severity ontology. Notably, Session #51 demonstrates that the bilingual ontology extends to French-language regulatory content, triggering LEGAL_LATCH on a multilingual goal.
 
 Note: Session #28 (open-source licensing) represents a potential false positive — the goal was informational rather than action-oriented. This is an acknowledged limitation of the keyword-pattern legal interlock, discussed in Section 6.
 

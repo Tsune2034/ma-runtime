@@ -84,7 +84,7 @@ MA Runtime executes a goal through six sequential stages: (1) memory state evalu
 
 **Figure 1** illustrates the complete system architecture, showing the hardware-derived topology of each safety component.
 
-![Figure 1: MA Runtime System Architecture](../figures/ma_runtime_architecture.png)
+![Figure 1: MA Runtime System Architecture](ma_runtime_architecture.png)
 *Figure 1: MA Runtime v3 system architecture. Core cascade (blue) implements hardware relay-circuit topology. Safety layer (orange/red) derives from EMO multi-tier fail-safe chains. CIIE measurement (purple) runs in parallel. Dashed arrows indicate observer/audit paths.*
 
 *See Appendix A for the full ASCII execution graph.*
@@ -237,7 +237,7 @@ Mean execution time: 26.4 seconds. Retry recovery rate: 81% (sessions rescued fr
 
 **Figure 2** summarizes all empirical results across the four key metrics.
 
-![Figure 2: MA Runtime Empirical Results](../figures/ma_runtime_results.png)
+![Figure 2: MA Runtime Empirical Results](ma_runtime_results.png)
 *Figure 2: Empirical results of MA Runtime v3. (A) Session outcomes across all N=151 sessions. (B) Judge score distribution among N=128 DONE sessions (mean=0.709); orange bar marks the minimum passing score (0.65). (C) Retry recovery among N=96 retried sessions, with Wilson 95% confidence interval. (D) Task category distribution for the CIIE sub-experiment (N=51 only; not all N=151 sessions).*
 
 **Table 2: Judge Score Distribution (DONE sessions, N=128)**
