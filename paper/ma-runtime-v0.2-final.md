@@ -4,7 +4,8 @@
 Independent Researcher  
 **Experimenter ID**: Tsune2034
 
-*Preprint — Technical Report — Draft v0.2 — 2026-05-28*
+*Preprint — Technical Report — Draft v0.2 — 2026-05-28*  
+**DOI**: 10.5281/zenodo.20415646
 
 ---
 
