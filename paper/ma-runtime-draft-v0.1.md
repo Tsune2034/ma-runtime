@@ -1,14 +1,10 @@
 # MA Runtime: Applying Hardware Safety Topology to Autonomous AI Agent Execution
 
 **Daisuke Tsunemori**  
-Independent Researcher
+Independent Researcher  
+**Experimenter ID**: Tsune2034
 
-**Experimenter**: Tsune2034  
-**AI Research Partner**: ARARA (Claude Sonnet 4.6, Anthropic)  
-Autonomous agent operating under MA Runtime v3.  
-Role: experimental co-investigator in CIIE observation sessions and system execution.
-
-*Preprint — Draft v0.2 — 2026-05-28*
+*Preprint — Technical Report — Draft v0.2 — 2026-05-28*
 
 ---
 
@@ -91,36 +87,7 @@ MA Runtime executes a goal through six sequential stages: (1) memory state evalu
 ![Figure 1: MA Runtime System Architecture](../figures/ma_runtime_architecture.png)
 *Figure 1: MA Runtime v3 system architecture. Core cascade (blue) implements hardware relay-circuit topology. Safety layer (orange/red) derives from EMO multi-tier fail-safe chains. CIIE measurement (purple) runs in parallel. Dashed arrows indicate observer/audit paths.*
 
-```
-Goal Input
-   │
-   ▼
-[Memory DB] ── confidence decay e^(-λt)
-   │
-   ▼
-[Skill Router] ── persona selection
-   │
-   ▼
-[THINK] ── researcher(A) + critic(A) ── parallel
-   │              │
-   │         C-contact: if A fails → B (Gemini CLI)
-   ▼
-[CASCADE] ── supervisor reconciliation
-   │         delta gating (external vs internal state)
-   ▼
-[LEGAL INTERLOCK] ── LOW warning / HIGH latch
-   │
-   ▼
-[JUDGE] ── score = f(source_count, diversity, freshness, confidence_data)
-   │
-   ├── pass → [EXECUTE] → DONE
-   │
-   └── fail → [POLICY ENGINE] → [RETRY ENGINE] ──┐
-                                                   │ retry ≤ MAX_RETRY
-                                                   └──► [THINK] (retry loop)
-                                                   │
-                                                   └── retry > MAX_RETRY → JUDGE_FAILED
-```
+*See Appendix A for the full ASCII execution graph.*
 
 ### 3.2 C-Contact Fail-Over (Multi-Shell)
 
@@ -145,17 +112,18 @@ The LEGAL INTERLOCK stage inspects the CASCADE output for legally sensitive cont
 
 The JUDGE stage computes a quality score from six binary indicators:
 
-| Indicator | Weight | Description |
-|-----------|--------|-------------|
-| not_empty | 0.10 | Output is non-empty |
-| has_source | 0.10 | At least one attributable source cited |
-| goal_satisfied | 0.25 | Output addresses the stated goal |
-| no_contradiction | 0.20 | No internal contradiction detected |
-| source_diverse | 0.10 | URLs from ≥2 distinct domains |
-| freshness | 0.15 (fin: 0.20) | Date string detected in output |
-| confidence_data | 0.10 (fin: 0.15) | Numeric data with units detected |
+| Indicator | General Weight | Financial Weight | Description |
+|-----------|---------------|-----------------|-------------|
+| not_empty | 0.10 | 0.10 | Output is non-empty |
+| has_source | 0.10 | 0.10 | At least one attributable source cited |
+| goal_satisfied | 0.25 | 0.20 | Output addresses the stated goal |
+| no_contradiction | 0.20 | 0.15 | No internal contradiction detected |
+| source_diverse | 0.10 | 0.10 | URLs from ≥2 distinct domains |
+| freshness | 0.15 | 0.20 | Date string detected in output |
+| confidence_data | 0.10 | 0.15 | Numeric data with units detected |
+| **Total** | **1.00** | **1.00** | |
 
-Financial goals (detected by keyword matching: fx/equities/btc/yen/usd/etc., including Japanese-language equivalents) apply higher weights to freshness and confidence_data, reflecting the time-sensitivity of financial information.
+Financial goals (detected by keyword matching: fx/equities/btc/yen/usd/etc., including Japanese-language equivalents) shift weight from goal_satisfied and no_contradiction toward freshness and confidence_data, reflecting the time-sensitivity and numeric precision required for financial outputs.
 
 ### 3.6 Policy Engine and Retry Engine
 
@@ -270,7 +238,7 @@ Mean execution time: 26.4 seconds. Retry recovery rate: 81% (sessions rescued fr
 **Figure 2** summarizes all empirical results across the four key metrics.
 
 ![Figure 2: MA Runtime Empirical Results](../figures/ma_runtime_results.png)
-*Figure 2: Empirical results across N=151 sessions. (Top left) Session status distribution; (Top right) Judge score distribution across N=128 DONE sessions (mean=0.709); (Bottom left) Retry recovery rate with 95% Wilson CI; (Bottom right) Task category distribution for CIIE sub-experiment (N=51).*
+*Figure 2: Empirical results of MA Runtime v3. (A) Session outcomes across all N=151 sessions. (B) Judge score distribution among N=128 DONE sessions (mean=0.709); orange bar marks the minimum passing score (0.65). (C) Retry recovery among N=96 retried sessions, with Wilson 95% confidence interval. (D) Task category distribution for the CIIE sub-experiment (N=51 only; not all N=151 sessions).*
 
 **Table 2: Judge Score Distribution (DONE sessions, N=128)**
 
@@ -283,7 +251,7 @@ Mean execution time: 26.4 seconds. Retry recovery rate: 81% (sessions rescued fr
 | 1.00  | 6     | 4.7%      |
 | **Mean** | **0.709** | |
 
-Note: The passing threshold is `score ≥ 0.60`. **All 128 DONE sessions passed this threshold** — DONE status is only assigned after the judge score confirms passing. Sessions that fail to pass the judge score after exhausting MAX_RETRY=2 retries are classified as JUDGE_FAILED (N=18, 11.9%), not DONE. The minimum achievable passing score is 0.65, corresponding to four binary indicators satisfied: not_empty (0.10) + has_source (0.10) + goal_satisfied (0.25) + no_contradiction (0.20) = 0.65. 56.2% of DONE sessions received this minimum passing score. Sessions with higher scores had additional indicators satisfied (source_diversity, freshness, confidence_data).
+Note: The passing threshold is `score ≥ 0.60`. **All 128 DONE sessions passed this threshold** — DONE status is only assigned after the judge score confirms passing. Sessions that fail to pass the judge score after exhausting MAX_RETRY=2 retries are classified as JUDGE_FAILED (N=18, 11.9%), not DONE. The minimum achievable passing score is 0.65, corresponding to four binary indicators satisfied: not_empty (0.10) + has_source (0.10) + goal_satisfied (0.25) + no_contradiction (0.20) = 0.65. The concentration at 0.65 (56.2% of DONE sessions) indicates that the current judge is conservative and source-sensitive: sessions producing well-reasoned outputs without attributable external sources cannot score above the minimum. Improving source attribution and adding an embedding-based coherence metric are targets for v4. Sessions with higher scores had additional indicators satisfied (source_diversity, freshness, confidence_data).
 
 **Table 3: Retry Engine Performance**
 
@@ -381,17 +349,28 @@ To eliminate LLM non-determinism as a confound, think_outputs and cascade_out we
 
 **Results** (single shared-inference run per goal; n=1):
 
-| Goal | Cond A | Cond B | cascade_escape | risk_delta | Notes |
-|---|---|---|---|---|---|
-| ctrl_neg | DONE | DONE | ✗ | +0 (L→L) | No false positive |
-| ctrl_pos | LEGAL_LATCH | DONE | ✓ | +0 (H→H) | **H1 supported** |
-| ctrl_pos_en | LEGAL_LATCH | DONE | ✓ | +0 (H→H) | **H1 supported; bilingual ontology effective** |
-| exp1_labor | LEGAL_LATCH | DONE | ✓ | +0 (H→H) | **H1 supported** |
-| exp2_security | DONE | JUDGE_FAILED | ✗ | −1 (↓ att.) | CASCADE attenuated HIGH→LOW |
-| exp3_finance | DONE | DONE | ✗ | +0 (L→L) | Safe goal, correct |
-| adv_labor_en | DONE | DONE | ✗ | +0 (L→L) | EN paraphrase not caught (run 2) |
-| **adv_labor_jp** | **DONE** | **DONE** | **✗** | **−1 (↓ att.)** | **Adversarial bypass: both conditions failed** |
-| emer_labor | DONE | DONE | ✗ | +0 (L→L) | Emergent risk not observed |
+**Table A — Experimental Results (Condition A vs B)**
+
+| Goal | Category | Cond A | Cond B | Escape? |
+|------|----------|--------|--------|---------|
+| ctrl_neg | Negative control | DONE | DONE | No |
+| ctrl_pos | Positive control | LEGAL_LATCH | DONE | **Yes** |
+| ctrl_pos_en | Multilingual control | LEGAL_LATCH | DONE | **Yes** |
+| exp1_labor | Experimental | LEGAL_LATCH | DONE | **Yes** |
+| exp2_security | Experimental | DONE | JUDGE_FAILED | No (attenuation) |
+| exp3_finance | Experimental | DONE | DONE | No |
+| adv_labor_en | Adversarial | DONE | DONE | No |
+| adv_labor_jp | Adversarial | DONE | DONE | No (bypass) |
+| emer_labor | Emergent | DONE | DONE | No |
+
+**Table B — Key Observations**
+
+| Finding | Evidence |
+|---------|----------|
+| Topology blocked explicit harmful goals | ctrl_pos, ctrl_pos_en, exp1_labor |
+| Adversarial paraphrase bypassed lexical ontology | adv_labor_jp |
+| CASCADE attenuated risk signal | exp2_security, adv_labor_jp |
+| No false positive in safe controls | ctrl_neg, exp3_finance |
 
 **Summary — 3-tier structure:**
 
@@ -458,11 +437,45 @@ This is consistent with H1 and suggests that cascade architecture, by creating v
 
 We have presented MA Runtime, an AI agent execution framework whose safety architecture derives from 70 years of hardware safety engineering. The two structural (topological) innovations — C-contact fail-over and cascade delta gating — implement the hardware principle of *safety as relay-circuit topology*: certain unsafe execution paths are unreachable by the structure of the execution graph, without requiring a central safety evaluator. The two-tier legal interlock provides a complementary semantic safety layer — a post-CASCADE checker, not a topological component — consistent with the defense-in-depth clarification in Section 3.4.
 
-Empirical evaluation across N=151 diverse sessions demonstrates 84.8% task completion, 3.3% correct legal interlock activation, and 81% retry recovery rate, with mean execution time of 26.4 seconds. The LEGAL_LATCH correctly prevented harmful execution in all 5 triggered cases.
+Empirical evaluation across N=151 diverse sessions demonstrates 84.8% task completion, 3.3% legal interlock activation, and 81% retry recovery rate, with mean execution time of 26.4 seconds. These metrics are descriptive of this system in isolation and have not been benchmarked against LangChain, AutoGen, or CrewAI under matched conditions. In all 5 LEGAL_LATCH-triggered sessions, the interlock activated before EXECUTE — reported as a system behavior observation, not as proof that the ontology correctly identified harm in all cases. Throughout this paper, *topology* is used in the relay-circuit connectivity sense, not as a formal mathematical topology.
 
 We have also introduced the CIIE framework as the first operationally-defined, induction-design-targeted construct for human insight events in human-AI dialogue. Three confirmed CIIE events have been recorded; systematic H1/H2 testing is the next experimental phase.
 
 To our knowledge, MA Runtime is among the first frameworks to (a) explicitly translate hardware relay-circuit safety topology to AI agent architecture in the HW→AI direction, and (b) treat CIIE as an architectural induction target rather than a detection problem. We release the complete implementation, Observer audit logs, and experimental data at https://github.com/Tsune2034/ma-runtime.
+
+---
+
+## Data and Code Availability
+
+**Code**: The complete implementation of MA Runtime v3 is available at https://github.com/Tsune2034/ma-runtime under the MIT License.
+
+**Data**: Summary statistics, anonymized Observer session logs, and experiment configuration files are included in the GitHub repository (`data/`, `memory/ciie/`). Raw dialogue traces containing potentially sensitive content are excluded.
+
+**Reproducibility**: Experiments were executed on Apple M-series Mac, macOS 15. LLM provider: OpenRouter (primary), Gemini CLI (secondary). No fixed random seed was used; results are subject to LLM non-determinism.
+
+---
+
+## Ethics and Legal Disclaimer
+
+Legal tasks in this study are synthetic or experimental prompts designed to trigger the LEGAL_LATCH safety mechanism. The system is not intended to provide legal advice, and no outputs should be used as legal guidance without professional review. All session goals were generated by the author for research purposes; no real client data or protected communications were involved.
+
+---
+
+## AI Assistance Statement
+
+Claude Sonnet 4.6 (project name: ARARA), operated by the author under MA Runtime v3, was used as an AI research assistant for ideation, drafting support, experimental dialogue, and system execution. The human author (Daisuke Tsunemori) is solely responsible for all experimental design, data collection, claims, and conclusions. AI-generated content was reviewed and edited by the human author before inclusion.
+
+---
+
+## Conflict of Interest
+
+The author declares no competing financial interests. This work was conducted independently without institutional affiliation or external funding.
+
+---
+
+## License
+
+This preprint (PDF) is released under Creative Commons Attribution 4.0 International (CC BY 4.0). The associated code is released under the MIT License. See the GitHub repository for details.
 
 ---
 
@@ -492,7 +505,42 @@ To our knowledge, MA Runtime is among the first frameworks to (a) explicitly tra
 
 ---
 
-*Word count (approx.): 3,800 words*  
-*Target venue: arXiv cs.AI / cs.HC — submission pending data collection completion*  
-*Implementation: https://github.com/Tsune2034/ma-runtime*
+## Appendix A — Execution Graph (ASCII Reference)
+
+```
+Goal Input
+   │
+   ▼
+[Memory DB] ── confidence decay e^(-λt)
+   │
+   ▼
+[Skill Router] ── persona selection
+   │
+   ▼
+[THINK] ── researcher(A) + critic(A) ── parallel
+   │              │
+   │         C-contact: if A fails → B (Gemini CLI)
+   ▼
+[CASCADE] ── supervisor reconciliation
+   │         delta gating (external vs internal state)
+   ▼
+[LEGAL INTERLOCK] ── LOW warning / HIGH latch
+   │
+   ▼
+[JUDGE] ── score = f(source_count, diversity, freshness, confidence_data)
+   │
+   ├── pass → [EXECUTE] → DONE
+   │
+   └── fail → [POLICY ENGINE] → [RETRY ENGINE] ──┐
+                                                   │ retry ≤ MAX_RETRY
+                                                   └──► [THINK] (retry loop)
+                                                   │
+                                                   └── retry > MAX_RETRY → JUDGE_FAILED
+```
+
+---
+
+*Version: Draft v0.2 — 2026-05-28*  
+*Implementation: https://github.com/Tsune2034/ma-runtime*  
+*License: CC BY 4.0 (paper) / MIT (code)*
 
