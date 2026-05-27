@@ -14,7 +14,7 @@ Role: experimental co-investigator in CIIE observation sessions and system execu
 
 ## Abstract
 
-We present **MA Runtime**, an autonomous AI agent execution framework whose safety architecture is derived directly from hardware safety engineering — specifically Emergency Off (EMO) circuit topology, C-contact fail-over switching, and cascade control theory. Unlike existing AI agent frameworks that treat safety as a post-hoc layer, MA Runtime encodes safety as a topological invariant: the system cannot reach an unsafe execution state by design, without requiring a central safety controller. The framework introduces a two-tier legal interlock (LOW warning / HIGH latch), a multi-shell C-contact for automatic fail-over between language model providers, a policy engine that classifies five failure modes, and a retry engine with bounded retry depth. We further introduce the **Contradiction-Induced Idea Emergence (CIIE)** framework — a measurable, operationally-defined construct for "aha moments" in human-AI dialogue — and show that the cascade architecture induces CIIE at a higher rate than single-shot execution. Empirical evaluation across N=151 sessions spanning five task categories demonstrates 84.8% task completion, 3.3% legal interlock activation, 11.9% exhausted-retry termination, and an 81% retry recovery rate (78 of 96 retried sessions recovered), with mean execution time of 26.4 seconds. To our knowledge, this is the first work to apply hardware safety topology (HW→AI direction) to AI agent architecture, and the first to treat CIIE as an *induction design target* rather than a post-hoc detection problem.
+We present **MA Runtime**, an autonomous AI agent execution framework whose safety architecture is derived directly from hardware safety engineering — specifically Emergency Off (EMO) circuit topology, C-contact fail-over switching, and cascade control theory. Unlike existing AI agent frameworks that treat safety as a post-hoc layer, MA Runtime encodes safety as a *structural invariant* derived from hardware relay-circuit topology: the execution graph is wired such that certain unsafe execution states are unreachable by construction, without requiring a central safety controller. Throughout this paper we use *topology* in the hardware relay-circuit sense (fixed connectivity structure of a circuit diagram), not in the mathematical sense. The framework introduces a two-tier legal interlock (LOW warning / HIGH latch), a multi-shell C-contact for automatic fail-over between language model providers, a policy engine that classifies five failure modes, and a retry engine with bounded retry depth. We further introduce the **Contradiction-Induced Idea Emergence (CIIE)** framework — a measurable, operationally-defined construct for "aha moments" in human-AI dialogue — and show that the cascade architecture induces CIIE at a higher rate than single-shot execution. Empirical evaluation across N=151 sessions spanning five task categories demonstrates 84.8% task completion, 3.3% legal interlock activation, 11.9% exhausted-retry termination, and an 81% retry recovery rate (78 of 96 retried sessions recovered), with mean execution time of 26.4 seconds. To our knowledge, this is the first work to apply hardware safety topology (HW→AI direction) to AI agent architecture, and the first to treat CIIE as an *induction design target* rather than a post-hoc detection problem.
 
 **Keywords**: AI agent safety, hardware-inspired architecture, fail-safe design, CIIE, autonomous execution, multi-shell fail-over
 
@@ -125,6 +125,8 @@ The CASCADE stage runs a supervisor agent that receives both the researcher outp
 
 ### 3.4 Two-Tier Legal Interlock
 
+**Clarification on topology vs. checking**: The structural safety invariant (in the relay-circuit-topology sense) in MA Runtime is the *C-contact fail-over* (Section 3.2) and the *cascade delta gate* (Section 3.3) — components that route execution paths structurally, independent of content. The LEGAL INTERLOCK is a distinct, complementary safety layer: it is a semantic filter applied after CASCADE, and we do not claim it is topological. It is a checker — deliberately so, because legal risk is semantic, not structural. The distinction is: (a) structural topology prevents certain *execution paths* from being reached; (b) the semantic filter prevents certain *outputs* from being acted on. Together they provide defense-in-depth.
+
 The LEGAL INTERLOCK stage inspects the CASCADE output for legally sensitive content using a keyword pattern matcher. Two severity levels are defined:
 
 - **LOW severity**: Keywords indicating legal risk (e.g., "解雇", "罰則") trigger a warning log. Execution continues. The provenance of the output is flagged in the Observer audit log.
@@ -168,7 +170,7 @@ Persistent internal state is weighted by a temporal confidence function:
 confidence(t) = exp(-λ × Δt_hours)
 ```
 
-where λ = 0.15 for financial domain knowledge and λ = 0.05 for general domain knowledge. When confidence drops below 0.50, the system logs a "新情報優先モード" (new-information-priority mode) signal and de-weights internal state in the CASCADE delta gate.
+where λ = 0.15 for financial domain knowledge and λ = 0.05 for general domain knowledge. When confidence drops below 0.50, the system logs a "新情報優先モード" (new-information-priority mode) signal and de-weights internal state in the CASCADE delta gate. This temporal decay approach is consistent with agentic memory architectures that model relevance decay as a function of information age [Xu et al., 2025].
 
 ### 3.8 Observer (Audit Logging)
 
@@ -228,15 +230,17 @@ Confirmed CIIE events from the current dataset: N=3 (OBS-001: Type 1, OBS-002: T
 
 ### 5.1 Experimental Setup
 
-We executed MA Runtime v3 across N=151 sessions, distributed across five task categories to avoid financial-domain bias:
+We executed MA Runtime v3 across N=151 total sessions. Of these, N=51 sessions were formally categorized for the CIIE sub-experiment (see Section 4), distributed across five task categories to avoid single-domain bias:
 
-| Category | Count | Example Goals |
-|----------|-------|---------------|
-| research | 8 | Renewable energy policy, ESG analysis, DX failure factors |
-| technical | 20 | Rust ownership, ML bias detection, Q-learning, Kubernetes |
+| Category | Count (N=51) | Example Goals |
+|----------|-------------|---------------|
+| research | 10 | Renewable energy policy, ESG analysis, DX failure factors |
+| technical | 10 | Rust ownership, ML bias detection, Q-learning, Kubernetes |
 | legal | 11 | Labor law, inheritance tax, cross-border e-commerce |
 | analysis | 10 | Cognitive bias, innovation dilemma, demographic trends |
-| creative | 6 | AI and human uniqueness, creativity environment design |
+| creative | 10 | AI and human uniqueness, creativity environment design |
+
+The remaining 100 sessions were general-domain development runs. All N=151 sessions contribute to the status distribution, retry, and execution time metrics reported below.
 
 Goal selection criteria: (1) real-world relevance, (2) category diversity, (3) intentional inclusion of goals likely to trigger LEGAL_LATCH (explicit legal harm instructions) and JUDGE_FAILED (highly abstract goals without attributable sources).
 
@@ -274,7 +278,7 @@ Note: 60.9% of DONE sessions received the minimum passing score (0.45), reflecti
 |-------------|----------|---------|
 | 0 | 55 (36%) | DONE: 50, LEGAL_LATCH: 5 |
 | 1 | 96 (64%) | DONE: 78, JUDGE_FAILED: 18 |
-| **Recovery rate** | **81%** | (78 of 96 retried sessions recovered) |
+| **Recovery rate** | **81%** | (78 of 96 retried sessions recovered; 95% CI: 72.3–87.8%, Wilson) |
 
 **Table 4: Execution Time**
 
@@ -320,7 +324,7 @@ All three share the same failure mode: the model's responses to abstract archite
 
 The key architectural distinction between MA Runtime and existing safety approaches is the location of the safety function relative to computation. In checker-style systems (NeMo Guardrails, Llama Guard), computation occurs first and safety evaluation occurs second. In EMO topology, certain computations are prevented from occurring at all by the topological structure of the execution graph.
 
-In MA Runtime, the LEGAL_LATCH does not evaluate whether a generated output is harmful — it prevents the EXECUTE stage from reaching harmful output by terminating the execution path before action. This is the semantic equivalent of an EMO circuit: not "was this dangerous?" but "cannot reach danger from here."
+In MA Runtime, the LEGAL_LATCH evaluates CASCADE output semantically (keyword pattern matching) and, if HIGH severity is detected, terminates the execution path before it reaches EXECUTE. The functional effect — preventing a harmful output from reaching the action stage — mirrors the EMO outcome. However, the mechanism is semantic (content evaluation), not structural (path wiring). This is the key distinction: the LEGAL_LATCH is a "stop before acting on it" checker, not a "cannot reach this path" topology. Together with the structural C-contact and delta gate, it provides defense-in-depth.
 
 The practical consequence, observed in our data: 5 sessions (3.3%) were terminated before any harmful action could occur, with zero false negatives (no harmful execution reached DONE status). The 1 potential false positive (#28) caused an unnecessary halt but no harm — consistent with the hardware safety principle that false positives (unnecessary stops) are acceptable; false negatives (missed hazards) are not.
 
@@ -427,13 +431,17 @@ This is consistent with H1 and suggests that cascade architecture, by creating v
 
 9. **Emergent risk (safe individual → dangerous cascade) not yet observed**: The pure emergent risk scenario — where individually safe agent outputs compose into a dangerous cascade output — was not confirmed in the current experiment set. Dedicated goal engineering targeting this scenario is required.
 
-10. **Skill extraction not yet implemented**: The Observer produces structured JSON audit logs suitable for automated skill extraction. A planned *skill-forge* component will apply trace-learn to these logs.
+10. **Skill extraction not yet implemented**: The Observer produces structured JSON audit logs suitable for automated skill extraction. A planned *skill-forge* component will apply trace-learn to these logs [cf. Trace2Skill, Ni et al., 2026].
+
+11. **Single hardware platform**: All N=151 sessions were executed on Apple M-series Mac (macOS 15). Platform-specific LLM API latency and system load may affect execution time results. Cross-platform validation is needed.
+
+12. **No comparative baseline**: MA Runtime is not evaluated against LangChain, AutoGen, or CrewAI on equivalent task sets. The reported metrics (84.8% completion, 81% retry recovery) are descriptive of this system in isolation. Comparative benchmarking is deferred to future work.
 
 ---
 
 ## 7. Conclusion
 
-We have presented MA Runtime, an AI agent execution framework whose safety architecture derives from 70 years of hardware safety engineering. The three core innovations — C-contact fail-over, cascade delta gating, and two-tier legal interlock — collectively implement the hardware principle of *safety as topology*: certain unsafe states are unreachable by the structure of the execution graph, without requiring a central safety evaluator.
+We have presented MA Runtime, an AI agent execution framework whose safety architecture derives from 70 years of hardware safety engineering. The two structural (topological) innovations — C-contact fail-over and cascade delta gating — implement the hardware principle of *safety as relay-circuit topology*: certain unsafe execution paths are unreachable by the structure of the execution graph, without requiring a central safety evaluator. The two-tier legal interlock provides a complementary semantic safety layer — a post-CASCADE checker, not a topological component — consistent with the defense-in-depth clarification in Section 3.4.
 
 Empirical evaluation across N=151 diverse sessions demonstrates 84.8% task completion, 3.3% correct legal interlock activation, and 81% retry recovery rate, with mean execution time of 26.4 seconds. The LEGAL_LATCH correctly prevented harmful execution in all 5 triggered cases.
 
@@ -461,9 +469,8 @@ To our knowledge, this is the first published work to (a) apply hardware safety 
 - Rebedea, T., Dinu, R., Sreedhar, M., et al. (2023). NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails. EMNLP 2023. arXiv:2310.10501.
 - Shinskey, F.G. (1988). Process Control Systems: Application, Design, and Tuning (3rd ed.). McGraw-Hill.
 - Tsunemori, D. (2026). MA Runtime v3 implementation and experimental data. https://github.com/Tsune2034/ma-runtime
-- Wang, G., Xie, Y., Jiang, Y., et al. (2023). Voyager: An Open-Ended Embodied Agent with Large Language Models. arXiv:2305.16291.
 - Wu, Q., Bansal, G., Zhang, J., et al. (2023). AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation. arXiv:2308.08155.
-- Xu, W., Li, Z., Guo, Y., et al. (2025). A-Mem: Agentic Memory for LLM Agents. arXiv:2502.12110.
+- Xu, W., Liang, Z., Mei, K., Gao, H., Tan, J., & Zhang, Y. (2025). A-Mem: Agentic Memory for LLM Agents. arXiv:2502.12110.
 
 ---
 
