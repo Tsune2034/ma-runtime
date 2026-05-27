@@ -22,7 +22,7 @@ We present **MA Runtime**, an autonomous AI agent execution framework whose safe
 
 ## 1. Introduction
 
-Autonomous AI agent systems are increasingly deployed in high-stakes settings: legal analysis, financial reasoning, infrastructure automation. As these systems grow more capable, their failure modes also grow more consequential. The dominant response has been to add safety layers on top of existing architectures — constitutional constraints [CITATION], RLHF [CITATION], output classifiers [CITATION]. These approaches share a structural assumption: safety is something to be checked *after* computation has occurred.
+Autonomous AI agent systems are increasingly deployed in high-stakes settings: legal analysis, financial reasoning, infrastructure automation. As these systems grow more capable, their failure modes also grow more consequential. The dominant response has been to add safety layers on top of existing architectures — constitutional constraints [Bai et al., 2022], RLHF [Ouyang et al., 2022], output classifiers [Inan et al., 2023]. These approaches share a structural assumption: safety is something to be checked *after* computation has occurred.
 
 Hardware safety engineering does not share this assumption. In industrial control systems, semiconductor fabrication equipment, and medical devices, safety is a *topological property* — the wiring itself prevents certain states from being reached, regardless of controller behavior. An Emergency Off (EMO) circuit does not ask whether the system is in a dangerous state; it removes power along paths that cannot reach danger by construction. A C-contact (normally-closed contact) routes execution to a backup path *before* failure is detected, not in response to it.
 
@@ -46,33 +46,33 @@ This paper presents **MA Runtime**, an autonomous AI agent framework that direct
 
 ### 2.1 AI Agent Frameworks
 
-LangChain [CITATION] and AutoGen [CITATION] are the dominant multi-agent orchestration frameworks. Both treat safety as an optional plugin rather than an architectural constraint. MAESTRO [CITATION] (Multi-Agent Evaluation Suite for Testing, Reliability, and Observability) provides evaluation methodology for agent reliability, establishing task diversity and failure taxonomy as key dimensions — our evaluation design follows MAESTRO's category-diversity recommendations.
+LangChain [Chase, 2022] and AutoGen [Wu et al., 2023] are the dominant multi-agent orchestration frameworks. Both treat safety as an optional plugin rather than an architectural constraint. MAESTRO [Dong et al., 2026] (Multi-Agent Evaluation Suite for Testing, Reliability, and Observability) provides evaluation methodology for agent reliability, establishing task diversity and failure taxonomy as key dimensions — our evaluation design follows MAESTRO's category-diversity recommendations.
 
-CrewAI [CITATION] introduces role-based agent specialization; we adopt a similar PERSONAS model but add hardware-inspired interlock logic between agent outputs. OpenAgents [CITATION] demonstrates that tool-augmented agents can operate across diverse task categories with measurable reliability, supporting our multi-category experimental design.
+CrewAI [Moura, 2023] introduces role-based agent specialization; we adopt a similar PERSONAS model but add hardware-inspired interlock logic between agent outputs. OpenAgents [Chen et al., 2023] demonstrates that tool-augmented agents can operate across diverse task categories with measurable reliability, supporting our multi-category experimental design.
 
 No prior work applies hardware safety topology as an architectural primitive to AI agent systems.
 
 ### 2.2 Safety in AI Systems
 
-Constitutional AI [CITATION] embeds behavioral constraints as training-time principles. RLHF [CITATION] shapes model behavior through reward modeling. Both operate at the model level, not the execution architecture level. Our legal interlock operates at the *execution topology* level, independent of which model is running.
+Constitutional AI [Bai et al., 2022] embeds behavioral constraints as training-time principles. RLHF [Ouyang et al., 2022] shapes model behavior through reward modeling. Both operate at the model level, not the execution architecture level. Our legal interlock operates at the *execution topology* level, independent of which model is running.
 
-Guard-rail systems (NeMo Guardrails [CITATION], Llama Guard [CITATION]) insert classifiers between agent outputs and downstream actions. These are checker-style safety mechanisms: they evaluate outputs after generation. The EMO topology in MA Runtime prevents generation of certain outputs by routing control flow before the offending computation occurs.
+Guard-rail systems (NeMo Guardrails [Rebedea et al., 2023], Llama Guard [Inan et al., 2023]) insert classifiers between agent outputs and downstream actions. These are checker-style safety mechanisms: they evaluate outputs after generation. The EMO topology in MA Runtime prevents generation of certain outputs by routing control flow before the offending computation occurs.
 
-Closest in spirit to our approach, Parallax [CITATION] (arXiv:2604.12986, 2026) proposes strict separation between an AI agent's *thinking* and *acting* components, arguing that agents which think must never directly act. Parallax realizes this separation through container-level process isolation — a systems-security substrate. MA Runtime realizes the same principle through a different substrate: hardware relay topology. Where Parallax enforces the think/act boundary at the OS process boundary, MA Runtime enforces it at the execution-graph level via LEGAL_LATCH and C-contact fail-over. The two approaches are complementary: Parallax addresses *who executes*; MA Runtime addresses *what paths execution can reach*.
+Closest in spirit to our approach, Parallax [Fokou, 2026] (arXiv:2604.12986, 2026) proposes strict separation between an AI agent's *thinking* and *acting* components, arguing that agents which think must never directly act. Parallax realizes this separation through container-level process isolation — a systems-security substrate. MA Runtime realizes the same principle through a different substrate: hardware relay topology. Where Parallax enforces the think/act boundary at the OS process boundary, MA Runtime enforces it at the execution-graph level via LEGAL_LATCH and C-contact fail-over. The two approaches are complementary: Parallax addresses *who executes*; MA Runtime addresses *what paths execution can reach*.
 
 ### 2.3 Hardware Safety Engineering
 
-IEC 61508 [CITATION] defines Safety Integrity Levels (SIL) for functional safety in industrial control systems. The fundamental principle is that safety functions must be architecturally independent of the function being protected. EMO circuits [CITATION] implement this principle in relay logic: the emergency stop path is physically separate from the control path.
+IEC 61508 [IEC, 2010] defines Safety Integrity Levels (SIL) for functional safety in industrial control systems. The fundamental principle is that safety functions must be architecturally independent of the function being protected. EMO circuits [IEC, 2010] implement this principle in relay logic: the emergency stop path is physically separate from the control path.
 
-C-contact (normally-closed contact) fail-safe design [CITATION] is a relay logic pattern where the default state is the safe state — power interruption causes the contact to close (safe), not open (unsafe). We adapt this principle to AI execution: the backup shell is the default state when primary fails.
+C-contact (normally-closed contact) fail-safe design [IEC, 2010] is a relay logic pattern where the default state is the safe state — power interruption causes the contact to close (safe), not open (unsafe). We adapt this principle to AI execution: the backup shell is the default state when primary fails.
 
-Cascade control [CITATION] is an industrial control pattern for multi-loop systems where the output of an outer controller sets the reference for an inner controller. We use cascade structure to reconcile external agent output (outer loop) with persistent internal state (inner loop), suppressing cascade propagation unless a genuine information delta exists.
+Cascade control [Shinskey, 1988] is an industrial control pattern for multi-loop systems where the output of an outer controller sets the reference for an inner controller. We use cascade structure to reconcile external agent output (outer loop) with persistent internal state (inner loop), suppressing cascade propagation unless a genuine information delta exists.
 
 ### 2.4 Insight and Creativity Measurement
 
-The "aha moment" or insight has been studied in cognitive science as the Representational Change Theory [CITATION] and the Progress Monitoring Theory [CITATION]. These theories explain when insight occurs, but do not provide operational conditions for measuring it in real-time dialogue.
+The "aha moment" or insight has been studied in cognitive science as the Representational Change Theory [Ohlsson, 1992] and the Progress Monitoring Theory [MacGregor et al., 2001]. These theories explain when insight occurs, but do not provide operational conditions for measuring it in real-time dialogue.
 
-More recent work on human-AI creativity [CITATION] documents emergent insights in co-creative sessions but does not distinguish between insights generated by the AI system and insights generated by the human in response to AI limitations. Our CIIE framework makes this distinction explicit through the "source" field (human vs automated) and defines five evidence conditions that must all be satisfied for an event to be classified as a confirmed CIIE.
+More recent work on human-AI creativity [Lin et al., 2025] documents emergent insights in co-creative sessions but does not distinguish between insights generated by the AI system and insights generated by the human in response to AI limitations. Our CIIE framework makes this distinction explicit through the "source" field (human vs automated) and defines five evidence conditions that must all be satisfied for an event to be classified as a confirmed CIIE.
 
 No prior work treats CIIE as an *induction design target* — a property to be engineered into the system architecture rather than observed after the fact.
 
@@ -208,7 +208,7 @@ Three CIIE types are defined based on the trigger mechanism:
 
 The common structure across all three types is: *the human surpasses the AI in the moment the AI fails*. This is distinct from existing creativity-support research, which models AI as a capability extender for humans. CIIE specifically targets the *breakdown events* where the AI system's limitations create a cognitive pressure that releases human insight.
 
-This framing connects to Representational Change Theory [CITATION]: insight occurs when an initial problem representation is restructured. In the CIIE model, the AI's limitation provides the "impasse" that forces representational restructuring in the human.
+This framing connects to Representational Change Theory [Ohlsson, 1992]: insight occurs when an initial problem representation is restructured. In the CIIE model, the AI's limitation provides the "impasse" that forces representational restructuring in the human.
 
 ### 4.4 Experimental Design
 
@@ -445,22 +445,25 @@ To our knowledge, this is the first published work to (a) apply hardware safety 
 
 ## References
 
-*[CITATION markers to be replaced with actual references before submission]*
-
-- [CITATION] Bai, Y. et al. (2022). Constitutional AI: Harmlessness from AI Feedback. arXiv:2212.08073.
-- [CITATION] Ouyang, L. et al. (2022). Training language models to follow instructions with human feedback. NeurIPS 2022.
-- [CITATION] Chase, H. (2022). LangChain. GitHub.
-- [CITATION] Wu, Q. et al. (2023). AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation. arXiv:2308.08155.
-- [CITATION] Dong, R. et al. (2026). MAESTRO: Multi-Agent Evaluation Suite for Testing, Reliability and Observability. arXiv:2601.00481.
-- [CITATION] Guardrails AI / NVIDIA (2023). NeMo Guardrails.
-- [CITATION] Meta AI (2023). Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations.
-- [CITATION] IEC 61508 (2010). Functional Safety of E/E/PE Safety-related Systems.
-- [CITATION] Ohlsson, S. (1992). Information-Processing Explanations of Insight and Related Phenomena. Advances in the Psychology of Thinking.
-- [CITATION] MacGregor, J.N. et al. (2001). Information Processing and Insight: A Process Model of Performance on the Nine-Dot and Related Problems. Journal of Experimental Psychology.
-- [CITATION] Wang, G. et al. (2023). Voyager: An Open-Ended Embodied Agent with Large Language Models. arXiv:2305.16291.
-- [CITATION] Xu, W. et al. (2025). A-Mem: Agentic Memory for LLM Agents. arXiv preprint arXiv:2502.12110.
-- [CITATION] Ni, J. et al. (2026). Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills. arXiv:2603.25158.
-- [CITATION] Parallax (2026). Why AI Agents That Think Must Never Act. arXiv:2604.12986.
+- Bai, Y., Jones, A., Ndousse, K., et al. (2022). Constitutional AI: Harmlessness from AI Feedback. arXiv:2212.08073.
+- Chase, H. (2022). LangChain. GitHub. https://github.com/langchain-ai/langchain
+- Chen, T., Wang, W., Li, H., et al. (2023). OpenAgents: An Open Platform for Language Agents in the Wild. arXiv:2310.10634.
+- Dong, R., Lu, C., Fang, Y., et al. (2026). MAESTRO: Multi-Agent Evaluation Suite for Testing, Reliability and Observability. arXiv:2601.00481.
+- Fokou, J. (2026). Why AI Agents That Think Must Never Act. arXiv:2604.12986.
+- IEC (2010). IEC 61508: Functional Safety of Electrical/Electronic/Programmable Electronic Safety-related Systems. International Electrotechnical Commission.
+- Inan, H., Upasani, K., Chi, J., et al. (2023). Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations. arXiv:2312.06674.
+- Lin, Y.-C., Zeng, Z., Shi, W., et al. (2025). Creativity in LLM-based Multi-Agent Systems: A Survey. EMNLP 2025. arXiv:2505.21116.
+- MacGregor, J.N., Ormerod, T.C., & Chronicle, E.P. (2001). Information Processing and Insight: A Process Model of Performance on the Nine-Dot and Related Problems. Journal of Experimental Psychology: Learning, Memory, and Cognition, 27(1), 176–201.
+- Moura, J. (2023). CrewAI: Framework for Orchestrating Role-Playing, Autonomous AI Agents. GitHub. https://github.com/joaomdmoura/crewai
+- Ni, J., Liu, X., Wang, J., et al. (2026). Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills. arXiv:2603.25158.
+- Ohlsson, S. (1992). Information-Processing Explanations of Insight and Related Phenomena. In M. T. Keane & K. J. Gilhooly (Eds.), Advances in the Psychology of Thinking (Vol. 1, pp. 1–44). Harvester Wheatsheaf.
+- Ouyang, L., Wu, J., Jiang, X., et al. (2022). Training language models to follow instructions with human feedback. NeurIPS 2022. arXiv:2203.02155.
+- Rebedea, T., Dinu, R., Sreedhar, M., et al. (2023). NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails. EMNLP 2023. arXiv:2310.10501.
+- Shinskey, F.G. (1988). Process Control Systems: Application, Design, and Tuning (3rd ed.). McGraw-Hill.
+- Tsunemori, D. (2026). MA Runtime v3 implementation and experimental data. https://github.com/Tsune2034/ma-runtime
+- Wang, G., Xie, Y., Jiang, Y., et al. (2023). Voyager: An Open-Ended Embodied Agent with Large Language Models. arXiv:2305.16291.
+- Wu, Q., Bansal, G., Zhang, J., et al. (2023). AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation. arXiv:2308.08155.
+- Xu, W., Li, Z., Guo, Y., et al. (2025). A-Mem: Agentic Memory for LLM Agents. arXiv:2502.12110.
 
 ---
 
